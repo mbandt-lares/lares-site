@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Lares Health Website
 
-## Getting Started
+A production Next.js 14 website for Lares Health, deployed on Vercel.
+This repository contains the full marketing site, informational pages, and minimal backend API routes (e.g., waitlist submission).
 
-First, run the development server:
+🚀 Tech Stack
 
-```bash
+Next.js 14 / App Router
+
+React Server Components
+
+Tailwind CSS v4 (via @tailwindcss/postcss)
+
+TypeScript
+
+Vercel Deployment
+
+Node.js 18+
+
+🧱 Project Structure
+src/
+  app/
+    layout.tsx             # Global layout wrapper
+    page.tsx               # Home page
+    globals.css            # Tailwind + global styles
+
+    about/
+      page.tsx             # About page
+
+    contact/
+      page.tsx             # Contact / Waitlist form
+
+    api/
+      contact/
+        route.ts           # POST /api/contact – waitlist handler
+
+
+Root files include:
+
+tailwind.config.ts – Tailwind theme + content paths
+
+postcss.config.mjs – Tailwind v4 PostCSS integration
+
+next.config.ts – Next.js configuration
+
+package.json / package-lock.json – dependencies
+
+tsconfig.json – TypeScript setup
+
+💻 Local Development
+
+Clone and install dependencies:
+
+git clone https://github.com/mbandt-lares/lares-site.git
+cd lares-site
+npm install
+
+
+Run locally:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open the app:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🏗 Production Build
+npm run build
+npm start
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This approximates Vercel’s production environment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🌐 Deployment (Vercel)
 
-## Deploy on Vercel
+Pushing to the main branch deploys the site automatically.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production URL:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://lares-site.vercel.app
+
+
+Preview deployments are automatically created for all feature branches and pull requests.
+
+📨 Waitlist API
+
+Form submissions on /contact post to:
+
+POST /api/contact
+
+
+Payload:
+
+{
+  "name": "optional",
+  "email": "required",
+  "message": "optional"
+}
+
+
+Current behavior:
+
+Logs submissions to the server console (development placeholder)
+
+Planned options:
+
+Email notifications (Resend)
+
+CRM integration (HubSpot)
+
+Google Sheets sync
+
+Postgres/Supabase persistence
+
+🧪 Scripts
+Script	Purpose
+npm run dev	Start local development server
+npm run build	Create a production build
+npm start	Run the production build locally
+npm run lint	Run Next.js linting
+👥 Collaboration Workflow
+
+This repository uses a branch-based workflow.
+
+1. Pull the latest main
+git checkout main
+git pull origin main
+
+2. Create a feature branch
+git checkout -b feature/your-task
+
+3. Commit work
+git add .
+git commit -m "Describe your change"
+
+4. Push the branch
+git push origin feature/your-task
+
+5. Open a Pull Request
+
+Base: main
+
+Compare: your branch
+
+Vercel will automatically create a preview deployment.
+
+6. Merge → Auto deploy
+
+After your PR is merged into main, Vercel deploys automatically.
+
+7. Sync local environment
+git checkout main
+git pull origin main
+
+🛠 Requirements
+
+Node 18+
+
+npm 9+
+
+macOS, Linux, or WSL recommended
+
+📌 Notes
+
+This repo replaces older Netlify-based versions.
+
+Tailwind v4 requires the @tailwindcss/postcss plugin — already configured.
+
+Backend is intentionally minimal; expansions will be added as needed.
