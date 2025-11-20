@@ -1,7 +1,9 @@
 import "./globals.css";
 import Link from "next/link";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Lares Health",
   description: "Quietly watching. Actively caring.",
 };
@@ -9,7 +11,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
@@ -36,10 +38,22 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
+        <main>{children}</main>
 
-        <footer className="border-t border-slate-200 py-10 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Lares Health. All rights reserved.
+        <footer className="border-t border-slate-200">
+          <div className="mx-auto max-w-5xl px-4 py-6 flex flex-col gap-2 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+            <span>
+              © {new Date().getFullYear()} Lares Health. All rights reserved.
+            </span>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="hover:text-slate-900">
+                Privacy
+              </Link>
+              <Link href="/terms" className="hover:text-slate-900">
+                Terms
+              </Link>
+            </div>
+          </div>
         </footer>
       </body>
     </html>
