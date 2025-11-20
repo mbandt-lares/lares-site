@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
@@ -8,45 +9,67 @@ export default function HomePage() {
     <div className="space-y-12 md:space-y-16">
       {/* HERO */}
       <Container className="space-y-8">
-        <Section
-          eyebrow="Quietly watching. Actively caring."
-          title="AI-powered health monitoring for elders who want independence—and for families who stay connected."
-          description="Lares Health watches for small changes in daily patterns so families don’t have to. When something looks off, Lares nudges, checks in, and keeps everyone in the loop."
-        />
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="space-y-6">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
+              Quietly watching. Actively caring.
+            </p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
+              AI-powered health monitoring for elders who want independence—and
+              for families who stay connected.
+            </h1>
+            <p className="text-sm md:text-base text-slate-600">
+              Lares Health watches for small changes in daily patterns so
+              families don&apos;t have to. When something looks off, Lares
+              nudges, checks in, and keeps everyone in the loop.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 text-sm">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
+                           bg-sky-600 text-white hover:bg-sky-500 focus:outline-none focus:ring-2
+                           focus:ring-offset-1 focus:ring-sky-600"
+              >
+                Get Early Access
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
+                           border border-slate-300 bg-white text-slate-800 hover:border-slate-400
+                           focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-600"
+              >
+                How It Works
+              </Link>
+            </div>
+            <p className="text-[0.75rem] text-slate-500">
+              Designed for aging in place. Built on Apple Health and connected
+              devices.
+            </p>
+          </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-sm">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
-                       bg-sky-600 text-white hover:bg-sky-500 focus:outline-none focus:ring-2
-                       focus:ring-offset-1 focus:ring-sky-600"
-          >
-            Get Early Access
-          </Link>
-
-          {/* UPDATED CTA → FULL FILE CHANGE */}
-          <Link
-            href="/how-it-works"
-            className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
-                       border border-slate-300 bg-white text-slate-800 hover:border-slate-400
-                       focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-600"
-          >
-            How It Works
-          </Link>
-
-          <p className="mt-2 text-[0.75rem] text-slate-500 md:mt-0">
-            Designed for aging in place. Built on Apple Health and connected devices.
-          </p>
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl bg-sky-100/60 blur-2xl" />
+            <div className="relative rounded-3xl border border-slate-200 bg-white/80 shadow-md overflow-hidden">
+              <Image
+                src="/images/hero-elder-family.jpg"
+                alt="Older adult at home staying connected with family using technology"
+                width={900}
+                height={700}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
-        <Card className="p-4 text-xs text-slate-600">
+        <Card className="mt-4 p-4 text-xs text-slate-600">
           <p className="mb-1 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
             At a glance
           </p>
           <ul className="list-disc space-y-1 pl-4">
             <li>Elders keep their independence and routines.</li>
             <li>Families get timely insight instead of guesswork.</li>
-            <li>Trends trigger checks before they become crises.</li>
+            <li>Subtle trends trigger checks before they become crises.</li>
           </ul>
         </Card>
       </Container>
@@ -56,7 +79,7 @@ export default function HomePage() {
         <Section
           eyebrow="The problem"
           title="Aging in place shouldn’t mean guessing about safety."
-          description="Most families only find out something is wrong after a fall or an urgent visit. The signals were there—but nobody was watching full time."
+          description="Most families only find out something is wrong after a fall, a hospital visit, or days of unanswered calls. The signals were there—but nobody was watching full time."
         />
 
         <div className="grid gap-4 md:grid-cols-3 text-sm text-slate-600">
@@ -64,65 +87,101 @@ export default function HomePage() {
             <h3 className="mb-2 text-sm font-semibold text-slate-900">
               Aging in place feels isolating
             </h3>
-            <p>Days blur together. It’s easy for subtle declines to go unnoticed.</p>
+            <p>
+              Days blur together. It&apos;s easy for loneliness, low mood, or
+              reduced activity to build up quietly.
+            </p>
           </Card>
           <Card className="p-4">
             <h3 className="mb-2 text-sm font-semibold text-slate-900">
               Small health changes go unnoticed
             </h3>
             <p>
-              Slower walks, restless sleep, skipped meals—minor individually, big over time.
+              Slower walks, restless sleep, skipped meals—each looks minor on
+              its own but can signal real risk over time.
             </p>
           </Card>
           <Card className="p-4">
             <h3 className="mb-2 text-sm font-semibold text-slate-900">
               Families worry without insight
             </h3>
-            <p>Check-ins help, but they’re snapshots. Lares sees the whole picture.</p>
+            <p>
+              Check-in calls help, but they&apos;re snapshots. Without data,
+              families are guessing whether things are truly OK.
+            </p>
           </Card>
         </div>
       </Container>
 
-      {/* HOW IT WORKS PREVIEW */}
-      <Container id="how-it-works" className="space-y-6">
-        <Section
-          eyebrow="How it works"
-          title="Lares watches patterns, then steps in when it matters."
-          description="Built on Apple Health, Lares links activity trends with smart outreach and clear, human-readable alerts."
-        />
+      {/* HOW IT WORKS PREVIEW WITH DIAGRAM */}
+      <Container className="space-y-6">
+        <div className="grid gap-8 md:grid-cols-[1.15fr,0.85fr] md:items-center">
+          <div className="space-y-4">
+            <Section
+              eyebrow="How it works"
+              title="Lares quietly watches patterns, then steps in when it matters."
+              description="Built on Apple Health and connected devices, Lares links daily activity with proactive outreach and clear, human-readable alerts."
+            />
+            <div className="grid gap-4 md:grid-cols-3 text-sm text-slate-600">
+              <Card className="p-4 flex flex-col gap-2">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
+                  Step 1
+                </p>
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Sync with Apple Health
+                </h3>
+                <p>
+                  Connects to Apple Watch, iPhone, and compatible devices to
+                  track movement, activity, sleep, and other key signals.
+                </p>
+              </Card>
+              <Card className="p-4 flex flex-col gap-2">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
+                  Step 2
+                </p>
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Learn what&apos;s normal
+                </h3>
+                <p>
+                  Builds a baseline for each person—how active they usually are,
+                  how steady they tend to be, and how their sleep and rhythms
+                  look over weeks.
+                </p>
+              </Card>
+              <Card className="p-4 flex flex-col gap-2">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
+                  Step 3
+                </p>
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Flag meaningful changes
+                </h3>
+                <p>
+                  When patterns drift, Lares highlights what changed and
+                  suggests when it may be time to check in or seek help.
+                </p>
+              </Card>
+            </div>
+          </div>
 
-        <div className="grid gap-4 md:grid-cols-3 text-sm text-slate-600">
-          <Card className="p-4 flex flex-col gap-2">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
-              Step 1
+          {/* Diagram card – using next/image now */}
+          <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-md">
+            <p className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
+              Visual signal flow
             </p>
-            <h3 className="text-sm font-semibold text-slate-900">
-              Sync with Apple Health
-            </h3>
-            <p>
-              Connects to Apple Watch, iPhone, and compatible health devices.
+            <div className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+              <Image
+                src="/images/how-it-works-diagram-v2.png"
+                alt="Diagram showing Apple devices sending signals to Lares and notifying family"
+                width={700}
+                height={450}
+                className="block w-full h-auto"
+              />
+            </div>
+            <p className="mt-3 text-[0.75rem] text-slate-500">
+              Apple devices send wellness signals to Lares. Lares analyzes
+              trends, then surfaces simple, timely insight to families.
             </p>
-          </Card>
-          <Card className="p-4 flex flex-col gap-2">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
-              Step 2
-            </p>
-            <h3 className="text-sm font-semibold text-slate-900">
-              Learn what’s normal
-            </h3>
-            <p>
-              Builds a personal baseline for activity, steadiness, and routines.
-            </p>
-          </Card>
-          <Card className="p-4 flex flex-col gap-2">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-600">
-              Step 3
-            </p>
-            <h3 className="text-sm font-semibold text-slate-900">
-              Flag meaningful changes
-            </h3>
-            <p>Signals when patterns shift in ways that matter.</p>
-          </Card>
+          </div>
         </div>
       </Container>
 
@@ -131,82 +190,211 @@ export default function HomePage() {
         <Section
           eyebrow="Benefits"
           title="Support independence without becoming a burden."
-          description="Lares gives seniors control—and families peace of mind."
+          description="Lares is for seniors who want to stay in control—and for families who want peace of mind without constant surveillance."
         />
 
         <div className="grid gap-4 md:grid-cols-2 text-sm text-slate-600">
-          <Card className="p-4">
-            <h3 className="mb-2 text-sm font-semibold text-slate-900">
-              Non-intrusive monitoring
-            </h3>
-            <p>Runs quietly in the background using devices seniors already wear.</p>
+          <Card className="flex gap-4 p-4">
+            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-slate-100">
+              <Image
+                src="/images/benefit-non-intrusive.jpg"
+                alt="Older adult wearing a watch in a relaxed home setting"
+                width={300}
+                height={200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="mb-1 text-sm font-semibold text-slate-900">
+                Non-intrusive monitoring
+              </h3>
+              <p>
+                Runs quietly in the background using devices seniors already
+                wear and use. No cameras in the living room, no hospital feel at
+                home.
+              </p>
+            </div>
           </Card>
-          <Card className="p-4">
-            <h3 className="mb-2 text-sm font-semibold text-slate-900">
-              Early warning system
-            </h3>
-            <p>Highlights drifts in steadiness, movement, sleep, and more.</p>
+
+          <Card className="flex gap-4 p-4">
+            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-slate-100">
+              <Image
+                src="/images/benefit-early-warning.jpg"
+                alt="Simple chart showing gentle change in activity over time"
+                width={300}
+                height={200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="mb-1 text-sm font-semibold text-slate-900">
+                Early warning system
+              </h3>
+              <p>
+                Highlights trends before they become emergencies: reduced
+                movement, changes in steadiness, disrupted sleep, and more.
+              </p>
+            </div>
           </Card>
-          <Card className="p-4">
-            <h3 className="mb-2 text-sm font-semibold text-slate-900">
-              Family dashboard & updates
-            </h3>
-            <p>Simple summaries, not complex dashboards.</p>
+
+          <Card className="flex gap-4 p-4">
+            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-slate-100">
+              <Image
+                src="/images/benefit-family-dashboard.jpg"
+                alt="Family viewing a simple dashboard together on a tablet"
+                width={300}
+                height={200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="mb-1 text-sm font-semibold text-slate-900">
+                Family dashboard &amp; updates
+              </h3>
+              <p>
+                A simple view of how things are going, with periodic summaries
+                and timely alerts when attention is needed.
+              </p>
+            </div>
           </Card>
-          <Card className="p-4">
-            <h3 className="mb-2 text-sm font-semibold text-slate-900">
-              Compassionate check-ins
-            </h3>
-            <p>Human language that supports dignity—not surveillance.</p>
+
+          <Card className="flex gap-4 p-4">
+            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-slate-100">
+              <Image
+                src="/images/benefit-compassion.jpg"
+                alt="Warm conversation between an older adult and a family member"
+                width={300}
+                height={200}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="mb-1 text-sm font-semibold text-slate-900">
+                Compassionate check-ins
+              </h3>
+              <p>
+                Respectful, human language instead of clinical jargon—so seniors
+                feel supported, not monitored or managed.
+              </p>
+            </div>
           </Card>
         </div>
       </Container>
 
       {/* TESTIMONIALS */}
       <Container className="space-y-6">
-        <Section eyebrow="Testimonials" title="What families are saying" />
+        <Section
+          eyebrow="Testimonials"
+          title="What families and elders are saying."
+        />
 
         <div className="grid gap-4 md:grid-cols-3 text-sm text-slate-600">
-          <Card className="p-4">
-            <p>“Lares helped us understand Dad’s routines in a way that felt natural.”</p>
-            <p className="mt-2 text-[0.75rem] text-slate-500">— Son</p>
+          <Card className="p-4 flex flex-col justify-between">
+            <p className="mb-3">
+              “Before Lares, I was checking my mom’s phone log every day. Now I
+              get a weekly summary and an alert if something changes. It’s worry
+              without the guesswork.”
+            </p>
+            <p className="text-[0.75rem] text-slate-500">
+              — Adult daughter, pilot user
+            </p>
           </Card>
-          <Card className="p-4">
-            <p>“I like that it checks in without hovering over me.”</p>
-            <p className="mt-2 text-[0.75rem] text-slate-500">— Senior pilot user</p>
+          <Card className="p-4 flex flex-col justify-between">
+            <p className="mb-3">
+              “I like that it’s watching without hovering. I still decide what I
+              do each day—it just notices if I start slowing down.”
+            </p>
+            <p className="text-[0.75rem] text-slate-500">
+              — 78-year-old living alone
+            </p>
           </Card>
-          <Card className="p-4">
-            <p>“We finally feel informed instead of worried.”</p>
-            <p className="mt-2 text-[0.75rem] text-slate-500">— Daughter</p>
+          <Card className="p-4 flex flex-col justify-between">
+            <p className="mb-3">
+              “It feels like we’re finally using the data from the watch for
+              something that actually matters to our family.”
+            </p>
+            <p className="text-[0.75rem] text-slate-500">
+              — Son caring for both parents
+            </p>
           </Card>
         </div>
       </Container>
 
-      {/* PRICING */}
+      {/* PRICING / WAITLIST */}
       <Container className="space-y-6">
         <Section
           eyebrow="Pricing"
-          title="Launching soon. Join the waitlist."
-          description="Early families receive preferred pricing and the ability to shape what we build next."
+          title="Launching soon. Join the early access waitlist."
+          description="We’re finalizing pricing with families and caregivers now. Early access members will help shape the product and receive preferred pricing at launch."
         />
 
         <Card className="p-4 text-sm text-slate-600 space-y-2">
-          <ul className="list-disc pl-4 space-y-1">
-            <li>Simple subscription per senior household.</li>
-            <li>Includes monitoring + alerts + summaries.</li>
-            <li>No new devices needed—Apple only.</li>
+          <ul className="list-disc space-y-1 pl-4">
+            <li>One simple subscription per senior household.</li>
+            <li>Includes monitoring, alerts, and family dashboard.</li>
+            <li>Works with existing Apple devices—no hub required.</li>
           </ul>
         </Card>
 
         <div className="text-center">
           <Link
             href="/contact"
-            className="inline-flex w-full justify-center md:w-auto rounded-md px-4 py-2 text-sm font-medium
+            className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium
                        bg-sky-600 text-white hover:bg-sky-500 focus:outline-none focus:ring-2
-                       focus:ring-offset-1 focus:ring-sky-600"
+                       focus:ring-offset-1 focus:ring-sky-600 md:w-auto"
           >
             Join the Waitlist
           </Link>
+        </div>
+      </Container>
+
+      {/* FAQ */}
+      <Container className="space-y-4">
+        <Section eyebrow="FAQ" title="Questions families usually ask." />
+
+        <div className="space-y-3 text-sm text-slate-600">
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">
+              What devices do we need?
+            </h3>
+            <p>
+              Lares works with iPhone, Apple Watch, and Apple Health–connected
+              devices such as scales and blood pressure cuffs.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">
+              How does Lares protect privacy?
+            </h3>
+            <p>
+              We focus on trends, not minute-by-minute tracking. Data is
+              encrypted in transit and at rest, and we share only what families
+              need to understand changes.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">
+              Is this a medical or emergency service?
+            </h3>
+            <p>
+              Lares is not an emergency response or diagnostic service. It&apos;s
+              an early-warning and peace-of-mind layer that helps families act
+              sooner and communicate better with clinicians.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">
+              How much will it cost?
+            </h3>
+            <p>
+              Early families will receive preferred pricing and help shape the
+              final plans. Our goal is a simple, predictable subscription that
+              covers monitoring and family access.
+            </p>
+          </div>
         </div>
       </Container>
     </div>
