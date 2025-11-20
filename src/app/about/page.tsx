@@ -1,49 +1,127 @@
-// src/app/about/page.tsx
-export default function AboutPage() {
+"use client";
+
+import { FormEvent, useState } from "react";
+import { Container } from "@/components/Container";
+import { Card } from "@/components/Card";
+import { Button } from "@/components/Button";
+
+export default function ContactPage() {
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Submission failed");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (err: any) {
+      setStatus("error");
+      setError(err?.message || "Something went wrong");
+    }
+  }
+
   return (
-    <div className="space-y-6 max-w-3xl">
-      <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
-        About Lares Health
-      </h1>
-      <p className="text-sm md:text-base text-slate-300">
-        Lares Health exists for one reason: to make aging in place safer,
-        calmer, and more connected—without turning home into a hospital or
-        family into full-time monitors.
+    <Container className="max-w-xl space-y-6">
+      <header className="space-y-2">
+        <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
+          Join the waitlist
+        </p>
+        <h1>Tell us a bit about your family.</h1>
+        <p>
+          We&apos;re starting with a small number of households to make sure
+          Lares is genuinely useful. Share your details and we&apos;ll reach out
+          as pilot spots open.
+        </p>
+      </header>
+
+      <Card className="p-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-1 text-sm">
+            <label htmlFor="name" className="block text-slate-800">
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
+                         focus:outline-none focus:ring-1 focus:ring-sky-600"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div className="space-y-1 text-sm">
+            <label htmlFor="email" className="block text-slate-800">
+              Email *
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
+                         focus:outline-none focus:ring-1 focus:ring-sky-600"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div className="space-y-1 text-sm">
+            <label htmlFor="message" className="block text-slate-800">
+              Anything we should know?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
+                         focus:outline-none focus:ring-1 focus:ring-sky-600"
+              placeholder="Tell us about your family or situation (optional)"
+            />
+          </div>
+
+          {status === "success" && (
+            <p className="text-xs text-emerald-700">
+              Thank you—your details have been received. We&apos;ll be in touch.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-xs text-red-600">
+              {error || "Something went wrong. Please try again."}
+            </p>
+          )}
+
+          <Button type="submit" disabled={status === "submitting"}>
+            {status === "submitting" ? "Submitting..." : "Join the Waitlist"}
+          </Button>
+        </form>
+      </Card>
+
+      <p className="text-[0.75rem] text-slate-500">
+        We&apos;ll never sell your information. We&apos;ll contact you only
+        about Lares Health and related early access opportunities.
       </p>
-
-      <div className="space-y-4 text-sm text-slate-300">
-        <div>
-          <h2 className="mb-1 text-sm font-semibold text-white">Mission</h2>
-          <p>
-            Use everyday health data and modern AI to catch small changes early,
-            support independence, and give families clear, actionable signals
-            instead of vague worry.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="mb-1 text-sm font-semibold text-white">
-            Why Lares is different
-          </h2>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Built for consumer devices, not clinic hardware.</li>
-            <li>Focuses on safety, wellbeing, and daily life—not just disease codes.</li>
-            <li>Designed for elders and families first, systems second.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="mb-1 text-sm font-semibold text-white">
-            How it works in practice
-          </h2>
-          <p>
-            Lares brings together Apple Health signals, light-touch check-ins,
-            and clear summaries for families. Over time, we aim to become the
-            quiet, reliable companion that notices when things change and helps
-            you respond early.
-          </p>
-        </div>
-      </div>
-    </div>
+    </Container>
   );
 }
