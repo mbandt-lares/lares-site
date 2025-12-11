@@ -1,60 +1,82 @@
+import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Lares Health",
-  description: "Quietly watching. Actively caring.",
+  description:
+    "AI-powered health monitoring for elders who want independence — and for families who want peace of mind.",
 };
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">
-        <header className="border-b border-slate-200">
-          <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="font-semibold text-slate-900">
-              Lares Health
-            </Link>
-            <nav className="flex items-center gap-6 text-xs text-slate-600">
-              <Link href="/" className="hover:text-slate-900">
-                Home
+      <body className="bg-slate-50 text-slate-900 antialiased">
+        <div className="flex min-h-screen flex-col">
+          {/* HEADER */}
+          <header className="border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+            <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+              {/* Logo + brand */}
+              <Link href="/" className="flex items-center gap-2">
+                {/* BIG, CLEAR LOGO */}
+                <img
+                  src="/images/lares_mark.png"
+                  alt="Lares Health logo"
+                  className="h-14 w-auto"
+                />
+                <span className="text-lg font-semibold tracking-tight text-slate-900">
+                  Lares Health
+                </span>
               </Link>
-              <Link href="/how-it-works" className="hover:text-slate-900">
-                How It Works
-              </Link>
-              <Link href="/about" className="hover:text-slate-900">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-slate-900">
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </header>
 
-        <main>{children}</main>
-
-        <footer className="border-t border-slate-200">
-          <div className="mx-auto max-w-5xl px-4 py-6 flex flex-col gap-2 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-            <span>
-              © {new Date().getFullYear()} Lares Health. All rights reserved.
-            </span>
-            <div className="flex items-center gap-4">
-              <Link href="/privacy" className="hover:text-slate-900">
-                Privacy
-              </Link>
-              <Link href="/terms" className="hover:text-slate-900">
-                Terms
-              </Link>
+              {/* Navigation */}
+              <nav className="flex items-center gap-6 text-xs sm:text-sm font-medium text-slate-600">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="transition-colors hover:text-slate-900"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
-          </div>
-        </footer>
+          </header>
+
+          {/* MAIN CONTENT */}
+          <main className="flex-1">
+            <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+              {children}
+            </div>
+          </main>
+
+          {/* FOOTER */}
+          <footer className="border-t border-slate-200 bg-white">
+            <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8">
+              <p>© 2025 Lares Health. All rights reserved.</p>
+              <div className="flex gap-4">
+                <Link href="/privacy" className="hover:text-slate-900">
+                  Privacy
+                </Link>
+                <Link href="/terms" className="hover:text-slate-900">
+                  Terms
+                </Link>
+              </div>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );

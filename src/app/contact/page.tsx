@@ -1,136 +1,98 @@
-"use client";
-
-import { FormEvent, useState } from "react";
 import { Container } from "@/components/Container";
-import { Card } from "@/components/Card";
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("submitting");
-    setError(null);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        throw new Error(data?.error || "Submission failed");
-      }
-
-      setStatus("success");
-      form.reset();
-    } catch (err: any) {
-      setStatus("error");
-      setError(err?.message || "Something went wrong");
-    }
-  }
-
   return (
-    <Container>
-      <div className="max-w-xl space-y-6">
-        <header className="space-y-2">
+    <div className="space-y-16 md:space-y-20">
+      <Container className="py-10">
+        {/* Header copy */}
+        <div className="max-w-3xl space-y-3">
           <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
             Join the waitlist
           </p>
-          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
             Join the Lares Health waitlist
           </h1>
-          <p className="text-sm md:text-base text-slate-600">
-            Share your details and we’ll reach out as pilot spots open. Early
-            families help shape the product and receive preferred pricing.
+          <p className="text-base md:text-lg text-slate-700">
+            Share your details and we&apos;ll reach out as pilot spots open. Early families
+            help shape the product and receive preferred pricing.
           </p>
-        </header>
+        </div>
 
-        <Card className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-1 text-sm">
-              <label htmlFor="name" className="block text-slate-800">
+        {/* Form card */}
+        <div className="mt-8 max-w-xl rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-7">
+          <form className="space-y-5">
+            {/* Name */}
+            <div className="space-y-1.5">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-slate-800"
+              >
                 Name
               </label>
               <input
                 id="name"
                 name="name"
                 type="text"
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
-                           focus:outline-none focus:ring-1 focus:ring-sky-600"
+                autoComplete="name"
+                className="block w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                 placeholder="Your name"
               />
             </div>
 
-            <div className="space-y-1 text-sm">
-              <label htmlFor="email" className="block text-slate-800">
-                Email *
+            {/* Email */}
+            <div className="space-y-1.5">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-slate-800"
+              >
+                Email <span className="text-rose-500">*</span>
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
-                           focus:outline-none focus:ring-1 focus:ring-sky-600"
+                autoComplete="email"
+                className="block w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                 placeholder="you@example.com"
               />
             </div>
 
-            <div className="space-y-1 text-sm">
-              <label htmlFor="message" className="block text-slate-800">
+            {/* Message */}
+            <div className="space-y-1.5">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-slate-800"
+              >
                 Anything we should know?
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
-                           focus:outline-none focus:ring-1 focus:ring-sky-600"
+                className="block w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                 placeholder="Tell us about your family or situation (optional)"
               />
             </div>
 
-            {status === "success" && (
-              <p className="text-xs text-emerald-700">
-                Thank you—your details have been received. We&apos;ll be in
-                touch.
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-xs text-red-600">
-                {error || "Something went wrong. Please try again."}
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="inline-flex items-center rounded-md px-4 py-2 text-sm font-medium
-                         bg-sky-600 text-white hover:bg-sky-500 disabled:opacity-60
-                         focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-600"
-            >
-              {status === "submitting" ? "Submitting..." : "Join the Waitlist"}
-            </button>
+            {/* Submit button */}
+            <div className="pt-1">
+              <button
+                type="submit"
+                className="btn-primary w-full sm:w-auto"
+              >
+                Join the waitlist
+              </button>
+            </div>
           </form>
-        </Card>
 
-        <p className="text-[0.75rem] text-slate-500">
-          We&apos;ll never sell your information. We&apos;ll contact you only
-          about Lares Health and related early access opportunities.
-        </p>
-      </div>
-    </Container>
+          {/* Privacy note */}
+          <p className="mt-4 text-xs md:text-sm text-slate-500">
+            We&apos;ll never sell your information. We&apos;ll contact you only about
+            Lares Health and related early access opportunities.
+          </p>
+        </div>
+      </Container>
+    </div>
   );
 }
