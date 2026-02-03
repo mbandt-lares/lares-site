@@ -34,9 +34,9 @@ export default function HomePage() {
       <PilotRibbon />
 
       {/* MAIN CONTENT with consistent spacing */}
-      <div className="space-y-10 md:space-y-12 pb-10 md:pb-12">
+      <div className="space-y-12 md:space-y-16 pb-12 md:pb-16">
         {/* HERO */}
-        <Container className="grid gap-8 pt-6 md:pt-8 md:grid-cols-[1.15fr,1fr] md:items-center">
+        <Container className="grid gap-8 pt-8 md:pt-12 md:grid-cols-[1.15fr,1fr] md:items-center">
           <div className="space-y-4 md:space-y-5">
             <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
               Quietly watching. Actively caring.
