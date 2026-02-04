@@ -1,6 +1,6 @@
-# 📄 Lares Health Website
+# 📄 Lares Care Website
 
-A production Next.js 14 website for **Lares Health**, deployed on
+A production Next.js 14 website for **Lares Care**, deployed on
 Vercel.\
 This repository contains the full marketing site, informational pages,
 and minimal backend API routes (e.g., waitlist submission).
@@ -12,7 +12,7 @@ and minimal backend API routes (e.g., waitlist submission).
 -   **Tailwind CSS v4** (via `@tailwindcss/postcss`)
 -   **TypeScript**
 -   **Vercel Deployment**
--   \*\*Node.js 18+\`
+-   **Node.js 18+**
 
 ## 🧱 Project Structure
 

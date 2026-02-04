@@ -15,7 +15,7 @@ function PilotRibbon() {
             </span>
             <span className="max-w-xl text-slate-800">
               We&apos;re actively monitoring independent seniors in the Bay Area
-              — including Rossmoor — to help shape Lares Health.
+              — including Rossmoor — to help shape Lares Care.
             </span>
           </div>
           <Link href="#pilot" className="btn-compact md:shrink-0">
@@ -48,7 +48,7 @@ export default function HomePage() {
             </h1>
 
             <p className="max-w-xl text-base md:text-lg text-slate-700">
-              Lares Health watches for small changes in daily patterns so
+              Lares Care watches for small changes in daily patterns so
               families don&apos;t have to. When something looks off, Lares
               nudges, checks in, and keeps everyone in the loop—without turning
               home into a hospital.

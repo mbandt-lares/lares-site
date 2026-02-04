@@ -10,15 +10,15 @@ export default function AboutPage() {
       <Container className="space-y-8 py-10">
         <div className="max-w-3xl space-y-4">
           <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
-            About Lares Health
+            About Lares Care
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
             AI-powered monitoring that respects independence.
           </h1>
           <p className="text-base md:text-lg text-slate-700">
-            Lares Health helps families support aging in place without turning home into a
+            Lares Care helps families support aging in place without turning home into a
             hospital. We watch quiet, everyday signals from Apple devices and highlight
-            meaningful changes—so small shifts don’t become big crises.
+            meaningful changes—so small shifts don't become big crises.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
       {/* WHAT WE'RE TRYING TO FIX */}
       <Container className="space-y-4">
         <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
-          What we’re trying to fix
+          What we're trying to fix
         </h2>
         <div className="grid gap-4 text-sm md:text-base text-slate-700 md:grid-cols-2">
           <Card className="p-4">
@@ -84,8 +84,8 @@ export default function AboutPage() {
               Signals, not dashboards
             </h3>
             <p>
-              Lares summarizes what’s changing in clear language: whether a trend is
-              unusual, how long it’s been drifting, and when it might be worth checking
+              Lares summarizes what's changing in clear language: whether a trend is
+              unusual, how long it's been drifting, and when it might be worth checking
               in or calling a clinician. No dense charts, no training.
             </p>
           </Card>
@@ -115,7 +115,7 @@ export default function AboutPage() {
       {/* WHO WE'RE BUILDING WITH */}
       <Container className="space-y-4 pb-10">
         <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
-          Who we’re building with
+          Who we're building with
         </h2>
         <div className="max-w-3xl space-y-3 text-sm md:text-base text-slate-700">
           <p>
@@ -124,12 +124,12 @@ export default function AboutPage() {
             slowing down, or subtle cognitive changes.
           </p>
           <p>
-            We’re deliberately keeping the first cohort small so we can adapt the product
+            We're deliberately keeping the first cohort small so we can adapt the product
             to real-world routines, not theoretical workflows. We care as much about the
             emotional experience of aging in place as the metrics on a chart.
           </p>
           <p>
-            If you’re interested in shaping what Lares becomes, we’d like to hear from
+            If you're interested in shaping what Lares becomes, we'd like to hear from
             you.
           </p>
         </div>

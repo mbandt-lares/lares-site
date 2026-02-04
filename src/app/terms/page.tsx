@@ -6,7 +6,7 @@ export default function TermsPage() {
     <Container className="max-w-3xl space-y-8 md:space-y-10">
       <Section
         eyebrow="Terms of Use"
-        title="The basics of using the Lares Health website."
+        title="The basics of using the Lares Care website."
         description="These Terms describe, in plain language, how you may use this website and what you can reasonably expect from us at this early stage of the product. They do not replace any specific written agreement we may sign with you in the future."
       />
 
@@ -28,7 +28,7 @@ export default function TermsPage() {
             2. What this site is (and is not)
           </h2>
           <p>
-            This website is for general information about Lares Health, early
+            This website is for general information about Lares Care, early
             access opportunities, and related content. It does not provide
             medical advice, diagnosis, treatment, or emergency services. If you
             have a medical concern, you should contact a licensed clinician or
@@ -67,7 +67,7 @@ export default function TermsPage() {
           </h2>
           <p>
             The content on this site, including text, visuals, and branding, is
-            owned by Lares Health or used with permission. You may view and
+            owned by Lares Care or used with permission. You may view and
             reference the content for your personal or internal business
             purposes, but you may not copy, modify, or distribute it for other
             uses without our prior written consent.
@@ -91,7 +91,7 @@ export default function TermsPage() {
             6. Disclaimers
           </h2>
           <p>
-            This site is provided on an “as is” and “as available” basis. To the
+            This site is provided on an "as is" and "as available" basis. To the
             extent permitted by law, we disclaim all warranties, express or
             implied, including warranties of accuracy, fitness for a particular
             purpose, and non-infringement. We do not guarantee that the site
@@ -104,7 +104,7 @@ export default function TermsPage() {
             7. Limitation of liability
           </h2>
           <p>
-            To the extent allowed by law, Lares Health and its officers,
+            To the extent allowed by law, Lares Care and its officers,
             directors, and employees will not be liable for any indirect,
             incidental, special, consequential, or punitive damages, or any loss
             of profits or data arising out of or related to your use of this
@@ -145,7 +145,7 @@ export default function TermsPage() {
           <p>
             If you have questions about these Terms, you can contact us via the
             Contact page or by replying to any email you receive from Lares
-            Health.
+            Care.
           </p>
         </section>
 

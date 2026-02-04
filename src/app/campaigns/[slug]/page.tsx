@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!campaign) {
     return {
-      title: "Campaign not found | Lares Health",
+      title: "Campaign not found | Lares Care",
     };
   }
 

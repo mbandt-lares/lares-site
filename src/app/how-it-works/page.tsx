@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How Lares Health Works',
+  title: 'How Lares Care Works',
   description:
-    'See how Lares Health connects to Apple devices, learns daily patterns, and flags meaningful changes for families.',
+    'See how Lares Care connects to Apple devices, learns daily patterns, and flags meaningful changes for families.',
 };
 
 export default function HowItWorksPage() {
@@ -288,7 +288,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        {/* Optional gentle CTA – comment out if you truly don’t want it */}
+        {/* Optional gentle CTA – comment out if you truly don't want it */}
         <div className="mt-8 border-t border-slate-200 pt-6 md:mt-10 md:pt-8">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <p className="max-w-xl text-sm leading-relaxed text-slate-700 md:text-[15px]">

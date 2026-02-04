@@ -6,8 +6,8 @@ export default function PrivacyPage() {
     <Container className="max-w-3xl space-y-8 md:space-y-10">
       <Section
         eyebrow="Privacy Policy"
-        title="How Lares Health handles your information."
-        description="This Privacy Policy explains, at a high level, how Lares Health collects, uses, and protects information when you use our services or join our waitlist. It is written for families and seniors, not lawyers."
+        title="How Lares Care handles your information."
+        description="This Privacy Policy explains, at a high level, how Lares Care collects, uses, and protects information when you use our services or join our waitlist. It is written for families and seniors, not lawyers."
       />
 
       <div className="space-y-6 text-sm text-slate-600">
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             1. Who this policy applies to
           </h2>
           <p>
-            This policy applies to visitors to the Lares Health website and
+            This policy applies to visitors to the Lares Care website and
             people who join our waitlist or otherwise contact us about the
             service. It does not replace any agreement we may sign with you in
             the future if you enroll in a formal pilot or commercial program.
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-4 space-y-1">
             <li>Respond to inquiries and manage the waitlist.</li>
             <li>
-              Understand interest in Lares Health and plan pilots, features, and
+              Understand interest in Lares Care and plan pilots, features, and
               pricing.
             </li>
             <li>Improve the website and our communications.</li>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
             4. How we think about health-related data
           </h2>
           <p>
-            Lares Health is currently focused on consumer wellness and safety.
+            Lares Care is currently focused on consumer wellness and safety.
             Our early product concepts rely on signals from devices such as
             iPhone and Apple Watch. We design systems with the expectation that
             health-related information is sensitive and should be treated with
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
           <p>
             If you have questions about this policy or how we handle
             information, you can contact us through the Contact page on this
-            site or by replying to any email you receive from Lares Health.
+            site or by replying to any email you receive from Lares Care.
           </p>
         </section>
 
