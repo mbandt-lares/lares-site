@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "LaresCare",
   description:
     "AI-powered health monitoring for elders who want independence — and for families who want peace of mind.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
