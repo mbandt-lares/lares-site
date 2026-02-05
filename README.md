@@ -43,8 +43,8 @@ Root files include:
 Clone and install dependencies:
 
 ``` bash
-git clone https://github.com/opmasan/lares-site.git
-cd lares-site
+git clone https://github.com/Gera-IT-AI/LaresCare-Landing.git
+cd LaresCare-Landing
 npm install
 ```
 

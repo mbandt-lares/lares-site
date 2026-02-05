@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const urbanist = Urbanist({
-  subsets: ["latin"],
+const urbanist = localFont({
   variable: "--font-urbanist",
   display: "swap",
+  src: [
+    { path: "../../public/fonts/Urbanist-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Urbanist-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Urbanist-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../../public/fonts/Urbanist-Bold.ttf", weight: "700", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
