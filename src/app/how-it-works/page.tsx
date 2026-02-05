@@ -7,9 +7,9 @@ import { WorkflowDiagram } from "@/components/WorkflowDiagram";
 import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: 'How Lares Health Works',
+  title: 'How LaresCare Works',
   description:
-    'See how Lares Health connects to Apple devices, learns daily patterns, and flags meaningful changes for families.',
+    'See how LaresCare connects to Apple devices, learns daily patterns, and flags meaningful changes for families.',
 };
 
 export default function HowItWorksPage() {
