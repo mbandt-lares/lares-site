@@ -7,8 +7,8 @@ type ContainerProps = {
 };
 
 export function Container({ children, className, id }: ContainerProps) {
-  const base = "mx-auto max-w-5xl px-4 sm:px-6 lg:px-8";
-  const classes = className ? `${base} ${className}` : base;
+  const base = "max-w-6xl mx-auto px-6 md:px-12";
+  const classes = `${base} ${className || ""}`;
   return (
     <div id={id} className={classes}>
       {children}

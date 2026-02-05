@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!campaign) {
     return {
-      title: "Campaign not found | Lares Health",
+      title: "Campaign not found | LaresCare",
     };
   }
 
@@ -38,82 +38,81 @@ export default function CampaignPage({ params }: Props) {
   }
 
   return (
-    <Container className="space-y-10 md:space-y-12 max-w-4xl">
-      {/* HERO */}
-      <div className="grid gap-8 md:grid-cols-[1.2fr,0.9fr] md:items-center">
-        <div className="space-y-4">
-          {campaign.heroEyebrow && (
-            <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
-              {campaign.heroEyebrow}
+    <>
+      <Container className="pt-16 pb-20">
+        {/* HERO */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            {campaign.heroEyebrow && (
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">
+                {campaign.heroEyebrow}
+              </p>
+            )}
+            <h1 className="text-4xl md:text-6xl font-headline font-bold text-brand-blue leading-tight">
+              {campaign.heroTitle}
+            </h1>
+            <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
+              {campaign.heroSubtitle}
             </p>
-          )}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900">
-            {campaign.heroTitle}
-          </h1>
-          <p className="text-sm md:text-base text-slate-600">
-            {campaign.heroSubtitle}
-          </p>
-          {campaign.audienceTagline && (
-            <p className="text-xs md:text-sm text-slate-500">
-              {campaign.audienceTagline}
-            </p>
-          )}
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href={campaign.ctaHref}
-              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
-                         bg-sky-600 text-white hover:bg-sky-500 focus:outline-none focus:ring-2
-                         focus:ring-offset-1 focus:ring-sky-600"
-            >
-              {campaign.ctaLabel}
-            </Link>
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
-                         border border-slate-300 bg-white text-slate-800 hover:border-slate-400
-                         focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-600"
-            >
-              Learn more about Lares
-            </Link>
-          </div>
-        </div>
-
-        {campaign.heroImage && (
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-sky-50 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
-              <Image
-                src={campaign.heroImage}
-                alt={campaign.heroTitle}
-                width={700}
-                height={500}
-                className="h-full w-full object-cover"
-              />
+            {campaign.audienceTagline && (
+              <p className="text-sm font-medium text-brand-blue opacity-60">
+                {campaign.audienceTagline}
+              </p>
+            )}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link
+                href={campaign.ctaHref}
+                className="bg-brand-orange text-white px-8 py-4 rounded-full text-center font-bold hover:bg-brand-orange/90 transition-all shadow-lg shadow-brand-orange/20"
+              >
+                {campaign.ctaLabel}
+              </Link>
+              <Link
+                href="/"
+                className="border-2 border-brand-blue/10 text-brand-blue px-8 py-4 rounded-full text-center font-bold hover:bg-brand-blue/5 transition-all"
+              >
+                Learn more about LaresCare
+              </Link>
             </div>
           </div>
-        )}
-      </div>
+
+          {campaign.heroImage && (
+            <div className="relative">
+              <div className="aspect-square rounded-[3rem] overflow-hidden border-8 border-brand-cream/20">
+                <Image
+                  src={campaign.heroImage}
+                  alt={campaign.heroTitle}
+                  fill
+                  className="object-cover photo-warm"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      </Container>
 
       {/* BULLETS / VALUE */}
       <Section title="Why this matters for your family">
-        <Card className="p-4 text-sm text-slate-600">
-          <ul className="list-disc space-y-2 pl-4">
+        <Card className="p-12 md:p-16">
+          <ul className="grid md:grid-cols-2 gap-8">
             {campaign.bullets.map((b) => (
-              <li key={b}>{b}</li>
+              <li key={b} className="flex gap-4 items-start">
+                <span className="text-brand-orange text-2xl">✓</span>
+                <span className="text-lg text-text-secondary leading-relaxed">{b}</span>
+              </li>
             ))}
           </ul>
         </Card>
       </Section>
 
       {/* PROOF / STORY */}
-      <Section title="What makes Lares different">
-        <div className="grid gap-4 md:grid-cols-2 text-sm text-slate-600">
+      <Section title="What makes LaresCare different">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {campaign.proof.map((block) => (
-            <Card key={block.heading} className="p-4">
-              <h3 className="mb-2 text-sm font-semibold text-slate-900">
+            <Card key={block.heading} className="p-10 space-y-4">
+              <h3 className="text-xl font-headline font-bold text-brand-blue">
                 {block.heading}
               </h3>
-              <p>{block.body}</p>
+              <p className="text-text-secondary leading-relaxed">{block.body}</p>
             </Card>
           ))}
         </div>
@@ -121,29 +120,32 @@ export default function CampaignPage({ params }: Props) {
 
       {/* CTA */}
       <Section title="What happens after you join">
-        <Card className="p-5 text-sm text-slate-600 space-y-2">
-          <p>
-            When you join this campaign cohort, we&apos;ll reach out with next
-            steps, ask a few questions about your parent&apos;s situation, and
-            confirm whether you&apos;re a fit for early access.
-          </p>
-          <p>
-            We&apos;re keeping the initial group small so we can learn quickly
-            and shape the product around real families, not theoretical
-            workflows.
-          </p>
-          <div className="pt-2">
-            <Link
-              href={campaign.ctaHref}
-              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium
-                         bg-sky-600 text-white hover:bg-sky-500 focus:outline-none focus:ring-2
-                         focus:ring-offset-1 focus:ring-sky-600"
-            >
-              {campaign.ctaLabel}
-            </Link>
+        <Card className="p-12 md:p-16 bg-brand-blue text-brand-cream border-none">
+          <div className="grid md:grid-cols-[1fr,auto] gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-xl leading-relaxed opacity-90">
+                When you join this campaign cohort, we&apos;ll reach out with next
+                steps, ask a few questions about your parent&apos;s situation, and
+                confirm whether you&apos;re a fit for early access.
+              </p>
+              <p className="text-xl leading-relaxed opacity-90">
+                We&apos;re keeping the initial group small so we can learn quickly
+                and shape the product around real families, not theoretical
+                workflows.
+              </p>
+            </div>
+            
+            <div>
+              <Link
+                href={campaign.ctaHref}
+                className="inline-block bg-brand-orange text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-brand-orange/90 transition-all shadow-xl shadow-black/20"
+              >
+                {campaign.ctaLabel}
+              </Link>
+            </div>
           </div>
         </Card>
       </Section>
-    </Container>
+    </>
   );
 }

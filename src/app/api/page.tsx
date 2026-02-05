@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
+import { WorkflowDiagram } from "@/components/WorkflowDiagram";
 
 function PilotRibbon() {
   return (
@@ -15,7 +16,7 @@ function PilotRibbon() {
             </span>
             <span className="max-w-xl text-slate-800">
               We&apos;re actively monitoring independent seniors in the Bay Area
-              — including Rossmoor — to help shape Lares Health.
+              — including Rossmoor — to help shape LaresCare.
             </span>
           </div>
           <Link href="#pilot" className="btn-compact md:shrink-0">
@@ -48,7 +49,7 @@ export default function HomePage() {
             </h1>
 
             <p className="max-w-xl text-base md:text-lg text-slate-700">
-              Lares Health watches for small changes in daily patterns so
+              LaresCare watches for small changes in daily patterns so
               families don&apos;t have to. When something looks off, Lares
               nudges, checks in, and keeps everyone in the loop—without turning
               home into a hospital.
@@ -76,7 +77,7 @@ export default function HomePage() {
               alt="Grandparent on a couch with two grandchildren, relaxed and together."
               width={800}
               height={600}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover photo-warm"
               priority
             />
           </div>
@@ -160,7 +161,7 @@ export default function HomePage() {
             </div>
 
             <div className="pt-1">
-              <Link href="/contact" className="btn-primary w-full md:w-auto">
+              <Link href="/#contact" className="btn-primary w-full md:w-auto">
                 I&apos;d like to learn more / join the pilot
               </Link>
             </div>
@@ -168,12 +169,11 @@ export default function HomePage() {
         </Container>
 
         {/* THE PROBLEM */}
-        <Container className="space-y-5">
-          <Section
-            eyebrow="The problem"
-            title="Aging in place shouldn't mean guessing about safety."
-            description="Most families only find out something is wrong after a fall, a hospital visit, or days of unanswered calls. The signals were there—but nobody was watching full time."
-          />
+        <Section
+          eyebrow="The problem"
+          title="Aging in place shouldn't mean guessing about safety."
+          description="Most families only find out something is wrong after a fall, a hospital visit, or days of unanswered calls. The signals were there—but nobody was watching full time."
+        >
           <div className="grid gap-4 text-sm text-slate-600 md:grid-cols-3">
             <Card className="p-4">
               <h3 className="mb-2 text-sm font-semibold text-slate-900">
@@ -205,15 +205,15 @@ export default function HomePage() {
               </p>
             </Card>
           </div>
-        </Container>
+        </Section>
 
         {/* HOW IT WORKS */}
-        <Container id="how-it-works" className="space-y-5">
-          <Section
-            eyebrow="How it works"
-            title="Lares quietly watches patterns, then steps in when it matters."
-            description="Built on Apple Health and connected devices, Lares links daily activity with proactive outreach and clear, human-readable alerts."
-          />
+        <Section
+          id="how-it-works"
+          eyebrow="How it works"
+          title="Lares quietly watches patterns, then steps in when it matters."
+          description="Built on Apple Health and connected devices, Lares links daily activity with proactive outreach and clear, human-readable alerts."
+        >
           <div className="grid gap-4 text-sm text-slate-600 md:grid-cols-3">
             <Card className="flex flex-col gap-2 p-4">
               <div className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-sky-600">
@@ -265,31 +265,21 @@ export default function HomePage() {
               </ul>
             </Card>
           </div>
-        </Container>
+        </Section>
 
         {/* VISUAL SIGNAL FLOW */}
-        <Container className="space-y-3">
-          <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-slate-500">
-            Visual signal flow
-          </p>
-          <div className="mx-auto max-w-3xl md:max-w-4xl overflow-hidden rounded-3xl shadow-sm">
-            <Image
-              src="/images/how-it-works-diagram.png"
-              alt="Diagram showing how Lares connects to Apple Health, establishes a baseline, and sends alerts and insights."
-              width={1200}
-              height={1200}
-              className="block h-auto w-full"
-            />
+        <Section title="Visual signal flow">
+          <div className="mx-auto max-w-3xl md:max-w-4xl">
+            <WorkflowDiagram />
           </div>
-        </Container>
+        </Section>
 
         {/* BENEFITS */}
-        <Container className="space-y-5">
-          <Section
-            eyebrow="Benefits"
-            title="Support independence without becoming a burden."
-            description="Lares is for seniors who want to stay in control—and for families who want peace of mind without constant surveillance."
-          />
+        <Section
+          eyebrow="Benefits"
+          title="Support independence without becoming a burden."
+          description="Lares is for seniors who want to stay in control—and for families who want peace of mind without constant surveillance."
+        >
           <div className="grid gap-4 text-sm text-slate-600 md:grid-cols-4">
             <Card className="p-4">
               <h3 className="mb-2 text-sm font-semibold text-slate-900">
@@ -331,7 +321,7 @@ export default function HomePage() {
               </p>
             </Card>
           </div>
-        </Container>
+        </Section>
 
         {/* TESTIMONIALS */}
         <Container className="space-y-3">

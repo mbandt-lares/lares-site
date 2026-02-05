@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Container } from "./Container";
 
 type SectionProps = {
   id?: string;
@@ -7,6 +8,7 @@ type SectionProps = {
   description?: ReactNode;
   children?: ReactNode;
   className?: string;
+  inverted?: boolean;
 };
 
 export function Section({
@@ -16,31 +18,41 @@ export function Section({
   description,
   children,
   className,
+  inverted = false,
 }: SectionProps) {
+  const textColor = inverted ? "text-brand-cream" : "text-brand-blue";
+  const secondaryTextColor = inverted ? "text-brand-cream/70" : "text-text-secondary";
+  const eyebrowColor = inverted ? "text-brand-orange" : "text-brand-blue";
+
   return (
-    <section id={id} className={`space-y-6 md:space-y-8 py-4 ${className || ""}`}>
-      {(eyebrow || title || description) && (
-        <header className="space-y-3 max-w-3xl">
-          {eyebrow && (
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-sky-600">
-              {eyebrow}
-            </p>
-          )}
-          {title && (
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
-              {title}
-            </h2>
-          )}
-          {description && (
-            <div className="text-base md:text-lg text-slate-600 leading-relaxed">
-              {description}
-            </div>
-          )}
-        </header>
-      )}
-      <div className="w-full">
-        {children}
-      </div>
+    <section
+      id={id}
+      className={`py-20 md:py-32 ${inverted ? "section-inverted text-brand-cream" : "text-brand-blue"} ${className || ""}`}
+    >
+      <Container>
+        {(eyebrow || title || description) && (
+          <div className="mb-12 md:mb-20">
+            {eyebrow && (
+              <p className={`text-xs font-bold uppercase tracking-[0.3em] mb-4 opacity-60 ${eyebrowColor}`}>
+                {eyebrow}
+              </p>
+            )}
+            {title && (
+              <h2 className={`section-title mb-6 ${textColor}`}>
+                {title}
+              </h2>
+            )}
+            {description && (
+              <div className={`max-w-2xl text-lg md:text-xl ${secondaryTextColor}`}>
+                {description}
+              </div>
+            )}
+          </div>
+        )}
+        <div>
+          {children}
+        </div>
+      </Container>
     </section>
   );
 }
