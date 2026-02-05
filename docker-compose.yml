@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # ports:
-    #  - "3000:3000" # Removed to avoid port conflict in Coolify. Coolify handles mapping via its proxy.
+    ports:
+      - "3001:3000" # Використовуємо 3001 на хості, щоб уникнути конфлікту з 3000
     restart: always
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
