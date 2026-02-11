@@ -5,7 +5,7 @@ import { structureTool } from 'sanity/structure';
 
 export default defineConfig({
   name: 'default',
-  title: 'Lares Health CMS',
+  title: 'LaresCare CMS',
   projectId: 'v2peljwj',
   dataset: 'production',
   basePath: '/studio',

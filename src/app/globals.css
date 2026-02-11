@@ -1,95 +1,91 @@
 @import "tailwindcss";
 
-/* Global light-only color scheme */
-:root {
-  color-scheme: light; /* force light UI even if OS is dark */
-
-  --background: #f8fafc; /* slate-50-ish */
-  --foreground: #0f172a; /* slate-900-ish */
-}
-
-/* Tailwind v4 inline theme tokens */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-header-bg: #19465D;
+  --color-header-text: #EDE6D8;
+  --color-bg-main: #F9F7F2;
+  --color-text-headline: #0D2B3B;
+  --color-text-secondary: #4A6B7C;
+  --color-brand-blue: #19465D;
+  --color-brand-cream: #EDE6D8;
+  --color-brand-orange: #F97316;
+
+  /* Fonts */
+  --font-headline: var(--font-urbanist);
+  --font-body: system-ui, -apple-system, sans-serif;
 }
 
-/* Hard lock light background + dark text */
-html,
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+/* Base styles */
+:root {
+  color-scheme: light;
 }
 
-/* Senior-friendly base scaling: bump rem size globally */
-html {
-  font-size: 17px;
+html, body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-headline);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
 }
 
-@media (min-width: 1024px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-/* Base typography */
 @layer base {
-  body {
-    @apply bg-slate-50 text-slate-900;
-    font-family: var(
-      --font-geist-sans,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif
-    );
-    line-height: 1.7;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    color: var(--color-text-headline);
+    @apply tracking-tight;
   }
 
-  h1 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight text-slate-900;
-  }
-
-  h2 {
-    @apply text-2xl md:text-3xl font-semibold tracking-tight text-slate-900;
-  }
-
-  h3 {
-    @apply text-lg md:text-xl font-semibold text-slate-900;
-  }
-
-  /* Default paragraph: comfortable for older eyes */
   p {
-    @apply text-base md:text-lg leading-relaxed text-slate-700;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
   }
 }
 
-/* Shared button styles (used in hero + pilot ribbon + pilot card) */
 @layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-amber-600 px-4 py-2
-      text-sm font-semibold text-white shadow-sm
-      hover:bg-amber-500
-      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600
-      focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50;
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-headline font-bold;
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-md border border-slate-300
-      bg-white px-4 py-2 text-sm font-semibold text-slate-800
-      hover:border-slate-400 hover:bg-slate-50
-      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600
-      focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50;
+  .photo-warm {
+    filter: saturate(1.08) sepia(0.08) hue-rotate(-6deg) contrast(1.02);
   }
+}
 
-  .btn-compact {
-    @apply inline-flex items-center justify-center rounded-md bg-amber-600 px-3 py-1.5
-      text-xs font-semibold text-white shadow-sm
-      hover:bg-amber-500
-      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600
-      focus-visible:ring-offset-2 focus-visible:ring-offset-amber-50;
-  }
+/* Inverted Section Overrides */
+:where(.section-inverted) h1,
+:where(.section-inverted) h2,
+:where(.section-inverted) h3,
+:where(.section-inverted) h4,
+:where(.section-inverted) h5,
+:where(.section-inverted) h6 {
+  color: var(--color-brand-cream);
+}
+
+:where(.section-inverted) p {
+  color: var(--color-brand-cream);
+}
+
+/* Ensure readable paragraph text in light cards even inside dark sections */
+:where(.card-light) p {
+  color: var(--color-text-secondary);
+}
+
+:where(.card-light) h1,
+:where(.card-light) h2,
+:where(.card-light) h3,
+:where(.card-light) h4,
+:where(.card-light) h5,
+:where(.card-light) h6 {
+  color: var(--color-text-headline);
+}
+
+/* Header Specific (Dark by default) */
+.site-header {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+.site-header a {
+  color: var(--color-header-text);
+  @apply transition-colors duration-200 hover:opacity-80;
 }

@@ -1,28 +1,35 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 
-type Variant = "primary" | "secondary";
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: Variant;
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> {
+  variant?: "primary" | "secondary";
   children: ReactNode;
+  className?: string;
+  href?: string;
 }
 
 export function Button({
   variant = "primary",
   className,
   children,
+  href,
   ...props
 }: ButtonProps) {
-  const base =
-    "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium " +
-    "focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-sky-600 disabled:opacity-60";
+  const base = "inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-sm transition-all duration-200 uppercase tracking-wider";
+  const variants = {
+    primary: "bg-brand-orange text-white hover:bg-brand-orange/90 hover:scale-[1.02] shadow-lg shadow-brand-orange/20",
+    secondary: "border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-brand-cream hover:scale-[1.02]"
+  };
 
-  const variantClasses =
-    variant === "primary"
-      ? "bg-sky-600 text-white hover:bg-sky-500"
-      : "border border-slate-300 text-slate-800 bg-white hover:border-slate-400";
+  const classes = `${base} ${variants[variant]} ${className || ""}`;
 
-  const classes = [base, variantClasses, className].filter(Boolean).join(" ");
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button className={classes} {...props}>

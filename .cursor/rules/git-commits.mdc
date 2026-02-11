@@ -1,0 +1,24 @@
+---
+description: Standards for git commit messages in this project
+globs: 
+alwaysApply: true
+---
+
+# Git Commit Messages
+
+Follow the conventional commits format: `type(scope): description`.
+
+## Types
+- `feat`: New feature
+- `fix`: Bug fix
+- `style`: Changes that do not affect the meaning of the code (formatting, missing semi-colons, etc)
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `chore`: Changes to the build process or auxiliary tools and libraries
+- `docs`: Documentation only changes
+
+
+## Examples
+- `feat: add solar panel configuration page`
+- `fix(cms): fix image upload validation`
+- `style: update primary brand colors to match design`
+- `chore(root): update workspace dependencies`
