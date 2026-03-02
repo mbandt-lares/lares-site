@@ -110,7 +110,7 @@ export function ContactForm({ className = "" }: ContactFormProps) {
             {status === "submitting" ? "Sending..." : "Submit Application"}
           </Button>
           
-          <p className="text-center text-xs opacity-40 uppercase tracking-widest">
+          <p className="text-center text-xs opacity-40 normal-case tracking-normal">
             We contact you only about early access opportunities.
           </p>
         </form>
