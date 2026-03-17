@@ -95,7 +95,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-2xl bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-6">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle><line x1="3" y1="3" x2="21" y2="21"></line></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-cream">Decline is invisible</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-cream">Decline is invisible</h3>
                 <div className="h-px w-12 bg-brand-orange/50"></div>
                 <p className="text-brand-cream/80 text-lg leading-relaxed">
                   She stopped going out. Started skipping meals. Sleeps worse than she used to. Some days, no one calls. You won&apos;t hear about it until she falls.
@@ -105,7 +105,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-2xl bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-6">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="23" y2="12"></line><line x1="23" y1="8" x2="19" y2="12"></line></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-cream">Loneliness is a health risk</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-cream">Loneliness is a health risk</h3>
                 <div className="h-px w-12 bg-brand-orange/50"></div>
                 <p className="text-brand-cream/80 text-lg leading-relaxed">
                   Not just sad. 31% higher dementia risk. Mortality impact of smoking a pack a day. Isolation kills—slowly, quietly.
@@ -115,7 +115,7 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-2xl bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-6">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 10h.01"></path><path d="M12 10h.01"></path><path d="M16 10h.01"></path></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-cream">&quot;I&apos;m fine&quot; tells you nothing</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-cream">&quot;I&apos;m fine&quot; tells you nothing</h3>
                 <div className="h-px w-12 bg-brand-orange/50"></div>
                 <p className="text-brand-cream/80 text-lg leading-relaxed">
                     You call. She says she&apos;s fine. She&apos;s not going to tell you she&apos;s lonely, unsteady, or scared. You need more than her word.
@@ -133,8 +133,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-brand-cream/30 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M13 8H7"></path><path d="M17 12H7"></path></svg>
               </div>
-              <div className="space-y-2 relative z-10">
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Someone checks in. Every day.</h3>
+              <div className="space-y-3 relative z-10">
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Someone checks in. Every&nbsp;day.</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">
                   How&apos;d you sleep? Getting out today? How are you feeling? It&apos;s a small thing—but for someone living alone, it might be the only voice they hear.
                 </p>
@@ -146,8 +146,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-brand-cream/30 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
               </div>
-              <div className="space-y-2 relative z-10">
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Continuous health data</h3>
+              <div className="space-y-3 relative z-10">
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Continuous health data</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">
                   Apple Watch and iPhone capture gait, sleep, activity, and fall risk—passively, with devices they already have.
                 </p>
@@ -159,8 +159,8 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-brand-cream/30 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
               </div>
-              <div className="space-y-2 relative z-10">
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Data meets conversation</h3>
+              <div className="space-y-3 relative z-10">
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Data meets conversation</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">
                   The watch shows she&apos;s walking less. The check-in reveals she hasn&apos;t left the house in days. That&apos;s not a glitch—that&apos;s a pattern worth noticing.
                 </p>
@@ -177,7 +177,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Weekly summary</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Weekly summary</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">What changed. What didn&apos;t. What you should pay attention to. Not data—answers.</p>
               </div>
 
@@ -185,7 +185,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Trend detection</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Trend detection</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">Sleeping less this month. Walking slower this week. You&apos;ll see the slide before it becomes a fall.</p>
               </div>
 
@@ -193,7 +193,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Family dashboard</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Family dashboard</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">One place. Clear picture. No calling to ask. No hoping she&apos;ll tell you.</p>
               </div>
 
@@ -201,14 +201,14 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
-                <h3 className="text-xl font-headline font-bold text-brand-blue">Daily touchpoint</h3>
+                <h3 className="text-2xl font-headline font-bold text-brand-blue">Daily touchpoint</h3>
                 <p className="text-text-secondary text-lg leading-relaxed">Not a survey. Not a sensor. A check-in that asks how they&apos;re doing—and notices when the answer changes.</p>
               </div>
             </div>
           </Section>
         </div>
 
-        {/* HOW LARES IS DIFFERENT */}
+        {/* THE DIFFERENCE */}
         <Section className="bg-brand-cream/30" eyebrow="The Difference" title="Proactive. Not reactive.">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -220,31 +220,31 @@ export default function HomePage() {
                     <div className="mt-1 flex-shrink-0 text-text-secondary/40">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </div>
-                    <p className="text-lg text-text-secondary">Tells you after she falls</p>
+                    <p className="text-text-secondary leading-relaxed">Tells you after she falls</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-text-secondary/40">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </div>
-                    <p className="text-lg text-text-secondary">Proves she&apos;s alive</p>
+                    <p className="text-text-secondary leading-relaxed">Proves she&apos;s alive</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-text-secondary/40">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </div>
-                    <p className="text-lg text-text-secondary">Another device she won&apos;t wear</p>
+                    <p className="text-text-secondary leading-relaxed">Another device she won&apos;t wear</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-text-secondary/40">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </div>
-                    <p className="text-lg text-text-secondary">Needs a doctor&apos;s order</p>
+                    <p className="text-text-secondary leading-relaxed">Needs a doctor&apos;s order</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-text-secondary/40">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </div>
-                    <p className="text-lg text-text-secondary">Fine until it&apos;s not</p>
+                    <p className="text-text-secondary leading-relaxed">Fine until it&apos;s not</p>
                   </li>
                 </ul>
               </div>
@@ -257,31 +257,31 @@ export default function HomePage() {
                     <div className="mt-1 flex-shrink-0 text-brand-orange bg-brand-orange/10 rounded-full p-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <p className="text-lg font-medium text-brand-blue">Sees the fall coming</p>
+                    <p className="font-medium text-brand-blue leading-relaxed">Sees the fall coming</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-brand-orange bg-brand-orange/10 rounded-full p-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <p className="text-lg font-medium text-brand-blue">Shows how she&apos;s actually doing</p>
+                    <p className="font-medium text-brand-blue leading-relaxed">Shows how she&apos;s actually doing</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-brand-orange bg-brand-orange/10 rounded-full p-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <p className="text-lg font-medium text-brand-blue">Uses the watch she already has</p>
+                    <p className="font-medium text-brand-blue leading-relaxed">Uses the watch she already has</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-brand-orange bg-brand-orange/10 rounded-full p-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <p className="text-lg font-medium text-brand-blue">You sign up. Done.</p>
+                    <p className="font-medium text-brand-blue leading-relaxed">You sign up. Done.</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="mt-1 flex-shrink-0 text-brand-orange bg-brand-orange/10 rounded-full p-1">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <p className="text-lg font-medium text-brand-blue">You see the change happening</p>
+                    <p className="font-medium text-brand-blue leading-relaxed">You see the change happening</p>
                   </li>
                 </ul>
               </div>
@@ -293,12 +293,16 @@ export default function HomePage() {
         <div className="bg-brand-blue relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-brand-cream/20 to-transparent" />
           <Section inverted={true} eyebrow="The Research" title="This isn't opinion. It's science.">
-            <div className="max-w-5xl mx-auto space-y-12">
-              <h3 className="text-2xl md:text-3xl text-brand-cream leading-relaxed font-medium max-w-4xl">
-                This isn&apos;t about feeling sad. It&apos;s about what happens to the brain and body when someone goes days without meaningful contact—and no one notices.
-              </h3>
+            <div className="max-w-5xl mx-auto space-y-16">
               
+              <div className="border-l-2 border-brand-orange/50 pl-6 py-1 max-w-3xl">
+                <p className="text-xl md:text-2xl text-brand-cream/90 leading-relaxed font-normal">
+                  This isn&apos;t about feeling sad. It&apos;s about what happens to the brain and body when someone goes days without meaningful contact—and no one notices.
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-3 gap-6">
+                {/* ... (cards remain the same, hidden for now so I can show both options in dev mode if needed, but I will just replace it directly) ... */}
                 <div className="bg-brand-cream/10 p-8 rounded-[2rem] space-y-4 border border-brand-cream/10">
                   <div className="text-6xl md:text-7xl font-bold text-brand-orange">31%</div>
                   <div className="h-px w-12 bg-brand-orange/50"></div>
@@ -341,19 +345,31 @@ export default function HomePage() {
               <div className="grid gap-12">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-headline font-bold text-brand-blue">What devices do they need?</h3>
-                  <p className="text-lg text-text-secondary leading-relaxed">iPhone and Apple Watch. No extra hardware.</p>
+                  <div className="flex gap-4 items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0"></div>
+                    <p className="text-lg text-text-secondary leading-relaxed">iPhone and Apple Watch. No extra hardware.</p>
+                  </div>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-2xl font-headline font-bold text-brand-blue">Is this a medical service?</h3>
-                  <p className="text-lg text-text-secondary leading-relaxed">No. Lares provides insight for families, not clinical care.</p>
+                  <div className="flex gap-4 items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0"></div>
+                    <p className="text-lg text-text-secondary leading-relaxed">No. Lares provides insight for families, not clinical care.</p>
+                  </div>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-2xl font-headline font-bold text-brand-blue">What if they don&apos;t answer a check-in?</h3>
-                  <p className="text-lg text-text-secondary leading-relaxed">You&apos;ll be notified. Patterns matter more than any single day.</p>
+                  <div className="flex gap-4 items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0"></div>
+                    <p className="text-lg text-text-secondary leading-relaxed">You&apos;ll be notified. Patterns matter more than any single day.</p>
+                  </div>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-2xl font-headline font-bold text-brand-blue">How is this different from a medical alert pendant?</h3>
-                  <p className="text-lg text-text-secondary leading-relaxed">Pendants react after a fall. Lares notices before.</p>
+                  <div className="flex gap-4 items-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-orange shrink-0"></div>
+                    <p className="text-lg text-text-secondary leading-relaxed">Pendants react after a fall. Lares notices before.</p>
+                  </div>
                 </div>
               </div>
             </div>
