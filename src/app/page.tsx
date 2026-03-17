@@ -126,7 +126,7 @@ export default function HomePage() {
         </div>
 
         {/* HOW IT WORKS */}
-        <Section id="how-it-works" className="bg-white" eyebrow="How It Works" title="Two signals. One clear picture.">
+        <Section id="how-it-works" className="bg-brand-cream/30" eyebrow="How It Works" title="Two signals. One clear picture.">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-[2rem] space-y-5 border border-brand-blue/5 shadow-xl shadow-brand-blue/5 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
               <span className="absolute -right-4 -bottom-6 text-[8rem] font-bold text-brand-blue/[0.03] pointer-events-none leading-none">01</span>
@@ -209,7 +209,7 @@ export default function HomePage() {
         </div>
 
         {/* HOW LARES IS DIFFERENT */}
-        <Section className="bg-white" eyebrow="The Difference" title="Proactive. Not reactive.">
+        <Section className="bg-brand-cream/30" eyebrow="The Difference" title="Proactive. Not reactive.">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Competitors Column */}
@@ -294,34 +294,40 @@ export default function HomePage() {
           <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-brand-cream/20 to-transparent" />
           <Section inverted={true} eyebrow="The Research" title="This isn't opinion. It's science.">
             <div className="max-w-5xl mx-auto space-y-12">
-              <h3 className="text-2xl md:text-3xl text-brand-cream leading-relaxed text-center font-medium max-w-3xl mx-auto">
+              <h3 className="text-2xl md:text-3xl text-brand-cream leading-relaxed font-medium max-w-4xl">
                 This isn&apos;t about feeling sad. It&apos;s about what happens to the brain and body when someone goes days without meaningful contact—and no one notices.
               </h3>
               
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-brand-cream/10 p-8 rounded-[2rem] text-center space-y-4 border border-brand-cream/10">
+                <div className="bg-brand-cream/10 p-8 rounded-[2rem] space-y-4 border border-brand-cream/10">
                   <div className="text-6xl md:text-7xl font-bold text-brand-orange">31%</div>
-                  <div className="h-px w-16 bg-brand-orange/50 mx-auto"></div>
-                  <p className="text-xl text-brand-cream font-medium">Higher dementia risk</p>
-                  <p className="text-brand-cream/70 text-sm">linked to chronic loneliness</p>
+                  <div className="h-px w-12 bg-brand-orange/50"></div>
+                  <div className="space-y-1">
+                    <p className="text-xl text-brand-cream font-medium">Higher dementia risk</p>
+                    <p className="text-brand-cream/70 text-sm">linked to chronic loneliness</p>
+                  </div>
                 </div>
                 
-                <div className="bg-brand-cream/10 p-8 rounded-[2rem] text-center space-y-4 border border-brand-cream/10">
+                <div className="bg-brand-cream/10 p-8 rounded-[2rem] space-y-4 border border-brand-cream/10">
                   <div className="text-6xl md:text-7xl font-bold text-brand-orange">29%</div>
-                  <div className="h-px w-16 bg-brand-orange/50 mx-auto"></div>
-                  <p className="text-xl text-brand-cream font-medium">Higher heart attack risk</p>
-                  <p className="text-brand-cream/70 text-sm">associated with social isolation</p>
+                  <div className="h-px w-12 bg-brand-orange/50"></div>
+                  <div className="space-y-1">
+                    <p className="text-xl text-brand-cream font-medium">Higher heart attack risk</p>
+                    <p className="text-brand-cream/70 text-sm">associated with social isolation</p>
+                  </div>
                 </div>
                 
-                <div className="bg-brand-cream/10 p-8 rounded-[2rem] text-center space-y-4 border border-brand-cream/10">
+                <div className="bg-brand-cream/10 p-8 rounded-[2rem] space-y-4 border border-brand-cream/10">
                   <div className="text-6xl md:text-7xl font-bold text-brand-orange">15</div>
-                  <div className="h-px w-16 bg-brand-orange/50 mx-auto"></div>
-                  <p className="text-xl text-brand-cream font-medium">Cigarettes a day</p>
-                  <p className="text-brand-cream/70 text-sm">equivalent mortality impact</p>
+                  <div className="h-px w-12 bg-brand-orange/50"></div>
+                  <div className="space-y-1">
+                    <p className="text-xl text-brand-cream font-medium">Cigarettes a day</p>
+                    <p className="text-brand-cream/70 text-sm">equivalent mortality impact</p>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-xs text-brand-cream/50 uppercase tracking-widest text-center mt-8">
+              <p className="text-xs text-brand-cream/50 uppercase tracking-widest mt-8">
                 Sources: National Institute on Aging, Lancet Psychiatry, US Surgeon General Advisory
               </p>
             </div>
