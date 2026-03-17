@@ -131,7 +131,7 @@ export default function HomePage() {
             <div className="bg-white p-8 rounded-[2rem] space-y-5 border border-brand-blue/5 shadow-xl shadow-brand-blue/5 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
               <span className="absolute -right-4 -bottom-6 text-[8rem] font-bold text-brand-blue/[0.03] pointer-events-none leading-none">01</span>
               <div className="w-12 h-12 bg-brand-cream/30 rounded-2xl flex items-center justify-center text-brand-blue">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M13 8H7"></path><path d="M17 12H7"></path></svg>
               </div>
               <div className="space-y-2 relative z-10">
                 <h3 className="text-xl font-headline font-bold text-brand-blue">Someone checks in. Every day.</h3>
