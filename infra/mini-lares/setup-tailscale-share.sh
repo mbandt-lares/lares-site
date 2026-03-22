@@ -54,7 +54,9 @@ SHARE_ROOT="$SANDISK_VOL/lares-share"
 
 mkdir -p "$SHARE_ROOT/reports"
 mkdir -p "$SHARE_ROOT/reports/artifacts"
-mkdir -p "$SHARE_ROOT/skills"
+mkdir -p "$SHARE_ROOT/skills/medical"
+mkdir -p "$SHARE_ROOT/skills/clinical"
+mkdir -p "$SHARE_ROOT/skills/common"
 mkdir -p "$SHARE_ROOT/work-product"
 
 # Create default skills.md if it doesn't exist
@@ -71,6 +73,39 @@ SKILLS_EOF
     echo "    Created default skills.md"
 fi
 
+# --- Sync OpenClaw Medical Skills ---
+echo "==> Syncing OpenClaw Medical Skills..."
+
+OPENCLAW_REPO="https://github.com/FreedomIntelligence/OpenClaw-Medical-Skills.git"
+OPENCLAW_CACHE="$SHARE_ROOT/.cache/OpenClaw-Medical-Skills"
+
+mkdir -p "$SHARE_ROOT/.cache"
+
+if [ -d "$OPENCLAW_CACHE/.git" ]; then
+    echo "    Updating existing clone..."
+    git -C "$OPENCLAW_CACHE" pull --ff-only 2>/dev/null || {
+        echo "    Pull failed, re-cloning..."
+        rm -rf "$OPENCLAW_CACHE"
+        git clone "$OPENCLAW_REPO" "$OPENCLAW_CACHE"
+    }
+else
+    echo "    Cloning OpenClaw Medical Skills..."
+    git clone "$OPENCLAW_REPO" "$OPENCLAW_CACHE"
+fi
+
+if [ -d "$OPENCLAW_CACHE/skills" ]; then
+    cp -r "$OPENCLAW_CACHE/skills/"* "$SHARE_ROOT/skills/medical/" 2>/dev/null || true
+    echo "    Medical skills synced to $SHARE_ROOT/skills/medical/"
+else
+    # Some repos use different structures — copy what's available
+    find "$OPENCLAW_CACHE" -name "*.md" -o -name "*.yaml" -o -name "*.json" | while read -r f; do
+        cp "$f" "$SHARE_ROOT/skills/medical/" 2>/dev/null || true
+    done
+    echo "    Copied available skill files to $SHARE_ROOT/skills/medical/"
+fi
+
+echo "    To re-sync later, run: bash sync-medical-skills.sh"
+
 # Create a README for the share
 cat > "$SHARE_ROOT/README.md" << 'README_EOF'
 # Lares Shared Drive
@@ -81,11 +116,14 @@ Hosted on mini-lares 4TB SanDisk via Tailscale Drive.
 
 ```
 lares-share/
-├── reports/          # Generated reports
-│   └── artifacts/    # Report artifacts (PDFs, exports, etc.)
-├── skills/           # Shared skill definitions
-│   └── skills.md     # Common skills file
-└── work-product/     # Shared work output between agents/sessions
+├── reports/
+│   └── artifacts/        # Report artifacts (PDFs, exports, etc.)
+├── skills/
+│   ├── skills.md         # Skills registry/index
+│   ├── medical/          # OpenClaw medical skills (auto-synced)
+│   ├── clinical/         # Clinical workflow skills
+│   └── common/           # Shared across all agents
+└── work-product/         # Shared work output between agents/sessions
 ```
 
 ## Access
@@ -138,7 +176,10 @@ echo "   macOS:  tailfs://mini-lares/$SHARE_NAME"
 echo "   Mount:  /Volumes/Tailscale/mini-lares/$SHARE_NAME"
 echo ""
 echo " Directory structure:"
-echo "   $SHARE_ROOT/reports/artifacts/  - report artifacts"
-echo "   $SHARE_ROOT/skills/skills.md    - shared skills"
+echo "   $SHARE_ROOT/reports/artifacts/   - report artifacts"
+echo "   $SHARE_ROOT/skills/skills.md    - skills registry"
+echo "   $SHARE_ROOT/skills/medical/     - OpenClaw medical skills"
+echo "   $SHARE_ROOT/skills/clinical/    - clinical workflow skills"
+echo "   $SHARE_ROOT/skills/common/      - shared agent skills"
 echo "   $SHARE_ROOT/work-product/       - common work output"
 echo ""
