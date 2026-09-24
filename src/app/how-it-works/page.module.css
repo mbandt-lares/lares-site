@@ -55,7 +55,7 @@
 }
 
 .page h1 {
-  font-size: 60px;
+  font-size: 3.5rem;
   line-height: 72px;
 }
 
@@ -69,8 +69,8 @@
 }
 
 .page h2 {
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 2.375rem;
+  line-height: 3rem;
 }
 
 .steps {
@@ -326,8 +326,8 @@
 
 .page .pilotPanel h2 {
   color: var(--lc-white);
-  font-size: 44px;
-  line-height: 56px;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
 }
 
 .page .pilotPanel p {
@@ -353,7 +353,7 @@
   }
 
   .page h1 {
-    font-size: clamp(44px, 5vw, 60px);
+    font-size: clamp(44px, 5vw, 3.5rem);
     line-height: 1.18;
   }
 
@@ -400,7 +400,7 @@
   }
 
   .page h1 {
-    font-size: clamp(42px, 11vw, 60px);
+    font-size: clamp(42px, 11vw, 3.5rem);
   }
 
   .page .heroIntro,
