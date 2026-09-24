@@ -59,6 +59,12 @@
   --lc-gutter-mobile: 20px;
   --lc-section-space-mobile: 48px;
   --lc-anchor-offset: 128px;
+  --lc-motion-fast: 120ms;
+  --lc-motion-radio: 150ms;
+  --lc-motion-feedback: 180ms;
+  --lc-motion-menu: 200ms;
+  --lc-motion-scene: 420ms;
+  --lc-motion-ease: cubic-bezier(.22, 1, .36, 1);
 
   --lc-display-size: 82px;
   --lc-display-line: 88px;

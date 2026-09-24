@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { LandingButton } from "@/components/landing/LandingButton";
+import { MotionScene } from "@/components/landing/MotionScene";
 import { PilotSection } from "@/components/landing/PilotSection";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections, pilotHref } from "@/design-system/sections";
@@ -56,10 +57,10 @@ function HeroArt() {
           <span className={styles.homeIndicator} />
         </div>
       </div>
-      <div className={styles.momentCard}>
+      <MotionScene effect="settle" className={styles.momentCard}>
         <span>THIS WEEK</span><strong>A good book for a rainy day</strong>
         <p>Shared with the family, with permission.</p>
-      </div>
+      </MotionScene>
     </div>
   );
 }
@@ -95,9 +96,11 @@ function Conversation() {
     <section id={landingSections.home.conversation} className={styles.conversation} aria-labelledby="conversation-title">
       <div className={styles.conversationBand}>
         <div className={styles.conversationLar} aria-hidden="true">
-          <Image src={asset("lar-conversation.png")} alt="" width={248} height={165} />
-          <span className={`${styles.eyePatch} ${styles.eyeLeft}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
-          <span className={`${styles.eyePatch} ${styles.eyeRight}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
+          <MotionScene effect="greet" className={styles.larMotion}>
+            <Image src={asset("lar-conversation.png")} alt="" width={248} height={165} />
+            <span className={`${styles.eyePatch} ${styles.eyeLeft}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
+            <span className={`${styles.eyePatch} ${styles.eyeRight}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
+          </MotionScene>
         </div>
         <h2 id="conversation-title">A story, a question,<br className={styles.desktopBreak} /> or just a little company.</h2>
         <div className={styles.conversationSide}>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Bell, FileText, Phone } from "lucide-react";
 import { LandingButton } from "@/components/landing/LandingButton";
+import { MotionScene } from "@/components/landing/MotionScene";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections, pilotHref } from "@/design-system/sections";
 import styles from "./page.module.css";
@@ -145,16 +146,16 @@ export default function HowItWorksPage() {
             <p>A change in routine can prompt a voice check-in. What the person shares with Lar helps explain the pattern.</p>
             <TextLink href="/about#about-conversation">Why conversation comes first</TextLink>
           </div>
-          <div className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
+          <MotionScene effect="messages" className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
             <p className={styles.chatLabel}>
               <span className={styles.chatIcon} aria-hidden="true" />
               <span>EXAMPLE: FEWER WALKS THIS WEEK</span>
             </p>
-            <p className={styles.chatBubble + " " + styles.larBubble}>Have you been out much this week?</p>
-            <p className={styles.chatBubble + " " + styles.personBubble}>I’ve been finishing a painting at home.</p>
+            <p className={styles.chatBubble + " " + styles.larBubble} data-motion-message>Have you been out much this week?</p>
+            <p className={styles.chatBubble + " " + styles.personBubble} data-motion-message>I’ve been finishing a painting at home.</p>
             <p className={styles.chatBubble + " " + styles.larBubble}>What have you been painting?</p>
             <p className={styles.chatConclusion}>The pattern shows fewer walks. The conversation explains why.</p>
-          </div>
+          </MotionScene>
         </div>
       </section>
 

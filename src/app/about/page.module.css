@@ -251,6 +251,7 @@
   height: 8px;
   background: var(--lc-coral);
   border-radius: 2px;
+  transform-origin: center bottom;
 }
 
 .wave i:nth-child(2),

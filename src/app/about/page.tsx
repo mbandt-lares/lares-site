@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { LandingButton } from "@/components/landing/LandingButton";
+import { MotionScene } from "@/components/landing/MotionScene";
 import { PilotSection } from "@/components/landing/PilotSection";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections } from "@/design-system/sections";
@@ -64,10 +65,10 @@ function ConversationPhones() {
               <Image src="/landing/secondary/icon-history.svg" alt="" width={20} height={20} />
             </div>
             <Image className={styles.voiceLar} src="/landing/home/lar-original.png" alt="" width={240} height={160} style={{ height: "auto" }} />
-            <div className={styles.voiceMessage}>
-              <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i /><i /><i /><i /><i /></span>Lar is speaking</p>
+            <MotionScene effect="wave" className={styles.voiceMessage}>
+              <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /></span>Lar is speaking</p>
               <p>What would you like to talk about today?</p>
-            </div>
+            </MotionScene>
             <span className={styles.callCircle} aria-hidden="true">
               <Image src="/landing/secondary/icon-call.svg" alt="" width={23} height={25} style={{ height: "auto" }} />
             </span>
