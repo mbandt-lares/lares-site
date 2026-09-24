@@ -104,20 +104,22 @@ export default function HowItWorksPage() {
       <section id={landingSections.howItWorks.process} className={styles.process} aria-labelledby="process-title">
         <div className={styles.container}>
           <h2 id="process-title">Connect. Learn. Stay informed.</h2>
-          <ol className={styles.steps}>
-            {steps.map((step, index) => (
-              <li className={styles.stepCard} key={step.title}>
-                <div className={styles.stepImage}>
-                  <Image src={step.image} alt={step.alt} fill loading={index === 0 ? "eager" : undefined} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 371px" />
-                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
-                </div>
-                <div className={styles.stepCopy}>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <MotionScene effect="sequence">
+            <ol className={styles.steps}>
+              {steps.map((step, index) => (
+                <li className={styles.stepCard} key={step.title} data-motion-item>
+                  <div className={styles.stepImage}>
+                    <Image src={step.image} alt={step.alt} fill loading={index === 0 ? "eager" : undefined} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 371px" />
+                    <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
+                  </div>
+                  <div className={styles.stepCopy}>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </MotionScene>
         </div>
       </section>
 
@@ -162,18 +164,18 @@ export default function HowItWorksPage() {
       <section id={landingSections.howItWorks.family} className={styles.family} aria-labelledby="family-title">
         <div className={styles.container}>
           <h2 id="family-title">What families receive</h2>
-          <div className={styles.familyGrid}>
+          <MotionScene effect="sequence" className={styles.familyGrid}>
             {familyBenefits.map((item) => {
               const Icon = item.icon;
               return (
-                <article className={styles.familyCard} key={item.title}>
+                <article className={styles.familyCard} key={item.title} data-motion-item>
                   <Icon className={styles.familyIcon} size={28} strokeWidth={1.5} aria-hidden="true" />
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               );
             })}
-          </div>
+          </MotionScene>
           <p className={styles.permission}>
             <Image src="/landing/secondary/icon-shield.svg" alt="" width={24} height={24} />
             <span>Shared with permission. Agree together who receives updates and what is included.</span>

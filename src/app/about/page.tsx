@@ -111,12 +111,12 @@ export default function AboutPage() {
     <div data-design-system="landing" className={styles.page}>
       <section id={landingSections.about.hero} className={styles.hero} aria-labelledby="about-title">
         <div className={styles.container + " " + styles.heroGrid}>
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>WHY LARESCARE</p>
-            <h1 id="about-title">Care starts<br />with connection.</h1>
-            <p>We’re building a familiar companion for everyday life. Someone to talk to, with the person’s independence and perspective at the centre.</p>
+          <MotionScene effect="hero" className={styles.heroCopy}>
+            <p className={styles.eyebrow} data-motion-item>WHY LARESCARE</p>
+            <h1 id="about-title" data-motion-item>Care starts<br />with connection.</h1>
+            <p data-motion-item>We’re building a familiar companion for everyday life. Someone to talk to, with the person’s independence and perspective at the centre.</p>
             <LandingButton href="/how-it-works" variant="outline">See how it works</LandingButton>
-          </div>
+          </MotionScene>
           <div className={styles.heroPhoto}>
             <Image
               src="/landing/home/family-tea.png"
@@ -162,17 +162,19 @@ export default function AboutPage() {
             <h2 id="about-independence-title">Close to them.<br />On their terms.</h2>
             <TextLink href="/how-it-works">See how it works</TextLink>
           </div>
-          <ol className={styles.principles}>
-            {principles.map((item, index) => (
-              <li key={item.title}>
-                <span className={styles.principleNumber}>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <MotionScene effect="sequence">
+            <ol className={styles.principles}>
+              {principles.map((item, index) => (
+                <li key={item.title} data-motion-item>
+                  <span className={styles.principleNumber}>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </MotionScene>
         </div>
       </section>
 
