@@ -10,6 +10,7 @@ export function LandingFooter() {
         <div className={styles.footerBrand}>
           <Link href="/" aria-label="LaresCare home"><Image src="/landing/shared/wordmark-light.svg" alt="LaresCare" width={252} height={40} /></Link>
           <p>More connection for everyday life.</p>
+          <a className={styles.footerEmail} href="mailto:info@larescare.com">info@larescare.com</a>
         </div>
         <nav className={styles.footerNav} aria-label="Footer navigation">
           {landingNavigation.map(({ href, label }) => <Link key={href} href={href}>{label}</Link>)}
