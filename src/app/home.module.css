@@ -50,8 +50,8 @@
 .momentCard p { color: var(--lc-secondary) !important; font-size: 14px; line-height: 20px; }
 
 .conversation { padding-block: 70px; }
-.conversationBand { width: min(var(--lc-container), calc(100% - 40px)); min-height: 346px; margin-inline: auto; padding: 56px; display: grid; grid-template-columns: 248px minmax(0, 1.33fr) minmax(0, 1fr); align-items: center; justify-content: space-between; gap: 32px; border-radius: 40px; background: var(--lc-peach); }
-.conversationLar { width: 248px; height: 165px; position: relative; }
+.conversationBand { width: min(var(--lc-container), calc(100% - 40px)); min-height: 306px; margin-inline: auto; padding: 40px 56px; display: grid; grid-template-columns: 248px minmax(0, 1.33fr) minmax(0, 1fr); align-items: center; justify-content: space-between; gap: 32px; border-radius: 40px; background: var(--lc-peach); }
+.conversationLar { width: 248px; height: 165px; position: relative; transform: translateX(-16px); }
 .conversationLar > img { width: 248px; height: 165px; object-fit: contain; }
 .eyePatch { position: absolute; display: block; width: 30px; height: 30px; overflow: hidden; }
 .eyePatch img { position: absolute; width: 248px; height: 165px; max-width: none; }
@@ -172,6 +172,7 @@
   .conversation { padding-block: 48px; }
   .conversationBand { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding: 28px; border-radius: 28px; }
   .conversationLar, .conversationLar > img { width: 180px; height: 120px; }
+  .conversationLar { transform: none; }
   .conversation h2 { font-size: clamp(30px, 8vw, 40px); line-height: 1.2; }
   .desktopBreak { display: none; }
   .conversationSide p { font-size: 18px; line-height: 27px; }
