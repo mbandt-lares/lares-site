@@ -16,7 +16,7 @@
 .textLinkExternal:hover svg,.textLinkExternal:focus-visible svg{transform:translate(3px,-3px) rotate(-45deg)}
 .textLinkInverse{color:var(--lc-coral,#ff6b6b)}
 .header{position:relative;z-index:50;background:var(--lc-cream);color:var(--lc-navy);font-family:var(--lc-font-family)}
-.headerInner{max-width:1440px;margin:auto;min-height:112px;padding:24px 80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.headerInner{max-width:calc(var(--lc-container) + 160px);margin:auto;min-height:112px;padding:24px 80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{display:inline-flex;align-items:center;flex:none}.logo img{display:block;width:190px;height:auto}
 .desktopNav{display:flex;align-items:center;gap:24px;margin-left:auto}
 .navLink{position:relative;display:inline-flex;align-items:center;min-height:48px;color:var(--lc-navy);font-size:18px;font-weight:500;text-decoration:none;white-space:nowrap}
@@ -25,7 +25,7 @@
 .mobileToggle{display:none;border:0;background:transparent;color:var(--lc-navy);padding:10px;cursor:pointer}
 .mobilePanel{display:none}
 .footer{background:var(--lc-navy);color:#fff;font-family:var(--lc-font-family)}
-.footerInner{max-width:1440px;margin:auto;padding:72px 80px 32px}
+.footerInner{max-width:calc(var(--lc-container) + 160px);margin:auto;padding:72px 80px 32px}
 .footerTop{display:flex;justify-content:space-between;gap:48px;min-height:91px}
 .footerBrand img{display:block;width:252px;height:auto}
 .footerBrand p{margin:24px 0 0;color:#fff;font-size:18px;line-height:28px}
@@ -37,11 +37,11 @@
 .footerBottom p{color:#fff;margin:0}.footerLegalLinks a{font-size:14px}
 .pilotSection{background:var(--lc-cream);padding:120px 80px 96px;scroll-margin-top:var(--lc-anchor-offset);position:relative;font-family:var(--lc-font-family)}
 .legacyAnchor{position:absolute;top:0;scroll-margin-top:var(--lc-anchor-offset)}
-.pilotInner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,688fr) minmax(0,560fr);align-items:start;gap:32px}
+.pilotInner{max-width:var(--lc-container);margin:0 auto;display:grid;grid-template-columns:minmax(0,688fr) minmax(0,560fr);align-items:start;gap:32px}
 .pilotInvite{position:relative;min-height:669px;border-radius:42px;background:var(--lc-peach);overflow:hidden}
 .pilotCopy{position:relative;z-index:2;padding:60px 64px 0}
 .pilotCopy h2{font:600 46px/54px var(--lc-font-family);letter-spacing:-.04em;color:var(--lc-navy);margin:0 0 20px}
-.pilotCopy p{font:400 21px/31px var(--lc-font-family);color:var(--lc-secondary);margin:0}
+.pilotCopy p{font:400 20px/30px var(--lc-font-family);color:var(--lc-secondary);margin:0}
 .pilotImage{position:absolute;left:0;bottom:0;width:100%;height:381px;object-fit:cover}
 .pilotInvite::after{content:"";position:absolute;z-index:1;top:288px;left:0;right:0;height:132px;background:linear-gradient(to bottom,var(--lc-peach),transparent);pointer-events:none}
 .formCard{background:#fff;border:1px solid var(--lc-line);border-radius:32px;padding:48px;color:var(--lc-navy)}

@@ -206,7 +206,7 @@
 .page .conversationCopy p {
   max-width: 520px;
   margin-block: 24px;
-  font-size: 21px;
+  font-size: 1.25rem;
   line-height: 32px;
 }
 

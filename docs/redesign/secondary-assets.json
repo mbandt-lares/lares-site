@@ -70,7 +70,8 @@
     },
     {
       "node": "478:215",
-      "file": "/landing/secondary/about-family.png",
+      "sourceNode": "395:1811",
+      "file": "/landing/home/family-tea.png",
       "route": "/about",
       "slot": "hero family photo",
       "alt": "An older man and a woman sharing tea together at home"

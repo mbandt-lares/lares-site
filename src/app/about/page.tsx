@@ -118,7 +118,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.heroPhoto}>
             <Image
-              src="/landing/secondary/about-family.png"
+              src="/landing/home/family-tea.png"
               alt="An older man and a woman sharing tea together at home"
               fill
               priority

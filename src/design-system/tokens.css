@@ -53,7 +53,7 @@
   --lc-radius-card: 32px;
   --lc-control-height: 56px;
   --lc-link-height: 44px;
-  --lc-container: 1280px;
+  --lc-container: 1200px;
   --lc-gutter-desktop: 80px;
   /* Mobile layout proposals; verify at 360, 390 and 768px during migration. */
   --lc-gutter-mobile: 20px;
@@ -72,8 +72,8 @@
   --lc-card-title-line: 32px;
   --lc-body-large-size: 21px;
   --lc-body-large-line: 32px;
-  --lc-body-size: 18px;
-  --lc-body-line: 28px;
+  --lc-body-size: 20px;
+  --lc-body-line: 30px;
   --lc-label-size: 16px;
   --lc-label-line: 22px;
   --lc-caption-size: 14px;

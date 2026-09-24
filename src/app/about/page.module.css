@@ -67,7 +67,7 @@
 
 .page .heroCopy > p:not(.eyebrow) {
   max-width: 535px;
-  font-size: 21px;
+  font-size: 1.25rem;
   line-height: 32px;
 }
 
@@ -131,7 +131,7 @@
 .page .conversationCopy > p:not(.eyebrow) {
   max-width: 540px;
   color: var(--lc-text-secondary-inverse);
-  font-size: 21px;
+  font-size: 1.25rem;
   line-height: 32px;
 }
 
