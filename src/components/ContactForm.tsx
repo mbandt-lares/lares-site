@@ -77,7 +77,7 @@ export function ContactForm({ className = "", pilot = false }: ContactFormProps)
       <button type="button" className={styles.noteToggle} aria-expanded={noteOpen} aria-controls={`${uid}-note`} onClick={() => setNoteOpen(!noteOpen)}>
         <Image src="/landing/shared/plus.svg" alt="" width={24} height={24} /> {noteOpen ? "Hide note" : "Add a note (optional)"}
       </button>
-      <div id={`${uid}-note`} className={styles.noteContent} hidden={!noteOpen}>
+      <div id={`${uid}-note`} hidden={!noteOpen}>
         <label className={styles.formField} htmlFor={`${uid}-message`}><span>Your note</span>
           <textarea id={`${uid}-message`} name="message" rows={4} />
         </label>

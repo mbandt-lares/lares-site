@@ -57,10 +57,10 @@ function HeroArt() {
           <span className={styles.homeIndicator} />
         </div>
       </div>
-      <MotionScene effect="settle" className={styles.momentCard}>
+      <div className={styles.momentCard}>
         <span>THIS WEEK</span><strong>A good book for a rainy day</strong>
         <p>Shared with the family, with permission.</p>
-      </MotionScene>
+      </div>
     </div>
   );
 }
@@ -69,14 +69,14 @@ function Hero() {
   return (
     <section id={landingSections.home.hero} className={styles.hero} aria-labelledby="home-title">
       <div className={styles.heroInner}>
-        <MotionScene effect="hero" className={styles.heroCopy}>
-          <div className={styles.heroBadge} data-motion-item>
+        <div className={styles.heroCopy}>
+          <div className={styles.heroBadge}>
             <Image src={asset("lar-original.png")} alt="" width={54} height={36} />
             <span>Meet Lar, your everyday AI companion</span>
           </div>
-          <h1 id="home-title" data-motion-item>A little company.<br /><span>A brighter day.</span></h1>
-          <p className={styles.heroLead} data-motion-item>A familiar conversation, a little support, and more<br className={styles.heroLeadBreak} /> context for the people you love.</p>
-          <div className={styles.heroActions} data-motion-item>
+          <h1 id="home-title">A little company.<br /><span>A brighter day.</span></h1>
+          <p className={styles.heroLead}>A familiar conversation, a little support, and more<br className={styles.heroLeadBreak} /> context for the people you love.</p>
+          <div className={styles.heroActions}>
             <LandingButton href={pilotHref}>Join the pilot</LandingButton>
             <LandingButton href="/how-it-works" variant="outline">See how it works</LandingButton>
           </div>
@@ -84,7 +84,7 @@ function Hero() {
             <span><Icon name="icon-shield-check.svg" />Shared only with permission</span>
             <span><Icon name="icon-microphone-dark.svg" />Speak or type</span>
           </div>
-        </MotionScene>
+        </div>
         <HeroArt />
       </div>
     </section>
@@ -96,6 +96,7 @@ function Conversation() {
     <section id={landingSections.home.conversation} className={styles.conversation} aria-labelledby="conversation-title">
       <div className={styles.conversationBand}>
         <div className={styles.conversationLar} aria-hidden="true">
+          <Image className={styles.larShadow} src={asset("lar-conversation.png")} alt="" width={248} height={165} />
           <MotionScene effect="greet" className={styles.larMotion}>
             <Image src={asset("lar-conversation.png")} alt="" width={248} height={165} />
             <span className={`${styles.eyePatch} ${styles.eyeLeft}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
@@ -125,14 +126,14 @@ function Signals() {
           <h2 id="signals-title">Two signals.<br />A fuller picture.</h2>
           <p>Conversation adds the person’s own account to patterns in activity and sleep. Together, they help make sense of everyday changes.</p>
         </div>
-        <MotionScene effect="sequence" className={styles.signalCards}>
-          <article className={`${styles.signalCard} ${styles.wordsCard}`} data-motion-item>
+        <div className={styles.signalCards}>
+          <article className={`${styles.signalCard} ${styles.wordsCard}`}>
             <p className={styles.eyebrow}>THEIR OWN WORDS</p>
             <Icon name="icon-chat-circle.svg" size={44} />
             <p className={styles.wordsQuote}>“I stayed in with a book because of the rain.”</p>
           </article>
           <span className={styles.signalOperator} aria-hidden="true"><Icon name="icon-plus.svg" /></span>
-          <article className={`${styles.signalCard} ${styles.patternsCard}`} data-motion-item>
+          <article className={`${styles.signalCard} ${styles.patternsCard}`}>
             <p className={styles.eyebrow}>EVERYDAY PATTERNS</p>
             <div className={styles.activityBars} aria-hidden="true">
               {bars.map((height, index) => <span key={index} style={{ height }} />)}
@@ -140,12 +141,12 @@ function Signals() {
             <p className={styles.patternsText}>Activity and sleep, with Apple Health.</p>
           </article>
           <span className={styles.signalOperator} aria-hidden="true"><Icon name="icon-equals.svg" /></span>
-          <article className={`${styles.signalCard} ${styles.contextCard}`} data-motion-item>
+          <article className={`${styles.signalCard} ${styles.contextCard}`}>
             <p className={styles.eyebrow}>CONTEXT</p>
             <p className={styles.contextText}>A change in routine, with the person’s own explanation.</p>
             <TextLink href="/how-it-works" inverse>Explore how it works</TextLink>
           </article>
-        </MotionScene>
+        </div>
       </div>
     </section>
   );
@@ -162,21 +163,21 @@ function Family() {
           <p className={styles.familyPermission}>Shared with permission, with the person at the center.</p>
           <LandingButton href="/how-it-works">See what families receive</LandingButton>
         </div>
-        <MotionScene effect="sequence" className={styles.familySummary} aria-label="Illustrative family weekly summary">
+        <div className={styles.familySummary} aria-label="Illustrative family weekly summary">
           <h3>Your week, in context</h3>
-          <div className={styles.summaryItem} data-motion-item>
+          <div className={styles.summaryItem}>
             <span className={styles.walkIcon}><Icon name="icon-walk.svg" size={32} /></span>
             <div><strong>A quieter week for walking</strong><p>Activity was lower than the usual pattern.</p></div>
           </div>
-          <div className={styles.summaryItem} data-motion-item>
+          <div className={styles.summaryItem}>
             <span className={styles.bookIcon}><Icon name="icon-book.svg" size={32} /></span>
             <div><strong>A good book for a rainy day</strong><p>“I stayed in because of the rain and got lost in a book.”</p></div>
           </div>
-          <div className={styles.summaryFooter} data-motion-item>
+          <div className={styles.summaryFooter}>
             <p className={styles.eyebrow}>CONVERSATION STARTER</p>
             <p>Ask about the book, or offer company for the next walk.</p>
           </div>
-        </MotionScene>
+        </div>
       </div>
     </section>
   );

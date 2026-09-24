@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { LandingButton } from "@/components/landing/LandingButton";
-import { MotionScene } from "@/components/landing/MotionScene";
 import { PilotSection } from "@/components/landing/PilotSection";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections } from "@/design-system/sections";
@@ -65,10 +64,10 @@ function ConversationPhones() {
               <Image src="/landing/secondary/icon-history.svg" alt="" width={20} height={20} />
             </div>
             <Image className={styles.voiceLar} src="/landing/home/lar-original.png" alt="" width={240} height={160} style={{ height: "auto" }} />
-            <MotionScene effect="wave" className={styles.voiceMessage}>
-              <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /><i data-motion-wave /></span>Lar is speaking</p>
+            <div className={styles.voiceMessage}>
+              <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i /><i /><i /><i /><i /></span>Lar is speaking</p>
               <p>What would you like to talk about today?</p>
-            </MotionScene>
+            </div>
             <span className={styles.callCircle} aria-hidden="true">
               <Image src="/landing/secondary/icon-call.svg" alt="" width={23} height={25} style={{ height: "auto" }} />
             </span>
@@ -111,12 +110,12 @@ export default function AboutPage() {
     <div data-design-system="landing" className={styles.page}>
       <section id={landingSections.about.hero} className={styles.hero} aria-labelledby="about-title">
         <div className={styles.container + " " + styles.heroGrid}>
-          <MotionScene effect="hero" className={styles.heroCopy}>
-            <p className={styles.eyebrow} data-motion-item>WHY LARESCARE</p>
-            <h1 id="about-title" data-motion-item>Care starts<br />with connection.</h1>
-            <p data-motion-item>We’re building a familiar companion for everyday life. Someone to talk to, with the person’s independence and perspective at the centre.</p>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>WHY LARESCARE</p>
+            <h1 id="about-title">Care starts<br />with connection.</h1>
+            <p>We’re building a familiar companion for everyday life. Someone to talk to, with the person’s independence and perspective at the centre.</p>
             <LandingButton href="/how-it-works" variant="outline">See how it works</LandingButton>
-          </MotionScene>
+          </div>
           <div className={styles.heroPhoto}>
             <Image
               src="/landing/home/family-tea.png"
@@ -162,19 +161,17 @@ export default function AboutPage() {
             <h2 id="about-independence-title">Close to them.<br />On their terms.</h2>
             <TextLink href="/how-it-works">See how it works</TextLink>
           </div>
-          <MotionScene effect="sequence">
-            <ol className={styles.principles}>
-              {principles.map((item, index) => (
-                <li key={item.title} data-motion-item>
-                  <span className={styles.principleNumber}>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </MotionScene>
+          <ol className={styles.principles}>
+            {principles.map((item, index) => (
+              <li key={item.title}>
+                <span className={styles.principleNumber}>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

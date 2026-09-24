@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Bell, FileText, Phone } from "lucide-react";
 import { LandingButton } from "@/components/landing/LandingButton";
-import { MotionScene } from "@/components/landing/MotionScene";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections, pilotHref } from "@/design-system/sections";
 import styles from "./page.module.css";
@@ -104,22 +103,20 @@ export default function HowItWorksPage() {
       <section id={landingSections.howItWorks.process} className={styles.process} aria-labelledby="process-title">
         <div className={styles.container}>
           <h2 id="process-title">Connect. Learn. Stay informed.</h2>
-          <MotionScene effect="sequence">
-            <ol className={styles.steps}>
-              {steps.map((step, index) => (
-                <li className={styles.stepCard} key={step.title} data-motion-item>
-                  <div className={styles.stepImage}>
-                    <Image src={step.image} alt={step.alt} fill loading={index === 0 ? "eager" : undefined} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 371px" />
-                    <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
-                  </div>
-                  <div className={styles.stepCopy}>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </MotionScene>
+          <ol className={styles.steps}>
+            {steps.map((step, index) => (
+              <li className={styles.stepCard} key={step.title}>
+                <div className={styles.stepImage}>
+                  <Image src={step.image} alt={step.alt} fill loading={index === 0 ? "eager" : undefined} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 371px" />
+                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
+                </div>
+                <div className={styles.stepCopy}>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -148,34 +145,34 @@ export default function HowItWorksPage() {
             <p>A change in routine can prompt a voice check-in. What the person shares with Lar helps explain the pattern.</p>
             <TextLink href="/about#about-conversation">Why conversation comes first</TextLink>
           </div>
-          <MotionScene effect="messages" className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
+          <div className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
             <p className={styles.chatLabel}>
               <span className={styles.chatIcon} aria-hidden="true" />
               <span>EXAMPLE: FEWER WALKS THIS WEEK</span>
             </p>
-            <p className={styles.chatBubble + " " + styles.larBubble} data-motion-message>Have you been out much this week?</p>
-            <p className={styles.chatBubble + " " + styles.personBubble} data-motion-message>I’ve been finishing a painting at home.</p>
+            <p className={styles.chatBubble + " " + styles.larBubble}>Have you been out much this week?</p>
+            <p className={styles.chatBubble + " " + styles.personBubble}>I’ve been finishing a painting at home.</p>
             <p className={styles.chatBubble + " " + styles.larBubble}>What have you been painting?</p>
             <p className={styles.chatConclusion}>The pattern shows fewer walks. The conversation explains why.</p>
-          </MotionScene>
+          </div>
         </div>
       </section>
 
       <section id={landingSections.howItWorks.family} className={styles.family} aria-labelledby="family-title">
         <div className={styles.container}>
           <h2 id="family-title">What families receive</h2>
-          <MotionScene effect="sequence" className={styles.familyGrid}>
+          <div className={styles.familyGrid}>
             {familyBenefits.map((item) => {
               const Icon = item.icon;
               return (
-                <article className={styles.familyCard} key={item.title} data-motion-item>
+                <article className={styles.familyCard} key={item.title}>
                   <Icon className={styles.familyIcon} size={28} strokeWidth={1.5} aria-hidden="true" />
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               );
             })}
-          </MotionScene>
+          </div>
           <p className={styles.permission}>
             <Image src="/landing/secondary/icon-shield.svg" alt="" width={24} height={24} />
             <span>Shared with permission. Agree together who receives updates and what is included.</span>
