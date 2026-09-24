@@ -13,7 +13,7 @@ const navLinks = [
 
 export function SiteFooter() {
   const pathname = usePathname();
-  if (pathname === "/" || pathname === "/about" || pathname === "/how-it-works") return <LandingFooter />;
+  if (pathname === "/" || pathname === "/about" || pathname === "/how-it-works" || pathname === "/privacy" || pathname === "/terms") return <LandingFooter />;
   return <LegacyFooter />;
 }
 

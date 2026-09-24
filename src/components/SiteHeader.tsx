@@ -16,7 +16,7 @@ const navLinks = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const landing = pathname === "/" || pathname === "/about" || pathname === "/how-it-works";
+  const landing = pathname === "/" || pathname === "/about" || pathname === "/how-it-works" || pathname === "/privacy" || pathname === "/terms";
   if (landing) return <LandingHeader key={pathname} />;
   return <LegacyHeader />;
 }
