@@ -1,0 +1,551 @@
+{
+  "fileKey": "3kvJHevjr4infPgV2DOtXc",
+  "pageId": "225:2",
+  "inspectedAt": "2026-09-24",
+  "pages": [
+    {
+      "route": "/how-it-works",
+      "figmaId": "365:135",
+      "name": "How it works / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "429:241",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "how-it-works-hero",
+          "figmaId": "429:254",
+          "name": "How / Introduction",
+          "heading": "How it works"
+        },
+        {
+          "id": "how-it-works-process",
+          "figmaId": "372:134",
+          "name": "How / Connect. Learn. Stay informed.",
+          "heading": "Connect. Learn. Stay informed."
+        },
+        {
+          "id": "how-it-works-context",
+          "figmaId": "430:256",
+          "name": "How / Information that adds context",
+          "heading": "What information adds context"
+        },
+        {
+          "id": "how-it-works-conversation",
+          "figmaId": "430:330",
+          "name": "How / Where conversation fits",
+          "heading": "Where conversation fits"
+        },
+        {
+          "id": "how-it-works-family",
+          "figmaId": "430:299",
+          "name": "How / What families receive",
+          "heading": "What families receive"
+        },
+        {
+          "id": "how-it-works-pilot",
+          "figmaId": "433:288",
+          "name": "How / Join the Bay Area pilot",
+          "heading": "Join the Bay Area pilot"
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "430:353",
+          "name": "How / Footer",
+          "heading": null
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "figmaId": "391:187",
+      "name": "Home / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "391:188",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "home-hero",
+          "figmaId": "391:189",
+          "name": "hero / reference composition",
+          "heading": "A little company. A brighter day."
+        },
+        {
+          "id": "home-conversation",
+          "figmaId": "391:190",
+          "name": "intro / reference composition",
+          "heading": "A story, a question, or just a little company."
+        },
+        {
+          "id": "home-signals",
+          "figmaId": "391:191",
+          "name": "signals / reference composition",
+          "heading": "Two signals. A fuller picture."
+        },
+        {
+          "id": "home-family",
+          "figmaId": "391:192",
+          "name": "family / reference composition",
+          "heading": "More to share. More to talk about."
+        },
+        {
+          "id": "home-independence",
+          "figmaId": "391:193",
+          "name": "about / reference composition",
+          "heading": "Built around independence."
+        },
+        {
+          "id": "home-faq",
+          "figmaId": "391:194",
+          "name": "faq / reference composition",
+          "heading": "A few things to know."
+        },
+        {
+          "id": "pilot",
+          "figmaId": "391:195",
+          "name": "pilot / reference composition",
+          "heading": "Good company. A good place to start."
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "391:196",
+          "name": "footer / reference composition",
+          "heading": null
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "figmaId": "431:258",
+      "name": "About / Why LaresCare / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "431:259",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "about-hero",
+          "figmaId": "431:272",
+          "name": "Why / Care starts with connection",
+          "heading": "Care starts with connection."
+        },
+        {
+          "id": "about-conversation",
+          "figmaId": "431:322",
+          "name": "Why / Conversation comes first",
+          "heading": "Conversation comes first."
+        },
+        {
+          "id": "about-connection",
+          "figmaId": "431:353",
+          "name": "Why / Why connection matters",
+          "heading": "The National Institute on Aging describes how social connection relates to health and wellbeing as we age."
+        },
+        {
+          "id": "about-independence",
+          "figmaId": "431:364",
+          "name": "Why / Close to them. On their terms.",
+          "heading": "Close to them. On their terms."
+        },
+        {
+          "id": "about-pilot",
+          "figmaId": "431:387",
+          "name": "Why / Join the pilot",
+          "heading": "Good company. A good place to start."
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "431:424",
+          "name": "footer / reference composition",
+          "heading": null
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "483:205",
+      "name": "Landing / Button / Primary",
+      "width": 170,
+      "height": 56,
+      "radius": 12,
+      "fills": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.7215686440467834,
+                "g": 0.2666666805744171,
+                "b": 0.2666666805744171,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:540:333"
+                }
+              }
+            },
+            {
+              "color": {
+                "r": 0.7764706015586853,
+                "g": 0.29411765933036804,
+                "b": 0.26274511218070984,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:540:334"
+                }
+              }
+            }
+          ],
+          "gradientTransform": [
+            [
+              0.5,
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              0.5,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "483:208",
+      "name": "Landing / Button / Outline",
+      "width": 170,
+      "height": 56,
+      "radius": 12,
+      "fills": []
+    },
+    {
+      "id": "484:224",
+      "name": "Landing / Header",
+      "width": 1440,
+      "height": 112,
+      "radius": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9843137264251709,
+            "g": 0.9686274528503418,
+            "b": 0.9450980424880981
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:482:203"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "485:305",
+      "name": "Landing / Footer",
+      "width": 1440,
+      "height": 324.8968200683594,
+      "radius": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.05882352963089943,
+            "g": 0.1764705926179886,
+            "b": 0.35686275362968445
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:54:1806"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "486:396",
+      "name": "Landing / Pilot form",
+      "width": 560,
+      "height": 669,
+      "radius": 32,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:54:1811"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "486:2024",
+      "name": "Landing / Text link / Light",
+      "width": 216,
+      "height": 44,
+      "radius": 0,
+      "fills": []
+    },
+    {
+      "id": "486:2029",
+      "name": "Landing / Text link / Dark",
+      "width": 216,
+      "height": 44,
+      "radius": 0,
+      "fills": []
+    },
+    {
+      "id": "491:459",
+      "name": "Landing / Pilot section",
+      "width": 1440,
+      "height": 885,
+      "radius": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9843137264251709,
+            "g": 0.9686274528503418,
+            "b": 0.9450980424880981
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:482:203"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "id": "VariableID:54:1806",
+      "name": "MVP/navy",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.05882352963089943,
+          "g": 0.1764705926179886,
+          "b": 0.35686275362968445,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1807",
+      "name": "MVP/coral",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 1,
+          "g": 0.41960784792900085,
+          "b": 0.41960784792900085,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1808",
+      "name": "MVP/ink",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.062745101749897,
+          "g": 0.12941177189350128,
+          "b": 0.22745098173618317,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1809",
+      "name": "MVP/secondary",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.3019607961177826,
+          "g": 0.37254902720451355,
+          "b": 0.4588235318660736,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1810",
+      "name": "MVP/surface",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.9450980424880981,
+          "g": 0.95686274766922,
+          "b": 0.9725490212440491,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1811",
+      "name": "MVP/white",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1812",
+      "name": "MVP/border",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.4627451002597809,
+          "g": 0.5137255191802979,
+          "b": 0.5882353186607361,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:54:1813",
+      "name": "MVP/error",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.6078431606292725,
+          "g": 0.1882352977991104,
+          "b": 0.25882354378700256,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:482:203",
+      "name": "Landing/cream",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.9843137264251709,
+          "g": 0.9686274528503418,
+          "b": 0.9450980424880981,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:482:204",
+      "name": "Landing/peach",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.9843137264251709,
+          "g": 0.8901960849761963,
+          "b": 0.8627451062202454,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:482:205",
+      "name": "Landing/action",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.8117647171020508,
+          "g": 0.27843138575553894,
+          "b": 0.27843138575553894,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:482:206",
+      "name": "Landing/line",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.8470588326454163,
+          "g": 0.8745098114013672,
+          "b": 0.9098039269447327,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:510:333",
+      "name": "Landing / Link on light",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:54:1805",
+      "values": {
+        "54:0": {
+          "r": 0.7215686440467834,
+          "g": 0.2666666805744171,
+          "b": 0.2666666805744171,
+          "a": 1
+        }
+      }
+    }
+  ],
+  "foundations": {
+    "boardId": "538:333",
+    "collectionId": "VariableCollectionId:537:333",
+    "tokenCount": 27,
+    "textStyleCount": 9
+  }
+}

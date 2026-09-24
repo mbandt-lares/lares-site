@@ -10,13 +10,14 @@ import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const campaign = campaigns[params.slug];
+  const { slug } = await params;
+  const campaign = campaigns[slug];
 
   if (!campaign) {
     return {
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CampaignPage({ params }: Props) {
-  const campaign = campaigns[params.slug];
+export default async function CampaignPage({ params }: Props) {
+  const { slug } = await params;
+  const campaign = campaigns[slug];
 
   if (!campaign) {
     return notFound();

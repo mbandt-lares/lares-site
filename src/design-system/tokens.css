@@ -1,0 +1,81 @@
+/* Landing Design, Figma page 225:2. Opt in when migrating each route.
+ * Keep the existing site's global theme intact until the new layouts are ready.
+ * Manrope must be loaded with next/font before enabling this theme.
+ */
+[data-design-system="landing"] {
+  --lc-navy: #0f2d5b;
+  --lc-coral: #ff6b6b;
+  --lc-ink: #10213a;
+  --lc-secondary: #4d5f75;
+  --lc-surface: #f1f4f8;
+  --lc-white: #ffffff;
+  --lc-border: #768396;
+  --lc-error: #9b3042;
+  --lc-cream: #fbf7f1;
+  --lc-peach: #fbe3dc;
+  --lc-action: #cf4747;
+  --lc-line: #d8dfe8;
+  --lc-link: #b84444;
+  --lc-gradient-start: #e85050;
+  --lc-gradient-end: #ea6255;
+
+  --lc-bg-page: var(--lc-cream);
+  --lc-bg-card: var(--lc-white);
+  --lc-bg-muted: var(--lc-surface);
+  --lc-bg-inverse: var(--lc-navy);
+  --lc-text-primary: var(--lc-navy);
+  --lc-text-secondary: var(--lc-secondary);
+  --lc-text-accent: #e85f5f;
+  --lc-text-inverse: var(--lc-white);
+  --lc-text-secondary-inverse: #d5dfee;
+  --lc-text-muted-inverse: #b7c7dd;
+  --lc-border-subtle: var(--lc-line);
+  --lc-link-light: var(--lc-link);
+  --lc-focus: var(--lc-navy);
+  /* Approved light-coral CTA: white 20px/700 label; minimum endpoint contrast 3.29:1. */
+  --lc-gradient-primary: linear-gradient(
+    to top right,
+    var(--lc-gradient-start),
+    var(--lc-gradient-end)
+  );
+
+  --lc-font-family: var(--font-manrope, "Manrope"), sans-serif;
+  --lc-space-4: 4px;
+  --lc-space-8: 8px;
+  --lc-space-12: 12px;
+  --lc-space-16: 16px;
+  --lc-space-24: 24px;
+  --lc-space-32: 32px;
+  --lc-space-48: 48px;
+  --lc-space-64: 64px;
+  --lc-space-80: 80px;
+  --lc-radius-button: 12px;
+  --lc-radius-card: 32px;
+  --lc-control-height: 56px;
+  --lc-link-height: 44px;
+  --lc-container: 1200px;
+  --lc-gutter-desktop: 80px;
+  /* Mobile layout proposals; verify at 360, 390 and 768px during migration. */
+  --lc-gutter-mobile: 20px;
+  --lc-section-space-mobile: 48px;
+  --lc-anchor-offset: 128px;
+
+  --lc-display-size: 82px;
+  --lc-display-line: 88px;
+  --lc-page-title-size: 60px;
+  --lc-page-title-line: 72px;
+  --lc-heading-size: 58px;
+  --lc-heading-line: 64px;
+  --lc-subheading-size: 40px;
+  --lc-subheading-line: 50px;
+  --lc-card-title-size: 23px;
+  --lc-card-title-line: 32px;
+  --lc-body-large-size: 21px;
+  --lc-body-large-line: 32px;
+  --lc-body-size: 20px;
+  --lc-body-line: 30px;
+  --lc-label-size: 16px;
+  --lc-label-line: 22px;
+  --lc-caption-size: 14px;
+  --lc-caption-line: 20px;
+}

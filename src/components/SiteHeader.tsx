@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { MobileNav } from "@/components/MobileNav";
+import { LandingHeader } from "@/components/landing/LandingHeader";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,6 +15,13 @@ const navLinks = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const landing = pathname === "/" || pathname === "/about" || pathname === "/how-it-works" || pathname === "/privacy" || pathname === "/terms";
+  if (landing) return <LandingHeader key={pathname} />;
+  return <LegacyHeader />;
+}
+
+function LegacyHeader() {
   const [heroVisible, setHeroVisible] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";

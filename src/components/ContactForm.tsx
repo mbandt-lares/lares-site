@@ -1,18 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/Button";
+import { LandingButton } from "@/components/landing/LandingButton";
+import styles from "@/components/landing/landing.module.css";
+import { buildPilotMessage } from "@/components/landing/pilot-message";
 
 type ContactFormProps = {
   className?: string;
+  pilot?: boolean;
 };
 
-export function ContactForm({ className = "" }: ContactFormProps) {
+export function ContactForm({ className = "", pilot = false }: ContactFormProps) {
+  const uid = useId();
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [noteOpen, setNoteOpen] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (status === "submitting") return;
+    if (!e.currentTarget.reportValidity()) return;
     setStatus("submitting");
     setErrorMessage("");
 
@@ -20,7 +29,9 @@ export function ContactForm({ className = "" }: ContactFormProps) {
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
-      message: formData.get("message") as string,
+      message: pilot
+        ? buildPilotMessage(String(formData.get("audience") || "Myself"), String(formData.get("message") || ""))
+        : String(formData.get("message") || ""),
     };
 
     try {
@@ -32,7 +43,7 @@ export function ContactForm({ className = "" }: ContactFormProps) {
 
       const result = await res.json();
 
-      if (result.ok) {
+      if (res.ok && result.ok) {
         setStatus("success");
       } else {
         setStatus("error");
@@ -43,6 +54,41 @@ export function ContactForm({ className = "" }: ContactFormProps) {
       setErrorMessage("Unable to connect. Please check your internet and try again.");
     }
   }
+
+  if (pilot) return <div className={`${styles.formCard} ${className}`}>
+    {status === "success" ? <div className={styles.formSuccess} role="status">
+      <h3>You&apos;re on the list!</h3>
+      <p>Thanks for your interest in LaresCare. We&apos;ll be in touch as pilot spots open.</p>
+    </div> : <form onSubmit={handleSubmit} aria-busy={status === "submitting"}>
+      <h3>Join the pilot</h3>
+      <fieldset className={styles.audienceField}>
+        <legend>Who is this for?</legend>
+        <div className={styles.audienceOptions}>
+          <label><input type="radio" name="audience" value="Myself" defaultChecked /><span>Myself</span></label>
+          <label><input type="radio" name="audience" value="A loved one" /><span>A loved one</span></label>
+        </div>
+      </fieldset>
+      <label className={styles.formField} htmlFor={`${uid}-name`}><span>Your name</span>
+        <input id={`${uid}-name`} name="name" type="text" autoComplete="name" required />
+      </label>
+      <label className={styles.formField} htmlFor={`${uid}-email`}><span>Email address</span>
+        <input id={`${uid}-email`} name="email" type="email" autoComplete="email" required />
+      </label>
+      <button type="button" className={styles.noteToggle} aria-expanded={noteOpen} aria-controls={`${uid}-note`} onClick={() => setNoteOpen(!noteOpen)}>
+        <Image src="/landing/shared/plus.svg" alt="" width={24} height={24} /> {noteOpen ? "Hide note" : "Add a note (optional)"}
+      </button>
+      <div id={`${uid}-note`} hidden={!noteOpen}>
+        <label className={styles.formField} htmlFor={`${uid}-message`}><span>Your note</span>
+          <textarea id={`${uid}-message`} name="message" rows={4} />
+        </label>
+      </div>
+      {status === "error" && <p className={styles.formError} role="alert">{errorMessage}</p>}
+      <LandingButton type="submit" disabled={status === "submitting"} className={styles.formSubmit}>
+        {status === "submitting" ? "Sending…" : "Join the pilot"}
+      </LandingButton>
+      <p className={styles.formHelp}>We&apos;ll email you about pilot availability and next steps.</p>
+    </form>}
+  </div>;
 
   return (
     <div className={`bg-white p-10 md:p-12 rounded-[2.5rem] border border-brand-cream/50 shadow-2xl shadow-brand-blue/10 ${className}`}>

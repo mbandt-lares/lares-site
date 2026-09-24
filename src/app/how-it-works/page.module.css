@@ -1,0 +1,521 @@
+.page {
+  background: var(--lc-cream);
+  color: var(--lc-navy);
+  font-family: var(--lc-font-family);
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page p {
+  margin: 0;
+  font-family: inherit;
+  letter-spacing: 0;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  color: var(--lc-navy);
+  font-weight: 600;
+}
+
+.page p {
+  color: var(--lc-secondary);
+  font-weight: 400;
+}
+
+.page section {
+  scroll-margin-top: var(--lc-anchor-offset);
+}
+
+.container {
+  width: min(100% - 160px, var(--lc-container));
+  margin-inline: auto;
+}
+
+.hero {
+  padding-block: 44px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 800px) minmax(0, 420px);
+  align-items: center;
+  gap: 60px;
+}
+
+.page .eyebrow {
+  margin-bottom: 20px;
+  color: var(--lc-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: .06em;
+}
+
+.page h1 {
+  font-size: 3.5rem;
+  line-height: 72px;
+}
+
+.page .heroIntro {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.process {
+  padding-block: 48px 96px;
+}
+
+.page h2 {
+  font-size: 2.375rem;
+  line-height: 3rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepCard {
+  min-width: 0;
+  padding: 20px 20px 28px;
+  background: var(--lc-white);
+  border: 1px solid var(--lc-line);
+  border-radius: 28px;
+}
+
+.stepImage {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.stepImage img {
+  object-fit: cover;
+  filter: sepia(0.08) saturate(0.98);
+}
+
+.stepCard:first-child .stepImage img {
+  object-position: center 80%;
+}
+
+.stepCard:not(:first-child) .stepImage img {
+  object-position: center top;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--lc-white);
+  background: var(--lc-coral);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.stepCopy {
+  padding: 24px 12px 0;
+}
+
+.page .stepCopy h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.page .stepCopy p {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.context {
+  padding-block: 80px;
+  background: var(--lc-surface);
+}
+
+.contextHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.page .contextHeading h2 {
+  line-height: 46px;
+}
+
+.page .contextHeading p {
+  text-align: right;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.informationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.informationItem {
+  min-width: 0;
+  padding-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--lc-border) 25%, transparent);
+}
+
+.informationItem img {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.page .informationItem h3 {
+  font-size: 21px;
+  line-height: 28px;
+}
+
+.page .informationItem p {
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.conversation {
+  padding-block: 96px;
+}
+
+.conversationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(0, 640px);
+  align-items: center;
+  gap: 80px;
+}
+
+.page .conversationCopy p {
+  max-width: 520px;
+  margin-block: 24px;
+  font-size: 1.25rem;
+  line-height: 32px;
+}
+
+.chatExample {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 32px 32px 28px;
+  background: var(--lc-white);
+  border-radius: 28px;
+}
+
+.page .chatLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--lc-action);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.chatIcon {
+  display: inline-block;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  background-color: currentColor;
+  -webkit-mask: url("/landing/secondary/icon-chat.svg") center / contain no-repeat;
+  mask: url("/landing/secondary/icon-chat.svg") center / contain no-repeat;
+}
+
+.page .chatBubble {
+  width: min(100%, 440px);
+  padding: 14px 20px;
+  border-radius: 18px;
+  color: var(--lc-navy);
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.page .larBubble {
+  background: #fff9f7;
+  border: 1px solid var(--lc-line);
+}
+
+.page .personBubble {
+  align-self: flex-end;
+  background: var(--lc-surface);
+}
+
+.page .chatConclusion {
+  margin-top: 1px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--lc-border) 25%, transparent);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.family {
+  padding-block: 24px 80px;
+}
+
+.familyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.familyCard {
+  min-width: 0;
+  padding: 32px;
+  background: var(--lc-white);
+  border-radius: 24px;
+}
+
+.familyIcon {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--lc-navy);
+}
+
+.page .familyCard h3 {
+  font-size: 23px;
+  line-height: 32px;
+}
+
+.page .familyCard p {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.page .permission {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.permission img {
+  flex: none;
+}
+
+.pilot {
+  padding-block: 24px 96px;
+}
+
+.pilotPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 56px 64px;
+  background: var(--lc-navy);
+  border-radius: 36px;
+}
+
+.page .pilotPanel h2 {
+  color: var(--lc-white);
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+}
+
+.page .pilotPanel p {
+  max-width: 650px;
+  margin-top: 18px;
+  color: var(--lc-text-secondary-inverse);
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.pilotPanel a {
+  flex: none;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: min(100% - 96px, var(--lc-container));
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .page h1 {
+    font-size: clamp(44px, 5vw, 3.5rem);
+    line-height: 1.18;
+  }
+
+  .steps,
+  .familyGrid {
+    gap: 16px;
+  }
+
+  .stepCard {
+    padding: 14px 14px 24px;
+  }
+
+  .stepImage {
+    height: 220px;
+  }
+
+  .stepCopy {
+    padding-inline: 4px;
+  }
+
+  .informationGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conversationGrid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 40px, var(--lc-container));
+  }
+
+  .hero {
+    padding-block: 40px 32px;
+  }
+
+  .heroGrid,
+  .conversationGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .page h1 {
+    font-size: clamp(42px, 11vw, 3.5rem);
+  }
+
+  .page .heroIntro,
+  .page .conversationCopy p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .process {
+    padding-block: 32px 64px;
+  }
+
+  .page h2,
+  .page .contextHeading h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .steps,
+  .familyGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .stepCard {
+    padding: 16px 16px 24px;
+  }
+
+  .stepImage {
+    height: clamp(210px, 60vw, 280px);
+  }
+
+  .context {
+    padding-block: 64px;
+  }
+
+  .contextHeading {
+    align-items: flex-start;
+  }
+
+  .page .contextHeading p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .informationGrid {
+    gap: 32px 20px;
+  }
+
+  .conversation {
+    padding-block: 64px;
+  }
+
+  .chatExample {
+    padding: 24px 20px;
+  }
+
+  .page .chatBubble {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .family {
+    padding-block: 16px 48px;
+  }
+
+  .familyCard {
+    padding: 24px;
+  }
+
+  .page .permission {
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .pilot {
+    padding-block: 16px 64px;
+  }
+
+  .pilotPanel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 28px;
+    border-radius: 28px;
+  }
+
+  .page .pilotPanel h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .page .pilotPanel p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 430px) {
+  .contextHeading {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page .contextHeading p {
+    text-align: left;
+  }
+
+  .informationGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "fileKey": "3kvJHevjr4infPgV2DOtXc",
+  "pageNode": "225:2",
+  "assets": [
+    {
+      "node": "476:205",
+      "file": "/images/how-it-works/step-1-connect-to-apple-health.jpg",
+      "route": "/how-it-works",
+      "slot": "process step 1 photo",
+      "alt": "An iPhone showing health information beside an Apple Watch",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
+    },
+    {
+      "node": "476:213",
+      "file": "/images/how-it-works/step-2-establish-baseline.jpg",
+      "route": "/how-it-works",
+      "slot": "process step 2 photo",
+      "alt": "An older man tending plants at home while wearing a watch",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
+    },
+    {
+      "node": "476:221",
+      "file": "/images/how-it-works/step-3-monitor-alert.jpg",
+      "route": "/how-it-works",
+      "slot": "process step 3 photo",
+      "alt": "A woman looking at her phone at home",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
+    },
+    {
+      "node": "479:203",
+      "file": "/landing/secondary/icon-trend.svg",
+      "route": "/how-it-works",
+      "slot": "activity icon",
+      "decorative": true
+    },
+    {
+      "node": "476:239",
+      "file": "/landing/secondary/icon-walk.svg",
+      "route": "/how-it-works",
+      "slot": "walking steadiness icon",
+      "decorative": true
+    },
+    {
+      "node": "476:245",
+      "file": "/landing/secondary/icon-moon.svg",
+      "route": "/how-it-works",
+      "slot": "sleep and rest icon",
+      "decorative": true
+    },
+    {
+      "node": "479:205",
+      "file": "/landing/secondary/icon-device.svg",
+      "route": "/how-it-works",
+      "slot": "connected devices icon",
+      "decorative": true
+    },
+    {
+      "node": "477:212",
+      "file": "/landing/secondary/icon-chat.svg",
+      "route": "/how-it-works",
+      "slot": "example conversation icon",
+      "decorative": true
+    },
+    {
+      "node": "477:238",
+      "file": "/landing/secondary/icon-shield.svg",
+      "route": "/how-it-works",
+      "slot": "permission note icon",
+      "decorative": true
+    },
+    {
+      "node": "478:215",
+      "sourceNode": "395:1811",
+      "file": "/landing/home/family-tea.png",
+      "route": "/about",
+      "slot": "hero family photo",
+      "alt": "An older man and a woman sharing tea together at home"
+    },
+    {
+      "node": "504:311",
+      "sourceNode": "392:204",
+      "file": "/landing/home/lar-original.png",
+      "route": "/about",
+      "slot": "voice and text phone examples",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "sourceNode": "I392:197;5465:16812",
+      "file": "/landing/home/icon-status-cellular.svg",
+      "route": "/about",
+      "slot": "illustrative phone cellular status",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "sourceNode": "I392:197;5465:16813",
+      "file": "/landing/home/icon-status-wifi.svg",
+      "route": "/about",
+      "slot": "illustrative phone Wi-Fi status",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "sourceNode": "I392:197;6325:1760",
+      "file": "/landing/home/icon-status-battery.svg",
+      "route": "/about",
+      "slot": "illustrative phone battery status",
+      "decorative": true
+    },
+    {
+      "node": "504:313",
+      "file": "/landing/secondary/icon-call.svg",
+      "route": "/about",
+      "slot": "illustrative voice phone call icon",
+      "decorative": true
+    },
+    {
+      "node": "504:348",
+      "file": "/landing/secondary/icon-menu.svg",
+      "route": "/about",
+      "slot": "illustrative phone menu icon",
+      "decorative": true
+    },
+    {
+      "node": "504:355",
+      "file": "/landing/secondary/icon-history.svg",
+      "route": "/about",
+      "slot": "illustrative voice phone history icon",
+      "decorative": true
+    },
+    {
+      "node": "508:370",
+      "file": "/landing/secondary/icon-microphone.svg",
+      "route": "/about",
+      "slot": "illustrative text phone microphone icon",
+      "decorative": true
+    }
+  ]
+}

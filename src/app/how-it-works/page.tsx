@@ -1,164 +1,198 @@
-// src/app/how-it-works/page.tsx
-import type { Metadata } from 'next';
-import { Activity, Shield, Moon, Smartphone } from "lucide-react";
-import { Section } from "@/components/Section";
-import { Card } from "@/components/Card";
-import { WorkflowDiagram } from "@/components/WorkflowDiagram";
-import { Button } from "@/components/Button";
+import type { Metadata } from "next";
+import { socialImage } from "@/lib/social-metadata";
+import Image from "next/image";
+import { Bell, FileText, Phone } from "lucide-react";
+import { LandingButton } from "@/components/landing/LandingButton";
+import { TextLink } from "@/components/landing/TextLink";
+import { landingSections, pilotHref } from "@/design-system/sections";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: 'How LaresCare Works',
+  title: "How it works | LaresCare",
   description:
-    'See how LaresCare connects to Apple devices, learns daily patterns, and flags meaningful changes for families.',
+    "Learn how familiar devices, a personal baseline and everyday conversations help families understand meaningful changes.",
+  alternates: { canonical: "https://larescare.com/how-it-works" },
+  openGraph: {
+    title: "How it works | LaresCare",
+    description: "Learn how familiar devices, a personal baseline and everyday conversations help families understand meaningful changes.",
+    url: "/how-it-works",
+    images: [socialImage],
+    siteName: "LaresCare",
+    type: "website",
+  },
 };
+
+const steps = [
+  {
+    title: "Connect to Apple Health",
+    description: "Link iPhone and Apple Watch data. No hub or proprietary hardware.",
+    image: "/images/how-it-works/step-1-connect-to-apple-health.jpg",
+    alt: "An iPhone showing health information beside an Apple Watch",
+  },
+  {
+    title: "Learn your usual rhythm",
+    description: "LaresCare learns your patterns over time, so meaningful changes stand out.",
+    image: "/images/how-it-works/step-2-establish-baseline.jpg",
+    alt: "An older man tending plants at home while wearing a watch",
+  },
+  {
+    title: "Keep family informed",
+    description: "Clear updates and voice check-ins help put changes into context.",
+    image: "/images/how-it-works/step-3-monitor-alert.jpg",
+    alt: "A woman looking at her phone at home",
+  },
+] as const;
+
+const information = [
+  {
+    title: "Activity",
+    description: "Steps, walking distance and changes in daily movement.",
+    icon: "/landing/secondary/icon-trend.svg",
+  },
+  {
+    title: "Walking steadiness",
+    description: "Mobility metrics and balance-related trends over time.",
+    icon: "/landing/secondary/icon-walk.svg",
+  },
+  {
+    title: "Sleep and rest",
+    description: "Sleep duration, interruptions and changes in rest.",
+    icon: "/landing/secondary/icon-moon.svg",
+  },
+  {
+    title: "Connected devices",
+    description: "Weight and blood-pressure trends from Apple Health devices, where available.",
+    icon: "/landing/secondary/icon-device.svg",
+  },
+] as const;
+
+const familyBenefits = [
+  {
+    title: "Weekly summaries",
+    description: "A concise view of routines, changes and conversation context.",
+    icon: FileText,
+  },
+  {
+    title: "Meaningful updates",
+    description: "Clear notifications when patterns shift, rather than every small fluctuation.",
+    icon: Bell,
+  },
+  {
+    title: "A practical next step",
+    description: "Suggestions such as a call, a visit or a conversation with a clinician.",
+    icon: Phone,
+  },
+] as const;
 
 export default function HowItWorksPage() {
   return (
-    <div className="bg-bg-main">
-      <div className="bg-linear-to-br from-[#F4F1EA] to-[#EBE5D9]">
-        <Section
-          eyebrow="How it works"
-          title={
-            <>
-              Lares quietly watches daily patterns,
-              <br className="hidden sm:block" /> then steps in when it matters.
-            </>
-          }
-          description="Lares connects to Apple devices already in the home, learns what “normal” looks like for each person, and flags meaningful changes for families—not every tiny fluctuation."
-        >
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="p-10 space-y-6 border-none shadow-xl shadow-brand-blue/5">
-              <span className="text-5xl font-bold text-brand-blue/20">01</span>
-              <h3 className="text-3xl font-headline font-bold text-brand-blue">Syncs</h3>
-              <p className="text-text-secondary text-lg">
-                Connects to Apple Watch and iPhone to track movement and sleep.
-              </p>
-            </Card>
-            <Card className="p-10 space-y-6 border-none shadow-xl shadow-brand-blue/5">
-              <span className="text-5xl font-bold text-brand-blue/20">02</span>
-              <h3 className="text-3xl font-headline font-bold text-brand-blue">Learns</h3>
-              <p className="text-text-secondary text-lg">
-                AI detects unusual patterns by learning what “normal” looks like for each person.
-              </p>
-            </Card>
-            <Card className="p-10 space-y-6 border-none shadow-xl shadow-brand-blue/5">
-              <span className="text-5xl font-bold text-brand-blue/20">03</span>
-              <h3 className="text-3xl font-headline font-bold text-brand-blue">Alerts</h3>
-              <p className="text-text-secondary text-lg">
-                Sends clear alerts and triggers voice check-ins when something looks off.
-              </p>
-            </Card>
-          </div>
-        </Section>
-      </div>
-
-      {/* Signals -> alerts */}
-      <div className="bg-brand-cream/30">
-        <Section title="From real-world signals to meaningful alerts">
-          <div className="max-w-3xl">
-            <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-              We don&apos;t ship hubs or proprietary hardware. Lares starts with Apple Watch, iPhone,
-              and Apple Health–connected devices like scales and blood pressure cuffs. These devices
-              quietly collect movement-related data and vital patterns throughout the day.
-            </p>
-            <div className="h-px bg-brand-blue/10 my-6" />
-            <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-              Our models turn that raw stream into simple stories about routine, steadiness, and change
-              over time—so families can see whether things are stable, drifting, or slipping in ways
-              that might merit action.
-            </p>
-          </div>
-        </Section>
-      </div>
-
-      {/* Signals Lares looks at */}
-      <Section title="What signals Lares looks at">
-        <div className="grid gap-8 md:grid-cols-2">
-          {[
-            {
-              title: "Activity and movement",
-              body: "Daily step counts, walking distance, and general activity levels. We’re looking for slow drifts: fewer steps, shorter walks, more time sitting than usual.",
-              icon: Activity,
-            },
-            {
-              title: "Steadiness & fall risk indicators",
-              body: "Signals from Apple’s mobility metrics—walk steadiness, balance-related trends, and changes that may increase fall risk over time.",
-              icon: Shield,
-            },
-            {
-              title: "Sleep & rest patterns",
-              body: "Changes in sleep duration, fragmentation, and overnight restlessness that may correlate with mood, medication effects, or overall decline.",
-              icon: Moon,
-            },
-            {
-              title: "Connected devices",
-              body: "Where families use Apple Health–connected scales or blood pressure cuffs, Lares can incorporate those trends as additional context.",
-              icon: Smartphone,
-            },
-          ].map((item) => (
-            <Card
-              key={item.title}
-              className="p-8 md:p-10 bg-white border border-brand-cream/40 shadow-lg shadow-brand-blue/5"
-            >
-              <div className="w-10 h-10 rounded-2xl bg-brand-cream/40 text-brand-blue flex items-center justify-center mb-4">
-                <item.icon size={20} strokeWidth={2} />
-              </div>
-              <h3 className="text-2xl font-headline font-bold text-brand-blue mb-3">{item.title}</h3>
-              <p className="text-text-secondary leading-relaxed">{item.body}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      {/* Workflow Diagram */}
-      <div className="bg-brand-blue overflow-hidden relative">
-        <Section inverted={true}>
-          <div className="flex flex-col items-center">
-            <div className="w-full max-w-5xl">
-              <WorkflowDiagram />
+    <div data-design-system="landing" className={styles.page}>
+      <section id={landingSections.howItWorks.hero} className={styles.hero} aria-labelledby="how-title">
+        <div className={styles.container}>
+          <div className={styles.heroGrid}>
+            <div>
+              <p className={styles.eyebrow}>PRACTICAL DETAILS</p>
+              <h1 id="how-title">How it works</h1>
             </div>
+            <p className={styles.heroIntro}>
+              Familiar devices, a personal baseline and everyday conversations. Together, they help
+              families understand meaningful changes.
+            </p>
           </div>
-        </Section>
-      </div>
-
-      {/* Experience for families */}
-      <Section title="What it feels like for families">
-        <div className="grid gap-8 md:grid-cols-2">
-          <Card className="p-8 md:p-10 space-y-4 bg-white border border-brand-cream/40 shadow-lg shadow-brand-blue/5">
-            <h3 className="text-2xl font-headline font-bold text-brand-blue">
-              A simple view of how things are going
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              Families get a concise picture of how routines are trending: broadly stable, drifting,
-              or clearly worsening. No training needed.
-            </p>
-          </Card>
-
-          <Card className="p-8 md:p-10 space-y-4 bg-white border border-brand-cream/40 shadow-lg shadow-brand-blue/5">
-            <h3 className="text-2xl font-headline font-bold text-brand-blue">
-              Clear next-step suggestions
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              When a trend matters, Lares frames reasonable options—like checking in, encouraging a
-              walk, or talking with a clinician.
-            </p>
-          </Card>
         </div>
-      </Section>
+      </section>
 
-      {/* Optional gentle CTA */}
-      <div className="bg-brand-cream/30">
-        <Section title="Ready to see Lares in action&nbsp;with&nbsp;your&nbsp;family?">
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-            <p className="max-w-xl text-lg text-text-secondary">
-              Early Bay Area pilots help shape how the product works in the real world.
-            </p>
-            <Button href="/#contact" variant="primary" className="px-8 py-3 text-base">
-              Join the waitlist
-            </Button>
+      <section id={landingSections.howItWorks.process} className={styles.process} aria-labelledby="process-title">
+        <div className={styles.container}>
+          <h2 id="process-title">Connect. Learn. Stay informed.</h2>
+          <ol className={styles.steps}>
+            {steps.map((step, index) => (
+              <li className={styles.stepCard} key={step.title}>
+                <div className={styles.stepImage}>
+                  <Image src={step.image} alt={step.alt} fill loading={index === 0 ? "eager" : undefined} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 371px" />
+                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
+                </div>
+                <div className={styles.stepCopy}>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id={landingSections.howItWorks.context} className={styles.context} aria-labelledby="context-title">
+        <div className={styles.container}>
+          <div className={styles.contextHeading}>
+            <h2 id="context-title">What information<br />adds context</h2>
+            <p>From Apple Health,<br />with permission</p>
           </div>
-        </Section>
-      </div>
+          <div className={styles.informationGrid}>
+            {information.map((item) => (
+              <article className={styles.informationItem} key={item.title}>
+                <Image src={item.icon} alt="" width={24} height={24} />
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id={landingSections.howItWorks.conversation} className={styles.conversation} aria-labelledby="conversation-title">
+        <div className={styles.container + " " + styles.conversationGrid}>
+          <div className={styles.conversationCopy}>
+            <h2 id="conversation-title">Where conversation fits</h2>
+            <p>A change in routine can prompt a voice check-in. What the person shares with Lar helps explain the pattern.</p>
+            <TextLink href="/about#about-conversation">Why conversation comes first</TextLink>
+          </div>
+          <div className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
+            <p className={styles.chatLabel}>
+              <span className={styles.chatIcon} aria-hidden="true" />
+              <span>EXAMPLE: FEWER WALKS THIS WEEK</span>
+            </p>
+            <p className={styles.chatBubble + " " + styles.larBubble}>Have you been out much this week?</p>
+            <p className={styles.chatBubble + " " + styles.personBubble}>I’ve been finishing a painting at home.</p>
+            <p className={styles.chatBubble + " " + styles.larBubble}>What have you been painting?</p>
+            <p className={styles.chatConclusion}>The pattern shows fewer walks. The conversation explains why.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id={landingSections.howItWorks.family} className={styles.family} aria-labelledby="family-title">
+        <div className={styles.container}>
+          <h2 id="family-title">What families receive</h2>
+          <div className={styles.familyGrid}>
+            {familyBenefits.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className={styles.familyCard} key={item.title}>
+                  <Icon className={styles.familyIcon} size={28} strokeWidth={1.5} aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+          <p className={styles.permission}>
+            <Image src="/landing/secondary/icon-shield.svg" alt="" width={24} height={24} />
+            <span>Shared with permission. Agree together who receives updates and what is included.</span>
+          </p>
+        </div>
+      </section>
+
+      <section id={landingSections.howItWorks.pilot} className={styles.pilot} aria-labelledby="how-pilot-title">
+        <div className={styles.container}>
+          <div className={styles.pilotPanel}>
+            <div>
+              <h2 id="how-pilot-title">Join the Bay Area pilot</h2>
+              <p>A small group of families helping shape LaresCare through real-world feedback.</p>
+            </div>
+            <LandingButton href={pilotHref}>Join the pilot</LandingButton>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

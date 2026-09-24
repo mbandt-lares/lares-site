@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LandingFooter } from "@/components/landing/LandingFooter";
+
 
 const navLinks = [
   { href: "/privacy", label: "Privacy" },
@@ -7,6 +12,12 @@ const navLinks = [
 ];
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname === "/" || pathname === "/about" || pathname === "/how-it-works" || pathname === "/privacy" || pathname === "/terms") return <LandingFooter />;
+  return <LegacyFooter />;
+}
+
+function LegacyFooter() {
   return (
     <footer className="bg-brand-blue text-brand-cream">
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-14">

@@ -89,3 +89,22 @@ html, body {
   color: var(--color-header-text);
   @apply transition-colors duration-200 hover:opacity-80;
 }
+
+/* The new landing theme is opt-in; legal, campaign, CMS and contact pages retain legacy styles. */
+[data-design-system="landing"] {
+  font-family: var(--lc-font-family);
+  color: var(--lc-text-primary);
+}
+
+[data-design-system="landing"] :is(h1,h2,h3,h4,h5,h6) {
+  font-family: var(--lc-font-family);
+  color: inherit;
+  letter-spacing: normal;
+}
+
+[data-design-system="landing"] p { color: inherit; }
+[data-design-system="landing"] :is(section,[id]) { scroll-margin-top: var(--lc-anchor-offset); }
+
+@media (prefers-reduced-motion: reduce) {
+  html, body { scroll-behavior: auto; }
+}

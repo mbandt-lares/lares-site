@@ -1,0 +1,580 @@
+{
+  "runId": "lares-landing-2026-09-24",
+  "collection": {
+    "id": "VariableCollectionId:537:333",
+    "name": "Landing / Web foundations"
+  },
+  "variables": {
+    "color/bg/page": {
+      "id": "VariableID:537:334",
+      "css": "--lc-bg-page"
+    },
+    "color/bg/card": {
+      "id": "VariableID:537:335",
+      "css": "--lc-bg-card"
+    },
+    "color/bg/muted": {
+      "id": "VariableID:537:336",
+      "css": "--lc-bg-muted"
+    },
+    "color/bg/inverse": {
+      "id": "VariableID:537:337",
+      "css": "--lc-bg-inverse"
+    },
+    "color/text/primary": {
+      "id": "VariableID:537:338",
+      "css": "--lc-text-primary"
+    },
+    "color/text/secondary": {
+      "id": "VariableID:537:339",
+      "css": "--lc-text-secondary"
+    },
+    "color/text/inverse": {
+      "id": "VariableID:537:340",
+      "css": "--lc-text-inverse"
+    },
+    "color/border/subtle": {
+      "id": "VariableID:537:341",
+      "css": "--lc-border-subtle"
+    },
+    "color/link/light": {
+      "id": "VariableID:537:342",
+      "css": "--lc-link-light"
+    },
+    "color/focus": {
+      "id": "VariableID:537:343",
+      "css": "--lc-focus"
+    },
+    "spacing/4": {
+      "id": "VariableID:537:344",
+      "css": "--lc-space-4"
+    },
+    "spacing/8": {
+      "id": "VariableID:537:345",
+      "css": "--lc-space-8"
+    },
+    "spacing/12": {
+      "id": "VariableID:537:346",
+      "css": "--lc-space-12"
+    },
+    "spacing/16": {
+      "id": "VariableID:537:347",
+      "css": "--lc-space-16"
+    },
+    "spacing/24": {
+      "id": "VariableID:537:348",
+      "css": "--lc-space-24"
+    },
+    "spacing/32": {
+      "id": "VariableID:537:349",
+      "css": "--lc-space-32"
+    },
+    "spacing/48": {
+      "id": "VariableID:537:350",
+      "css": "--lc-space-48"
+    },
+    "spacing/64": {
+      "id": "VariableID:537:351",
+      "css": "--lc-space-64"
+    },
+    "spacing/80": {
+      "id": "VariableID:537:352",
+      "css": "--lc-space-80"
+    },
+    "radius/button": {
+      "id": "VariableID:537:353",
+      "css": "--lc-radius-button"
+    },
+    "radius/card": {
+      "id": "VariableID:537:354",
+      "css": "--lc-radius-card"
+    },
+    "size/control": {
+      "id": "VariableID:537:355",
+      "css": "--lc-control-height"
+    },
+    "size/link": {
+      "id": "VariableID:537:356",
+      "css": "--lc-link-height"
+    },
+    "layout/container": {
+      "id": "VariableID:537:357",
+      "css": "--lc-container"
+    },
+    "layout/gutter-desktop": {
+      "id": "VariableID:537:358",
+      "css": "--lc-gutter-desktop"
+    }
+  },
+  "updatedVariableIds": [
+    "VariableID:54:1806",
+    "VariableID:54:1807",
+    "VariableID:54:1808",
+    "VariableID:54:1809",
+    "VariableID:54:1810",
+    "VariableID:54:1811",
+    "VariableID:54:1812",
+    "VariableID:54:1813",
+    "VariableID:482:203",
+    "VariableID:482:204",
+    "VariableID:482:205",
+    "VariableID:482:206",
+    "VariableID:510:333"
+  ],
+  "textStyles": [
+    {
+      "id": "S:fe1804264ced88a615bed64e40fb297ee84b5786,",
+      "name": "Landing / Display",
+      "size": 82,
+      "line": 88,
+      "weight": "SemiBold"
+    },
+    {
+      "id": "S:d33c60784f20eb0141f535d0dc4d0b73751bf65f,",
+      "name": "Landing / Page title",
+      "size": 60,
+      "line": 72,
+      "weight": "SemiBold"
+    },
+    {
+      "id": "S:59ea12b21f64cf077ace9245ef35f14c7952a9c6,",
+      "name": "Landing / Heading",
+      "size": 58,
+      "line": 64,
+      "weight": "SemiBold"
+    },
+    {
+      "id": "S:6318f54b588d106988757baf9ea926fb8b6f3138,",
+      "name": "Landing / Subheading",
+      "size": 40,
+      "line": 50,
+      "weight": "SemiBold"
+    },
+    {
+      "id": "S:7adb516a18b6a1d826276594230870fc985b9b51,",
+      "name": "Landing / Card title",
+      "size": 23,
+      "line": 32,
+      "weight": "SemiBold"
+    },
+    {
+      "id": "S:6f01291208f549241cdee738014afa9ab3c09606,",
+      "name": "Landing / Body large",
+      "size": 21,
+      "line": 32,
+      "weight": "Regular"
+    },
+    {
+      "id": "S:6092def04631cafc69d9a0f628abcc42f0429425,",
+      "name": "Landing / Body",
+      "size": 18,
+      "line": 28,
+      "weight": "Regular"
+    },
+    {
+      "id": "S:e9e84a7671a415f6aa68f2cd8fef97eace0d8e0e,",
+      "name": "Landing / Label",
+      "size": 16,
+      "line": 22,
+      "weight": "Medium"
+    },
+    {
+      "id": "S:a0a889c065f24ac98df29217308d475496f11d5e,",
+      "name": "Landing / Caption",
+      "size": 14,
+      "line": 20,
+      "weight": "Regular"
+    }
+  ],
+  "mutatedNodeIds": [
+    "483:205",
+    "483:208",
+    "486:396"
+  ],
+  "board": {
+    "boardId": "538:333",
+    "width": 1440,
+    "height": 2866,
+    "createdNodeIds": [
+      "538:333",
+      "538:334",
+      "538:335",
+      "538:336",
+      "538:337",
+      "538:338",
+      "538:339",
+      "538:340",
+      "538:341",
+      "538:342",
+      "538:343",
+      "538:344",
+      "538:345",
+      "538:346",
+      "538:347",
+      "538:348",
+      "538:349",
+      "538:350",
+      "538:351",
+      "538:352",
+      "538:353",
+      "538:354",
+      "538:355",
+      "538:356",
+      "538:357",
+      "538:358",
+      "538:359",
+      "538:360",
+      "538:361",
+      "538:362",
+      "538:363",
+      "538:364",
+      "538:365",
+      "538:366",
+      "538:367",
+      "538:368",
+      "538:369",
+      "538:370",
+      "538:371",
+      "538:372",
+      "538:373",
+      "538:374",
+      "538:375",
+      "538:376",
+      "538:377",
+      "538:378",
+      "538:379",
+      "538:380",
+      "538:381",
+      "538:382",
+      "538:383",
+      "538:384",
+      "538:385",
+      "538:386",
+      "538:387",
+      "538:388",
+      "538:389",
+      "538:390",
+      "538:391",
+      "538:392",
+      "538:393",
+      "538:394",
+      "538:395",
+      "538:396",
+      "538:397",
+      "538:398",
+      "538:399",
+      "538:400",
+      "538:401",
+      "538:402",
+      "538:403",
+      "538:404",
+      "538:405",
+      "538:406",
+      "538:407",
+      "538:408",
+      "538:409",
+      "538:410",
+      "538:411",
+      "538:412",
+      "538:413",
+      "538:414",
+      "538:415",
+      "538:416",
+      "538:417",
+      "538:418",
+      "538:419",
+      "538:420",
+      "538:421",
+      "538:422",
+      "538:423",
+      "538:424",
+      "538:425",
+      "538:426",
+      "538:427",
+      "538:428",
+      "538:429",
+      "538:430",
+      "538:431",
+      "538:432",
+      "538:433",
+      "538:434",
+      "538:435",
+      "538:436",
+      "538:437"
+    ],
+    "mutatedNodeIds": [
+      "483:205",
+      "483:208",
+      "484:224",
+      "485:305",
+      "486:396",
+      "486:2024",
+      "486:2029",
+      "491:459"
+    ],
+    "colorCount": 10,
+    "textStyleCount": 9,
+    "componentCount": 8
+  },
+  "pages": [
+    {
+      "route": "/how-it-works",
+      "figmaId": "365:135",
+      "name": "How it works / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "429:241",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "how-it-works-hero",
+          "figmaId": "429:254",
+          "name": "How / Introduction",
+          "heading": "How it works"
+        },
+        {
+          "id": "how-it-works-process",
+          "figmaId": "372:134",
+          "name": "How / Connect. Learn. Stay informed.",
+          "heading": "Connect. Learn. Stay informed."
+        },
+        {
+          "id": "how-it-works-context",
+          "figmaId": "430:256",
+          "name": "How / Information that adds context",
+          "heading": "What information adds context"
+        },
+        {
+          "id": "how-it-works-conversation",
+          "figmaId": "430:330",
+          "name": "How / Where conversation fits",
+          "heading": "Where conversation fits"
+        },
+        {
+          "id": "how-it-works-family",
+          "figmaId": "430:299",
+          "name": "How / What families receive",
+          "heading": "What families receive"
+        },
+        {
+          "id": "how-it-works-pilot",
+          "figmaId": "433:288",
+          "name": "How / Join the Bay Area pilot",
+          "heading": "Join the Bay Area pilot"
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "430:353",
+          "name": "How / Footer",
+          "heading": null
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "figmaId": "391:187",
+      "name": "Home / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "391:188",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "home-hero",
+          "figmaId": "391:189",
+          "name": "hero / reference composition",
+          "heading": "A little company. A brighter day."
+        },
+        {
+          "id": "home-conversation",
+          "figmaId": "391:190",
+          "name": "intro / reference composition",
+          "heading": "A story, a question, or just a little company."
+        },
+        {
+          "id": "home-signals",
+          "figmaId": "391:191",
+          "name": "signals / reference composition",
+          "heading": "Two signals. A fuller picture."
+        },
+        {
+          "id": "home-family",
+          "figmaId": "391:192",
+          "name": "family / reference composition",
+          "heading": "More to share. More to talk about."
+        },
+        {
+          "id": "home-independence",
+          "figmaId": "391:193",
+          "name": "about / reference composition",
+          "heading": "Built around independence."
+        },
+        {
+          "id": "home-faq",
+          "figmaId": "391:194",
+          "name": "faq / reference composition",
+          "heading": "A few things to know."
+        },
+        {
+          "id": "pilot",
+          "figmaId": "391:195",
+          "name": "pilot / reference composition",
+          "heading": "Good company. A good place to start."
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "391:196",
+          "name": "footer / reference composition",
+          "heading": null
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "figmaId": "431:258",
+      "name": "About / Why LaresCare / current",
+      "sections": [
+        {
+          "id": "site-header",
+          "figmaId": "431:259",
+          "name": "header / reference composition",
+          "heading": null
+        },
+        {
+          "id": "about-hero",
+          "figmaId": "431:272",
+          "name": "Why / Care starts with connection",
+          "heading": "Care starts with connection."
+        },
+        {
+          "id": "about-conversation",
+          "figmaId": "431:322",
+          "name": "Why / Conversation comes first",
+          "heading": "Conversation comes first."
+        },
+        {
+          "id": "about-connection",
+          "figmaId": "431:353",
+          "name": "Why / Why connection matters",
+          "heading": "The National Institute on Aging describes how social connection relates to health and wellbeing as we age."
+        },
+        {
+          "id": "about-independence",
+          "figmaId": "431:364",
+          "name": "Why / Close to them. On their terms.",
+          "heading": "Close to them. On their terms."
+        },
+        {
+          "id": "about-pilot",
+          "figmaId": "431:387",
+          "name": "Why / Join the pilot",
+          "heading": "Good company. A good place to start."
+        },
+        {
+          "id": "site-footer",
+          "figmaId": "431:424",
+          "name": "footer / reference composition",
+          "heading": null
+        }
+      ]
+    }
+  ],
+  "labelFix": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"mutatedNodeIds\":[\"429:250\",\"I484:250;484:219\",\"466:206\",\"475:204\",\"430:363\",\"478:1909\",\"I485:343;485:289\",\"I484:225;484:219\",\"I485:306;485:289\",\"431:268\",\"I484:275;484:219\",\"431:444\",\"I485:380;485:289\",\"484:219\",\"485:289\",\"365:135\"],\"changes\":[{\"id\":\"429:250\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I484:250;484:219\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"466:206\",\"before\":\"How LaresCare works\",\"after\":\"How it works\"},{\"id\":\"475:204\",\"before\":\"How LaresCare works\",\"after\":\"How it works\"},{\"id\":\"430:363\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"478:1909\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I485:343;485:289\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I484:225;484:219\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I485:306;485:289\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"431:268\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I484:275;484:219\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"431:444\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"I485:380;485:289\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"484:219\",\"before\":\"Practical details\",\"after\":\"How it works\"},{\"id\":\"485:289\",\"before\":\"Practical details\",\"after\":\"How it works\"}]}"
+      }
+    ]
+  },
+  "contrastFix": {
+    "variables": [
+      {
+        "id": "VariableID:540:333",
+        "name": "gradient/start",
+        "hex": "#B84444"
+      },
+      {
+        "id": "VariableID:540:334",
+        "name": "gradient/end",
+        "hex": "#C64B43"
+      }
+    ],
+    "mutatedNodeIds": [
+      "429:251",
+      "I484:250;484:221",
+      "477:245",
+      "391:206",
+      "I484:225;484:221",
+      "391:1796",
+      "395:214",
+      "I491:460;491:435;486:383",
+      "431:269",
+      "I484:275;484:221",
+      "478:223",
+      "I491:491;491:435;486:383",
+      "483:205",
+      "484:221",
+      "486:383",
+      "I491:435;486:383",
+      "538:423"
+    ],
+    "primaryFill": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0.7215686440467834,
+              "g": 0.2666666805744171,
+              "b": 0.2666666805744171,
+              "a": 1
+            },
+            "position": 0,
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:540:333"
+              }
+            }
+          },
+          {
+            "color": {
+              "r": 0.7764706015586853,
+              "g": 0.29411765933036804,
+              "b": 0.26274511218070984,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {
+              "color": {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:540:334"
+              }
+            }
+          }
+        ],
+        "gradientTransform": [
+          [
+            0.5,
+            -0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "phase": "preparation-complete"
+}

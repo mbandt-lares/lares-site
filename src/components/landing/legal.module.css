@@ -1,0 +1,141 @@
+.page {
+  min-width: 0;
+  background: var(--lc-cream);
+  color: var(--lc-navy);
+  font-family: var(--lc-font-family);
+}
+
+.container {
+  width: min(100% - 160px, var(--lc-container));
+  margin-inline: auto;
+  padding-block: 72px 112px;
+}
+
+.intro,
+.article {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.intro {
+  margin-bottom: 64px;
+}
+
+.page .eyebrow {
+  margin: 0;
+  color: var(--lc-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+}
+
+.page .title {
+  margin: 16px 0 0;
+  color: var(--lc-navy);
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
+.page .description {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--lc-secondary);
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.article {
+  color: var(--lc-secondary);
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.article section + section {
+  margin-top: 40px;
+}
+
+.page .article h2 {
+  margin: 0 0 16px;
+  color: var(--lc-navy);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.page .article p {
+  margin: 0;
+  color: var(--lc-secondary);
+}
+
+.page .article section p + p {
+  margin-top: 16px;
+}
+
+.article ul {
+  margin: 16px 0 0;
+  padding-left: 28px;
+  list-style: disc;
+}
+
+.article li + li {
+  margin-top: 12px;
+}
+
+.article li span {
+  color: var(--lc-navy);
+  font-weight: 600;
+}
+
+.page .article > p:last-child {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--lc-line);
+  color: var(--lc-secondary);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: min(100% - 80px, var(--lc-container));
+    padding-block: 64px 96px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 40px, var(--lc-container));
+    padding-block: 48px 72px;
+  }
+
+  .intro {
+    margin-bottom: 48px;
+  }
+
+  .page .title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .page .description,
+  .article {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .article section + section {
+    margin-top: 36px;
+  }
+
+  .page .article h2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .page .article > p:last-child {
+    margin-top: 48px;
+  }
+}
