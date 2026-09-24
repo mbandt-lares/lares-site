@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/social-metadata";
 import Image from "next/image";
 import { LandingButton } from "@/components/landing/LandingButton";
 import { MotionScene } from "@/components/landing/MotionScene";
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LaresCare | A little company. A brighter day.",
     description: "A familiar conversation, a little support, and more context for the people you love. Join the LaresCare pilot.",
-    url: "https://larescare.io/",
+    url: "/",
+    images: [socialImage],
     siteName: "LaresCare",
     type: "website",
   },

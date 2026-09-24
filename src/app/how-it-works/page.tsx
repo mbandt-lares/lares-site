@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/social-metadata";
 import Image from "next/image";
 import { Bell, FileText, Phone } from "lucide-react";
 import { LandingButton } from "@/components/landing/LandingButton";
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How it works | LaresCare",
     description: "Learn how familiar devices, a personal baseline and everyday conversations help families understand meaningful changes.",
-    url: "https://larescare.io/how-it-works",
+    url: "/how-it-works",
+    images: [socialImage],
     siteName: "LaresCare",
     type: "website",
   },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialImage } from "@/lib/social-metadata";
 import Image from "next/image";
 import { LandingButton } from "@/components/landing/LandingButton";
 import { PilotSection } from "@/components/landing/PilotSection";
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Why LaresCare | LaresCare",
     description: "Learn why LaresCare starts with conversation, connection and respect for each person’s independence.",
-    url: "https://larescare.io/about",
+    url: "/about",
+    images: [socialImage],
     siteName: "LaresCare",
     type: "website",
   },
