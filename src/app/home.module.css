@@ -6,7 +6,7 @@
 }
 
 .page *, .page *::before, .page *::after { box-sizing: border-box; }
-.page > :not(:last-child) :is(h1, h2, h3, p) { margin: 0; }
+.page > :where(:not(:last-child)) :where(h1, h2, h3, p) { margin: 0; }
 .page > :not(:last-child) :is(h1, h2, h3) { color: inherit; font-family: inherit; }
 .page > :not(:last-child) p { color: inherit; font-family: inherit; }
 .page section { scroll-margin-top: var(--lc-anchor-offset); }
@@ -15,10 +15,10 @@
 .hero { min-height: 690px; }
 .heroInner { width: min(1280px, calc(100% - 40px)); min-height: 690px; margin-inline: auto; position: relative; }
 .heroCopy { position: relative; z-index: 2; width: 675px; max-width: 54%; padding-top: 44px; }
-.heroBadge { display: flex; align-items: center; gap: 10px; width: max-content; max-width: 100%; min-height: 42px; padding: 2px 12px 2px 8px; background: var(--lc-white); border: 1px solid var(--lc-line); border-radius: 24px; color: var(--lc-navy); font-size: 14px; font-weight: 600; line-height: 20px; }
+.heroBadge { display: flex; align-items: center; gap: 2px; width: max-content; max-width: 100%; min-height: 42px; padding: 2px 20px 2px 8px; background: var(--lc-white); border: 1px solid var(--lc-line); border-radius: 24px; color: var(--lc-navy); font-size: 14px; font-weight: 600; line-height: 20px; }
 .heroBadge img { width: 54px; height: 36px; object-fit: contain; flex: none; }
 .hero h1 { margin-top: 24px; color: var(--lc-navy); font-size: clamp(54px, 5.69vw, 82px); font-weight: 600; line-height: 1.073; letter-spacing: -.04em; white-space: nowrap; }
-.hero h1 span { color: var(--lc-coral); letter-spacing: -.008em; }
+.hero h1 span { color: var(--lc-text-accent, #e85f5f); letter-spacing: -.008em; }
 .heroLead { max-width: 650px; margin-top: 55px !important; color: var(--lc-secondary) !important; font-size: 22px; line-height: 33px; }
 .heroActions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 55px; }
 .heroBenefits { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 24px; color: var(--lc-secondary); font-size: 16px; line-height: 22px; }
@@ -27,9 +27,8 @@
 
 .heroArt { position: absolute; top: 0; right: 0; width: 598px; height: 670px; }
 .heroPhoto { position: absolute; top: 46px; left: 0; width: 445px; height: 480px; border-radius: 38px; overflow: hidden; }
-.heroPhotoImage { position: absolute; top: 0; left: -350px; width: 720px; height: 480px; max-width: none; object-fit: cover; }
-.heroPhotoCaption { position: absolute; top: 558px; left: 0; color: var(--lc-navy) !important; font-size: 19px; font-weight: 500; line-height: 27px; }
-.phone { position: absolute; top: 4px; left: 258px; width: 320px; height: 666px; border: 12px solid var(--lc-navy); border-radius: 48px; background: var(--lc-white); box-shadow: 0 22px 19px rgba(0,0,0,.14); overflow: hidden; }
+.heroPhotoImage { position: absolute; top: 0; left: -300px; width: 720px; height: 480px; max-width: none; object-fit: cover; }
+.phone { position: absolute; top: 4px; left: 258px; width: 320px; height: 666px; transform: scale(.94); transform-origin: top right; border: 12px solid var(--lc-navy); border-radius: 48px; background: var(--lc-white); box-shadow: 0 22px 19px rgba(0,0,0,.14); overflow: hidden; }
 .phoneScreen { position: relative; width: 296px; height: 642px; border-radius: 37px; background: var(--lc-white); overflow: hidden; font-family: Inter, Arial, sans-serif; }
 .statusBar { position: absolute; top: 16px; left: 40px; right: 18px; display: flex; justify-content: space-between; align-items: center; color: var(--lc-navy); font-size: 10px; font-weight: 700; line-height: 14px; }
 .statusIcons { display: flex; align-items: center; gap: 5px; }
@@ -45,8 +44,8 @@
 .phoneMic { flex: none; width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; background: var(--lc-navy); }
 .phoneMic img { width: 24px; height: 24px; }
 .homeIndicator { position: absolute; bottom: 10px; left: 97px; width: 102px; height: 4px; border-radius: 3px; background: var(--lc-navy); }
-.momentCard { position: absolute; top: 402px; left: 186px; width: 280px; padding: 18px; display: flex; flex-direction: column; gap: 6px; border-radius: 20px; background: var(--lc-white); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
-.momentCard span { font-size: 12px; line-height: 17px; font-weight: 600; }
+.momentCard { position: absolute; top: 432px; left: 186px; width: 280px; padding: 18px; display: flex; flex-direction: column; gap: 6px; border-radius: 20px; background: var(--lc-white); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
+.momentCard span { font-size: 12px; line-height: 17px; font-weight: 600; letter-spacing: .06em; }
 .momentCard strong { font-size: 16px; line-height: 22px; font-weight: 600; }
 .momentCard p { color: var(--lc-secondary) !important; font-size: 14px; line-height: 20px; }
 
@@ -63,18 +62,19 @@
 .conversation h2 { font-size: 44px; line-height: 52px; letter-spacing: -.04em; font-weight: 600; }
 .conversationSide p { color: var(--lc-secondary) !important; font-size: 21px; line-height: 29px; }
 .modeLabels { display: flex; gap: 12px; margin-top: 20px; }
-.modeLabels span { min-width: 132px; height: 48px; padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(15,45,91,.12); border-radius: 78px; background: var(--lc-white); font-size: 18px; line-height: 24px; font-weight: 600; }
+.modeLabels span { min-width: 132px; height: 48px; padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid rgba(15,45,91,.12); border-radius: 78px; background: var(--lc-white); font-size: 18px; line-height: 24px; font-weight: 500; }
 
 .signals { padding-block: 76px 99px; }
 .signalsIntro { display: grid; grid-template-columns: 610px 600px; justify-content: space-between; align-items: start; gap: 40px; }
 .signals h2 { font-size: 60px; line-height: 64px; letter-spacing: -.04em; font-weight: 600; }
 .signalsIntro > p { padding-top: 34px; color: var(--lc-secondary) !important; font-size: 22px; line-height: 31px; }
 .signalCards { display: grid; grid-template-columns: minmax(0,386px) 24px minmax(0,386px) 24px minmax(0,386px); align-items: center; justify-content: space-between; gap: 12px; margin-top: 56px; }
-.signalCard { min-width: 0; height: 346px; padding: 30px 32px; display: flex; flex-direction: column; border-radius: 28px; }
+.signalCard { min-width: 0; height: 320px; padding: 30px 32px; display: flex; flex-direction: column; border-radius: 28px; }
 .signalCard .eyebrow { font-size: 14px; line-height: 20px; }
-.eyebrow { font-size: 14px; line-height: 20px; font-weight: 600; }
+.eyebrow { font-size: 14px; line-height: 20px; font-weight: 600; letter-spacing: .06em; }
+.page .signalCard p.eyebrow, .page .summaryFooter p.eyebrow { color: var(--lc-text-secondary); }
 .wordsCard { border: 1px solid var(--lc-line); background: var(--lc-white); }
-.wordsCard > img { margin-top: 40px; }
+.wordsCard > img { width: 64px; height: 64px; margin-top: 24px; }
 .wordsQuote { max-width: 322px; margin-top: auto !important; font-size: 29px; line-height: 35px; font-weight: 500; }
 .signalOperator { display: grid; place-items: center; }
 .patternsCard { background: var(--lc-surface); }
@@ -83,16 +83,16 @@
 .activityBars span:nth-child(4) { background: var(--lc-coral); }
 .patternsText { margin-top: auto !important; font-size: 25px; line-height: 31px; font-weight: 500; }
 .contextCard { background: var(--lc-navy); color: var(--lc-white); }
-.contextCard .eyebrow { font-weight: 500; }
-.contextText { margin-top: 74px !important; font-size: 28px; line-height: 35px; font-weight: 500; }
+.page .contextCard p.eyebrow { color: var(--lc-text-secondary-inverse, #d5dfee); font-weight: 500; }
+.contextText { margin-top: 48px !important; font-size: 28px; line-height: 35px; font-weight: 500; }
 .contextCard a { margin-top: auto; }
 
 .family { min-height: 680px; background: var(--lc-navy); color: var(--lc-white); }
 .familyGrid { display: grid; grid-template-columns: 610px 600px; justify-content: space-between; align-items: start; gap: 40px; padding-block: 120px 116px; }
-.familyCopy .eyebrow { font-weight: 500; }
+.page .familyCopy p.eyebrow { color: var(--lc-text-secondary-inverse, #d5dfee); font-weight: 500; }
 .family h2 { margin-top: 28px; font-size: 58px; line-height: 64px; letter-spacing: -.04em; font-weight: 600; }
-.familyLead { margin-top: 31px !important; font-size: 21px; line-height: 32px; }
-.familyPermission { margin-top: 24px !important; font-size: 17px; line-height: 24px; }
+.page .familyCopy p.familyLead { margin-top: 31px !important; color: var(--lc-text-secondary-inverse, #d5dfee); font-size: 21px; line-height: 32px; }
+.page .familyCopy p.familyPermission { margin-top: 24px !important; color: var(--lc-text-muted-inverse, #b7c7dd); font-size: 17px; line-height: 24px; }
 .familyCopy > a { margin-top: 29px; }
 .familySummary { margin-top: 10px; min-height: 420px; padding: 36px 40px 32px; border-radius: 32px; background: var(--lc-white); color: var(--lc-navy); }
 .familySummary h3 { font-size: 28px; line-height: 39px; font-weight: 600; }
@@ -112,7 +112,7 @@
 .familyPhoto { display: block; width: 100%; height: auto; aspect-ratio: 640 / 482; object-fit: cover; border-radius: 42px; }
 .familyPhotoCaption { position: absolute; top: -56px; right: -40px; z-index: 1; width: 210px; padding: 22px; border-radius: 22px; background: var(--lc-white); box-shadow: 0 8px 24px rgba(0,0,0,.07); font-size: 21px; line-height: 29px; font-weight: 500; }
 .independenceCopy h2 { font-size: 58px; line-height: 64px; letter-spacing: -.04em; font-weight: 600; }
-.independenceCopy > p { margin-top: 33px; color: var(--lc-secondary) !important; font-size: 21px; line-height: 32px; }
+.page .independenceCopy > p { margin-top: 28px; color: var(--lc-secondary) !important; font-size: 21px; line-height: 32px; }
 .independenceCopy > a { margin-top: 29px; }
 
 .faq { min-height: 700px; padding: 110px 0 82px; background: var(--lc-surface); }
@@ -138,6 +138,7 @@
 }
 
 @media (max-width: 1060px) {
+  .heroLeadBreak { display: none; }
   .hero { min-height: 600px; }
   .heroInner { min-height: 600px; }
   .heroArt { transform: scale(.68); }
@@ -185,7 +186,7 @@
   .family { min-height: 0; }
   .familyGrid { display: flex; flex-direction: column; gap: 40px; padding-block: 64px; }
   .family h2 { margin-top: 20px; }
-  .familyLead { margin-top: 25px !important; font-size: 18px; line-height: 28px; }
+  .page .familyCopy p.familyLead { margin-top: 25px !important; font-size: 18px; line-height: 28px; }
   .familySummary { width: 100%; min-height: 0; margin: 0; padding: 28px 22px; border-radius: 24px; }
   .summaryItem { gap: 12px; }
   .summaryItem strong { font-size: 16px; line-height: 23px; }
@@ -194,7 +195,7 @@
   .independenceGrid { display: flex; flex-direction: column; align-items: stretch; gap: 42px; }
   .familyPhoto { border-radius: 28px; }
   .familyPhotoCaption { top: -45px; right: 12px; width: 170px; padding: 14px; font-size: 17px; line-height: 24px; }
-  .independenceCopy > p { margin-top: 22px; font-size: 18px; line-height: 28px; }
+  .page .independenceCopy > p { margin-top: 22px; font-size: 18px; line-height: 28px; }
   .faq { min-height: 0; padding-block: 64px; }
   .faqGrid { display: flex; flex-direction: column; gap: 32px; }
   .faqList details { padding-block: 22px; }

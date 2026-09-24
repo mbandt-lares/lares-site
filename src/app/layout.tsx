@@ -27,8 +27,13 @@ export const metadata: Metadata = {
   description:
     "AI-powered health monitoring for elders who want independence — and for families who want peace of mind.",
   icons: {
-    icon: "/icon.svg",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/icon.svg?v=lar-20260924", type: "image/svg+xml", sizes: "any" },
+      { url: "/icon.png?v=lar-20260924", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=lar-20260924", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.ico?v=lar-20260924",
+    apple: [{ url: "/apple-icon.png?v=lar-20260924", sizes: "180x180", type: "image/png" }],
   },
 };
 

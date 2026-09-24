@@ -74,16 +74,34 @@
     },
     {
       "node": "504:311",
-      "file": "/landing/secondary/lar.png",
+      "sourceNode": "392:204",
+      "file": "/landing/home/lar-original.png",
       "route": "/about",
       "slot": "voice and text phone examples",
       "decorative": true
     },
     {
       "node": "504:304",
-      "file": "/landing/secondary/status-bar.png",
+      "sourceNode": "I392:197;5465:16812",
+      "file": "/landing/home/icon-status-cellular.svg",
       "route": "/about",
-      "slot": "illustrative voice and text phone status bars",
+      "slot": "illustrative phone cellular status",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "sourceNode": "I392:197;5465:16813",
+      "file": "/landing/home/icon-status-wifi.svg",
+      "route": "/about",
+      "slot": "illustrative phone Wi-Fi status",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "sourceNode": "I392:197;6325:1760",
+      "file": "/landing/home/icon-status-battery.svg",
+      "route": "/about",
+      "slot": "illustrative phone battery status",
       "decorative": true
     },
     {

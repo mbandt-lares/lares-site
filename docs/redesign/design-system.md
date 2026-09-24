@@ -2,13 +2,13 @@
 
 [Foundations у Figma](https://www.figma.com/design/3kvJHevjr4infPgV2DOtXc/LaresCare?node-id=538-333) · [Спільні компоненти](https://www.figma.com/design/3kvJHevjr4infPgV2DOtXc/LaresCare?node-id=482-207) · [План переносу](./migration-plan.md)
 
-Це підготовлена основа для реалізації, знята з поточних Figma frames 24.09.2026. Тема CSS ще не підключена до сайту; нові React-варіанти та interaction states реалізуються за планом. Figma — джерело візуального вигляду, існуючий Next.js-проєкт — джерело routes та інтеграцій.
+Основу взято з Figma frames 24.09.2026; пізніше для production primary CTA затверджено варіант «Світлий корал». Figma зберігає попередній стан градієнта, а чинні кольори CTA визначає CSS. Next.js-проєкт є джерелом routes та інтеграцій.
 
 ## Кольори
 
 CSS: `src/design-system/tokens.css`, область `[data-design-system="landing"]`.
 
-| Примітив | HEX | Призначення |
+| Токен | HEX | Призначення |
 | --- | --- | --- |
 | `--lc-navy` | #0F2D5B | Заголовки, темні секції, focus |
 | `--lc-coral` | #FF6B6B | Акцент бренду, Lar, декоративні елементи |
@@ -23,18 +23,21 @@ CSS: `src/design-system/tokens.css`, область `[data-design-system="landin
 | `--lc-action` | #CF4747 | Наявний колір дії; не підміняє CTA-градієнт |
 | `--lc-line` | #D8DFE8 | Декоративні роздільники |
 | `--lc-link` | #B84444 | Текстове посилання на світлому тлі |
-| `--lc-gradient-start` | #B84444 | Темний край primary CTA, знизу ліворуч |
-| `--lc-gradient-end` | #C64B43 | Світлий край primary CTA, зверху праворуч |
+| `--lc-text-accent` | #E85F5F | Великий акцентний текст на cream; не замінює брендове coral |
+| `--lc-gradient-start` | #E85050 | Початок primary CTA, знизу ліворуч |
+| `--lc-gradient-end` | #EA6255 | Кінець primary CTA, зверху праворуч |
+| `--lc-text-secondary-inverse` | #D5DFEE | Основний пояснювальний текст на navy |
+| `--lc-text-muted-inverse` | #B7C7DD | Додатковий supporting text на navy |
 
-Семантичний шар: `bg-page → cream`, `bg-card → white`, `bg-muted → surface`, `bg-inverse → navy`, `text-primary → navy`, `text-secondary → secondary`, `text-inverse → white`, `border-subtle → line`, `link-light → link`, `focus → navy`.
+Семантичний шар: `bg-page → cream`, `bg-card → white`, `bg-muted → surface`, `bg-inverse → navy`, `text-primary → navy`, `text-secondary → secondary`, `text-accent → #E85F5F`, `text-inverse → white`, `text-secondary-inverse → #D5DFEE`, `text-muted-inverse → #B7C7DD`, `border-subtle → line`, `link-light → link`, `focus → navy`. Брендове coral #FF6B6B лишається для декору й акцентів на navy; для великого тексту на cream застосовується `text-accent` (3,16:1). На темній секції заголовок лишається білим, основний абзац стає secondary inverse, короткий додатковий абзац — muted inverse.
 
-У Figma колекція `Landing / Web foundations` містить 27 variables; семантичні кольори посилаються на чинні variables, а не дублюють HEX. Два кольори градієнта прив'язані до gradient stops primary component та його екземплярів. WEB syntax відповідає іменам CSS.
+У Figma колекція `Landing / Web foundations` містить 27 variables; семантичні кольори посилаються на чинні variables, а не дублюють HEX. Після вибору «Світлий корал» production градієнт у CSS змінився; Figma variables і gradient stops ще показують попередній варіант.
 
-Білий напис на затвердженому темнішому CTA-градієнті має контраст щонайменше 4,68:1 за кінцевими кольорами. Обидва кольори та напрям уже застосовано у Figma. Coral не використовувати довільно як дрібний текст на cream/white; для такого тексту є `link-light`.
+Primary CTA використовує білий напис 20px/700/28px на #E85050 → #EA6255 у напрямі знизу ліворуч догори праворуч. Мінімальний контраст білого на кінцевих кольорах — 3,29:1; напис відповідає порогу 3:1 для великого жирного тексту (від 18,67px). Для дрібних посилань на cream/white залишається `link-light`.
 
 ## Типографіка
 
-Manrope: Regular 400, Medium 500, SemiBold 600. Дев'ять Figma text styles створено з наявної desktop-типографіки. Локальні файли шрифтів ще не додано; перед активацією теми потрібне завантаження через `next/font`.
+Manrope: Regular 400, Medium 500, SemiBold 600, Bold 700 для primary CTA. Локальний variable font 200–800 підключено через `next/font/local`. Дев'ять Figma text styles створено з наявної desktop-типографіки.
 
 | Стиль | Size / line-height | Weight |
 | --- | --- | --- |
@@ -56,25 +59,25 @@ Mobile-пропозиція для реалізації: fluid display приб�
 
 - Desktop canvas 1440px, max-width контенту 1280px, бокові поля 80px.
 - Спільна шкала відступів: 4, 8, 12, 16, 24, 32, 48, 64, 80px. Це базова шкала; не округляти всі деталі макета до неї автоматично.
-- Primary/outline button: min-height 56px, radius 12px; текст 18/28. Link hit area — 44px.
+- Primary/outline button: min-height 56px, radius 12px; primary текст 20/28, weight 700, outline 18/28, weight 600. TextLink має min-height 44px і додаткову область кліку 8px по вертикалі / 10px по горизонталі без зміщення тексту. Зовнішні URL мають ↗, внутрішні →; стрілка рухається на hover/focus із підтримкою reduced motion.
 - Pilot form: desktop width 560px, radius 32px; mobile width 100%, без fixed-height контейнера.
 - Mobile початкові значення: gutters 20px, section spacing 48px. Breakpoints перевірити на 768/1024px; CSS grid/flex замість абсолютного позиціонування макета.
 - Anchor `scroll-margin-top` узгодити з реальною висотою header. Reduced motion має вимикати smooth scrolling і необов'язкові анімації.
 
 ## Компоненти та відповідність коду
 
-У Figma вже є вісім основних компонентів. Вони збережені, описані й перевикористовуються; radius кнопок і форми прив'язано до нових variables. Шляхи нижче — точки адаптації або майбутні компоненти, а не твердження про готовий новий UI. Code Connect ще не публікувався.
+У Figma вже є вісім основних компонентів. Вони збережені, описані й перевикористовуються; radius кнопок і форми прив'язано до нових variables. Перелічені компоненти вже реалізовано в гілці нового лендінга. Code Connect ще не публікувався.
 
 | Figma / node | Код | Робота під час переносу |
 | --- | --- | --- |
-| Primary button / `483:205` | `src/components/Button.tsx` | Новий landing variant; semantic button або Link; default, hover, focus-visible, disabled, submitting; без scale jump |
-| Outline button / `483:208` | той самий `Button` | Outline variant, інверсне оточення, keyboard focus |
+| Primary button / `483:205` | `src/components/landing/LandingButton.tsx` | Production variant «Світлий корал»; semantic button або Link, hover, focus-visible, disabled, submitting; без scale jump |
+| Outline button / `483:208` | той самий `LandingButton` | Outline variant 18px/600, інверсне оточення, keyboard focus |
 | Header / `484:224` | `SiteHeader.tsx`, `MobileNav.tsx` | Desktop/mobile, active route, open/closed menu, Escape, focus return; primary CTA `/#pilot` |
 | Footer / `485:305` | `SiteFooter.tsx` | Responsive columns, усі URL та social/contact targets |
-| Pilot form / `486:396` | `ContactForm.tsx` | Audience radio, name/email, optional note; idle/invalid/submitting/success/error |
-| Text link Light / `486:2024` | Запланований `TextLink` | Темне посилання для світлого тла, focus/hover; native anchor |
+| Pilot form / `486:396` | `PilotForm.tsx` | Audience radio, name/email, optional note; idle/invalid/submitting/success/error |
+| Text link Light / `486:2024` | `TextLink.tsx` | Темне посилання для світлого тла, focus/hover; native anchor |
 | Text link Dark / `486:2029` | той самий `TextLink` | Контрастний variant для темного тла; перевірити контраст |
-| Pilot section / `491:459` | Запланований `PilotSection` + `ContactForm` | Одна shared composition для Home і About, різні section IDs |
+| Pilot section / `491:459` | `PilotSection.tsx` + `PilotForm.tsx` | Одна shared composition для Home і About, різні section IDs |
 
 Додаткові патерни для реалізації: `Container`, `Section`, `Card` адаптувати з наявних; FAQ item реалізувати через native `details/summary` або доступний accordion. З макета перенести початково видимі відповіді; collapse/expand не має ховати весь зміст без зрозумілого control. Signal cards, family summary й quote залишаються статичним поясненням продукту, якщо їхню інтерактивність не затверджено окремо.
 
@@ -86,4 +89,4 @@ Mobile-пропозиція для реалізації: fluid display приб�
 - Primary navigation CTA: `/#pilot`. Submit-кнопки всередині форм відправляють форму, а не виконують navigation.
 - Form payload зберігає `name, email, message`. Audience додається на початок message: `Who is this for: Myself` або `Who is this for: A loved one`, optional note — після двох переносів рядка.
 - Карта Figma node → section ID → route: [migration-plan.md](./migration-plan.md#карта-секцій), machine-readable snapshot: [figma-source.json](./figma-source.json), константи: `src/design-system/sections.ts`.
-- Усі чинні routes зберігаються. Production layout та форми в цій підготовці не змінені.
+- Усі чинні routes зберігаються. Новий layout і форми реалізовано в гілці `codex/new-landing`; публічний deployment у межах цих правок не виконувався.

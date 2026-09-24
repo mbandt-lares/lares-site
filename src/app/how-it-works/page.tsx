@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Bell, FileText, Phone } from "lucide-react";
 import { LandingButton } from "@/components/landing/LandingButton";
 import { TextLink } from "@/components/landing/TextLink";
 import { landingSections, pilotHref } from "@/design-system/sections";
@@ -67,14 +68,17 @@ const familyBenefits = [
   {
     title: "Weekly summaries",
     description: "A concise view of routines, changes and conversation context.",
+    icon: FileText,
   },
   {
     title: "Meaningful updates",
     description: "Clear notifications when patterns shift, rather than every small fluctuation.",
+    icon: Bell,
   },
   {
     title: "A practical next step",
     description: "Suggestions such as a call, a visit or a conversation with a clinician.",
+    icon: Phone,
   },
 ] as const;
 
@@ -143,7 +147,7 @@ export default function HowItWorksPage() {
           </div>
           <div className={styles.chatExample} aria-label="Illustrative conversation about fewer walks this week">
             <p className={styles.chatLabel}>
-              <Image src="/landing/secondary/icon-chat.svg" alt="" width={26} height={26} />
+              <span className={styles.chatIcon} aria-hidden="true" />
               <span>EXAMPLE: FEWER WALKS THIS WEEK</span>
             </p>
             <p className={styles.chatBubble + " " + styles.larBubble}>Have you been out much this week?</p>
@@ -158,12 +162,16 @@ export default function HowItWorksPage() {
         <div className={styles.container}>
           <h2 id="family-title">What families receive</h2>
           <div className={styles.familyGrid}>
-            {familyBenefits.map((item) => (
-              <article className={styles.familyCard} key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
+            {familyBenefits.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className={styles.familyCard} key={item.title}>
+                  <Icon className={styles.familyIcon} size={28} strokeWidth={1.5} aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              );
+            })}
           </div>
           <p className={styles.permission}>
             <Image src="/landing/secondary/icon-shield.svg" alt="" width={24} height={24} />

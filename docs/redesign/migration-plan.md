@@ -21,6 +21,7 @@
 4. Google Sheets залишається. Значення `Myself / A loved one` тимчасово включається в `message`; контракт `name, email, message` не розширюється.
 5. Зберегти всі чинні URL, зокрема `/contact`, `/privacy`, `/terms`, `/campaigns/[slug]`, `/studio/[[...index]]`, API та metadata assets.
 6. Назва пункту навігації й заголовок сторінки: `How it works`. У Figma змінені Header/Footer, їхні екземпляри й заголовок; контекстні посилання `Read practical details` замінені на `See how it works`.
+7. Після порівняння production CTA обрано варіант «Світлий корал»: #E85050 → #EA6255, білий напис 20px/700/28px, радіус 12px, мінімальна висота 56px. Outline залишається 18px/600. Figma наразі містить попередній темний варіант; чинним для сайту є CSS.
 
 ## Що вже підготовлено
 
@@ -135,4 +136,4 @@ ID унікальні в межах HTML document. `site-header` і `site-footer
 - `npm run lint -- src/design-system/sections.ts`: успішно після створення файлу.
 - Figma: screenshots Header, How introduction, Home і foundations board; виправлено висоту auto-layout карток палітри. Нові variables мають WEB syntax, без ALL_SCOPES; старих точних navigation labels не залишилося.
 - Нові сторінки ще не реалізовані, тому browser QA нового сайту та інтеграційна відправка форми ще не виконані.
-- Погоджено білий текст і темніший CTA-градієнт. Застосовано у Figma та CSS: #B84444 → #C64B43; контраст білої label 5,32:1 → 4,68:1, замість 3,17:1 → 2,73:1. Напрям і радіус збережено.
+- Історія підготовки: спочатку у Figma та CSS погодили темніший CTA-градієнт #B84444 → #C64B43 з білим текстом 18px/600. Пізніший вибір production варіанта «Світлий корал» у пункті 7 вище замінив це рішення для сайту; Figma ще не оновлена.

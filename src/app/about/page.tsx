@@ -39,18 +39,31 @@ const principles = [
   },
 ] as const;
 
+function PhoneStatus() {
+  return (
+    <div className={styles.phoneStatus} aria-hidden="true">
+      <span>9:41</span>
+      <span className={styles.statusIcons}>
+        <Image src="/landing/home/icon-status-cellular.svg" alt="" width={15} height={10} />
+        <Image src="/landing/home/icon-status-wifi.svg" alt="" width={13} height={10} style={{ height: "auto" }} />
+        <Image src="/landing/home/icon-status-battery.svg" alt="" width={21} height={10} />
+      </span>
+    </div>
+  );
+}
+
 function ConversationPhones() {
   return (
     <div className={styles.phones} aria-label="Illustrative examples of speaking and typing with Lar">
       <div className={styles.phoneExample}>
         <div className={styles.phone}>
           <div className={styles.phoneScreen}>
-            <Image className={styles.phoneStatus} src="/landing/secondary/status-bar.png" alt="" width={240} height={39} style={{ height: "auto" }} />
+            <PhoneStatus />
             <div className={styles.phoneTopIcons}>
               <Image src="/landing/secondary/icon-menu.svg" alt="" width={20} height={20} />
               <Image src="/landing/secondary/icon-history.svg" alt="" width={20} height={20} />
             </div>
-            <Image className={styles.voiceLar} src="/landing/secondary/lar.png" alt="" width={240} height={160} style={{ height: "auto" }} />
+            <Image className={styles.voiceLar} src="/landing/home/lar-original.png" alt="" width={240} height={160} style={{ height: "auto" }} />
             <div className={styles.voiceMessage}>
               <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i /><i /><i /><i /><i /></span>Lar is speaking</p>
               <p>What would you like to talk about today?</p>
@@ -66,11 +79,11 @@ function ConversationPhones() {
       <div className={styles.phoneExample}>
         <div className={styles.phone}>
           <div className={styles.phoneScreen}>
-            <Image className={styles.phoneStatus} src="/landing/secondary/status-bar.png" alt="" width={240} height={39} style={{ height: "auto" }} />
+            <PhoneStatus />
             <div className={styles.phoneTopIcons}>
               <Image src="/landing/secondary/icon-menu.svg" alt="" width={20} height={20} />
             </div>
-            <Image className={styles.chatLar} src="/landing/secondary/lar.png" alt="" width={96} height={64} style={{ height: "auto" }} />
+            <Image className={styles.chatLar} src="/landing/home/lar-original.png" alt="" width={96} height={64} style={{ height: "auto" }} />
             <div className={styles.phoneMessages}>
               <p className={styles.userMessage}>I stayed inside because of the rain and got lost in a book.</p>
               <p className={styles.larMessage}>That sounds like a good rainy-day plan. What are you reading?</p>
@@ -130,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       <section id={landingSections.about.connection} className={styles.connection} aria-labelledby="about-connection-title">
-        <div className={styles.container + " " + styles.connectionGrid}>
+        <div className={styles.container + " " + styles.connectionFlow}>
           <p className={styles.eyebrow}>WHY IT MATTERS</p>
           <div>
             <h2 id="about-connection-title">The National Institute on Aging describes how social connection relates to health and wellbeing as we age.</h2>

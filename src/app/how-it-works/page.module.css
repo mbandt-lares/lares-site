@@ -47,10 +47,11 @@
 
 .page .eyebrow {
   margin-bottom: 20px;
-  color: var(--lc-navy);
+  color: var(--lc-secondary);
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
+  letter-spacing: .06em;
 }
 
 .page h1 {
@@ -224,6 +225,16 @@
   line-height: 20px;
 }
 
+.chatIcon {
+  display: inline-block;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  background-color: currentColor;
+  -webkit-mask: url("/landing/secondary/icon-chat.svg") center / contain no-repeat;
+  mask: url("/landing/secondary/icon-chat.svg") center / contain no-repeat;
+}
+
 .page .chatBubble {
   width: min(100%, 440px);
   padding: 14px 20px;
@@ -267,6 +278,12 @@
   padding: 32px;
   background: var(--lc-white);
   border-radius: 24px;
+}
+
+.familyIcon {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--lc-navy);
 }
 
 .page .familyCard h3 {
@@ -316,7 +333,7 @@
 .page .pilotPanel p {
   max-width: 650px;
   margin-top: 18px;
-  color: var(--lc-white);
+  color: var(--lc-text-secondary-inverse);
   font-size: 20px;
   line-height: 30px;
 }

@@ -53,10 +53,11 @@
 }
 
 .page .eyebrow {
-  color: var(--lc-navy);
+  color: var(--lc-secondary);
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
+  letter-spacing: .06em;
 }
 
 .page .heroCopy h1 {
@@ -129,12 +130,13 @@
 
 .page .conversationCopy > p:not(.eyebrow) {
   max-width: 540px;
-  color: var(--lc-white);
+  color: var(--lc-text-secondary-inverse);
   font-size: 21px;
   line-height: 32px;
 }
 
 .page .conversationCopy > p:nth-last-of-type(1) {
+  color: var(--lc-text-muted-inverse);
   font-size: 20px;
   line-height: 30px;
 }
@@ -171,10 +173,22 @@
 
 .phoneStatus {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 39px;
+  top: 7px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--lc-navy);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .phoneTopIcons {
@@ -219,7 +233,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  color: var(--lc-action);
+  color: var(--lc-link);
   font-size: 13px;
   line-height: 20px;
 }
@@ -352,29 +366,35 @@
 }
 
 .connection {
-  padding-block: 96px;
+  padding-block: 72px 56px;
 }
 
-.connectionGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 280px) minmax(0, 900px);
-  align-items: start;
-  gap: 100px;
+.connectionFlow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.connectionFlow > div {
+  width: min(100%, 960px);
 }
 
 .page .connection h2 {
-  font-size: 40px;
-  line-height: 51px;
+  font-size: 36px;
+  line-height: 46px;
+  text-wrap: balance;
 }
 
-.page .connectionGrid > div > p {
-  margin-block: 28px;
+.page .connectionFlow > div > p {
+  max-width: 65ch;
+  margin-block: 24px 12px;
   font-size: 20px;
   line-height: 31px;
 }
 
 .independence {
-  padding-block: 40px 96px;
+  padding-block: 32px 96px;
 }
 
 .independenceGrid {
@@ -451,11 +471,6 @@
     justify-content: center;
   }
 
-  .connectionGrid {
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 48px;
-  }
-
   .independenceGrid {
     grid-template-columns: 38% minmax(0, 1fr);
     gap: 48px;
@@ -472,7 +487,6 @@
   }
 
   .heroGrid,
-  .connectionGrid,
   .independenceGrid {
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
@@ -524,11 +538,11 @@
   }
 
   .connection {
-    padding-block: 64px;
+    padding-block: 56px 48px;
   }
 
-  .connectionGrid {
-    gap: 24px;
+  .connectionFlow {
+    gap: 16px;
   }
 
   .page .connection h2 {
@@ -536,7 +550,7 @@
     line-height: 40px;
   }
 
-  .page .connectionGrid > div > p {
+  .page .connectionFlow > div > p {
     font-size: 18px;
     line-height: 28px;
   }

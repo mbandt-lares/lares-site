@@ -32,7 +32,6 @@ function HeroArt() {
         <Image src={asset("hero-conversation-photo.jpg")} alt="Woman smiling while looking at her phone"
           width={720} height={480} sizes="(max-width: 390px) 380px, (max-width: 520px) 470px, (max-width: 900px) 540px, (max-width: 1060px) 490px, 720px" priority className={styles.heroPhotoImage} />
       </div>
-      <p className={styles.heroPhotoCaption}>Your day. Your own words.</p>
       <div className={styles.phone}>
         <div className={styles.phoneScreen}>
           <div className={styles.statusBar}>
@@ -75,7 +74,7 @@ function Hero() {
             <span>Meet Lar, your everyday AI companion</span>
           </div>
           <h1 id="home-title">A little company.<br /><span>A brighter day.</span></h1>
-          <p className={styles.heroLead}>A familiar conversation, a little support, and more context for the people you love.</p>
+          <p className={styles.heroLead}>A familiar conversation, a little support, and more<br className={styles.heroLeadBreak} /> context for the people you love.</p>
           <div className={styles.heroActions}>
             <LandingButton href={pilotHref}>Join the pilot</LandingButton>
             <LandingButton href="/how-it-works" variant="outline">See how it works</LandingButton>

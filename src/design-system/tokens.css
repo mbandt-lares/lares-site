@@ -16,8 +16,8 @@
   --lc-action: #cf4747;
   --lc-line: #d8dfe8;
   --lc-link: #b84444;
-  --lc-gradient-start: #b84444;
-  --lc-gradient-end: #c64b43;
+  --lc-gradient-start: #e85050;
+  --lc-gradient-end: #ea6255;
 
   --lc-bg-page: var(--lc-cream);
   --lc-bg-card: var(--lc-white);
@@ -25,11 +25,14 @@
   --lc-bg-inverse: var(--lc-navy);
   --lc-text-primary: var(--lc-navy);
   --lc-text-secondary: var(--lc-secondary);
+  --lc-text-accent: #e85f5f;
   --lc-text-inverse: var(--lc-white);
+  --lc-text-secondary-inverse: #d5dfee;
+  --lc-text-muted-inverse: #b7c7dd;
   --lc-border-subtle: var(--lc-line);
   --lc-link-light: var(--lc-link);
   --lc-focus: var(--lc-navy);
-  /* Approved darker Figma gradient with white labels; minimum contrast 4.68:1. */
+  /* Approved light-coral CTA: white 20px/700 label; minimum endpoint contrast 3.29:1. */
   --lc-gradient-primary: linear-gradient(
     to top right,
     var(--lc-gradient-start),
