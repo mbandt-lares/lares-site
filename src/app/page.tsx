@@ -11,7 +11,7 @@ import styles from "./home.module.css";
 export const metadata: Metadata = {
   title: "LaresCare | A little company. A brighter day.",
   description: "A familiar conversation, a little support, and more context for the people you love. Join the LaresCare pilot.",
-  alternates: { canonical: "https://larescare.io/" },
+  alternates: { canonical: "https://larescare.com/" },
   openGraph: {
     title: "LaresCare | A little company. A brighter day.",
     description: "A familiar conversation, a little support, and more context for the people you love. Join the LaresCare pilot.",

@@ -24,7 +24,7 @@ async function main() {
       <div style={{ display: "flex", position: "absolute", left: 74, top: 412, fontSize: 29, color: "#4d5f75" }}>Your everyday AI companion.</div>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img alt="Lar" src={`data:image/png;base64,${lar.toString("base64")}`} width={800} height={533} style={{ position: "absolute", left: 510, top: 76 }} />
-      <div style={{ display: "flex", position: "absolute", left: 74, bottom: 54, fontSize: 24, color: "#4d5f75" }}>larescare.io</div>
+      <div style={{ display: "flex", position: "absolute", left: 74, bottom: 54, fontSize: 24, color: "#4d5f75" }}>larescare.com</div>
     </div>,
     {
       width: 1200,

@@ -21,5 +21,5 @@ export async function socialMetadataBase(): Promise<URL> {
   if (process.env.VERCEL_ENV === "preview" && previewHost) {
     return new URL(`https://${previewHost}`);
   }
-  return new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://larescare.io");
+  return new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://larescare.com");
 }

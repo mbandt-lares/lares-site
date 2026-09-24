@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Why LaresCare | LaresCare",
   description:
     "Learn why LaresCare starts with conversation, connection and respect for each person’s independence.",
-  alternates: { canonical: "https://larescare.io/about" },
+  alternates: { canonical: "https://larescare.com/about" },
   openGraph: {
     title: "Why LaresCare | LaresCare",
     description: "Learn why LaresCare starts with conversation, connection and respect for each person’s independence.",

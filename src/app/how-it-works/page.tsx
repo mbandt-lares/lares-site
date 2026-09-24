@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "How it works | LaresCare",
   description:
     "Learn how familiar devices, a personal baseline and everyday conversations help families understand meaningful changes.",
-  alternates: { canonical: "https://larescare.io/how-it-works" },
+  alternates: { canonical: "https://larescare.com/how-it-works" },
   openGraph: {
     title: "How it works | LaresCare",
     description: "Learn how familiar devices, a personal baseline and everyday conversations help families understand meaningful changes.",
