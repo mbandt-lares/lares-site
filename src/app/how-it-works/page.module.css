@@ -99,10 +99,15 @@
 
 .stepImage img {
   object-fit: cover;
+  filter: sepia(0.08) saturate(0.98);
 }
 
 .stepCard:first-child .stepImage img {
-  object-position: center 58%;
+  object-position: center 80%;
+}
+
+.stepCard:not(:first-child) .stepImage img {
+  object-position: center top;
 }
 
 .stepNumber {

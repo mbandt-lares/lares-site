@@ -4,24 +4,27 @@
   "assets": [
     {
       "node": "476:205",
-      "file": "/landing/secondary/process-connect.png",
+      "file": "/images/how-it-works/step-1-connect-to-apple-health.jpg",
       "route": "/how-it-works",
       "slot": "process step 1 photo",
-      "alt": "An iPhone showing health information beside an Apple Watch"
+      "alt": "An iPhone showing health information beside an Apple Watch",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
     },
     {
       "node": "476:213",
-      "file": "/landing/secondary/process-baseline.png",
+      "file": "/images/how-it-works/step-2-establish-baseline.jpg",
       "route": "/how-it-works",
       "slot": "process step 2 photo",
-      "alt": "An older man tending plants at home while wearing a watch"
+      "alt": "An older man tending plants at home while wearing a watch",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
     },
     {
       "node": "476:221",
-      "file": "/landing/secondary/process-family.png",
+      "file": "/images/how-it-works/step-3-monitor-alert.jpg",
       "route": "/how-it-works",
       "slot": "process step 3 photo",
-      "alt": "A woman looking at her phone at home"
+      "alt": "A woman looking at her phone at home",
+      "provenance": "Pre-redesign repository original, also in codex/backup-before-redesign-2026-09-24"
     },
     {
       "node": "479:203",

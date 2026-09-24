@@ -24,19 +24,19 @@ const steps = [
   {
     title: "Connect to Apple Health",
     description: "Link iPhone and Apple Watch data. No hub or proprietary hardware.",
-    image: "/landing/secondary/process-connect.png",
+    image: "/images/how-it-works/step-1-connect-to-apple-health.jpg",
     alt: "An iPhone showing health information beside an Apple Watch",
   },
   {
     title: "Learn your usual rhythm",
     description: "LaresCare learns your patterns over time, so meaningful changes stand out.",
-    image: "/landing/secondary/process-baseline.png",
+    image: "/images/how-it-works/step-2-establish-baseline.jpg",
     alt: "An older man tending plants at home while wearing a watch",
   },
   {
     title: "Keep family informed",
     description: "Clear updates and voice check-ins help put changes into context.",
-    image: "/landing/secondary/process-family.png",
+    image: "/images/how-it-works/step-3-monitor-alert.jpg",
     alt: "A woman looking at her phone at home",
   },
 ] as const;
