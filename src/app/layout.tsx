@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "@/design-system/tokens.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -13,6 +14,12 @@ const urbanist = localFont({
     { path: "../../public/fonts/Urbanist-SemiBold.ttf", weight: "600", style: "normal" },
     { path: "../../public/fonts/Urbanist-Bold.ttf", weight: "700", style: "normal" },
   ],
+});
+
+const manrope = localFont({
+  variable: "--font-manrope",
+  display: "swap",
+  src: [{ path: "../../public/fonts/Manrope-Variable.ttf", weight: "200 800", style: "normal" }],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${urbanist.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${urbanist.variable} ${manrope.variable}`}>
       <body className="antialiased">
         <SiteHeader />
 

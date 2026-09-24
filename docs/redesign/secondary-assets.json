@@ -1,0 +1,118 @@
+{
+  "fileKey": "3kvJHevjr4infPgV2DOtXc",
+  "pageNode": "225:2",
+  "assets": [
+    {
+      "node": "476:205",
+      "file": "/landing/secondary/process-connect.png",
+      "route": "/how-it-works",
+      "slot": "process step 1 photo",
+      "alt": "An iPhone showing health information beside an Apple Watch"
+    },
+    {
+      "node": "476:213",
+      "file": "/landing/secondary/process-baseline.png",
+      "route": "/how-it-works",
+      "slot": "process step 2 photo",
+      "alt": "An older man tending plants at home while wearing a watch"
+    },
+    {
+      "node": "476:221",
+      "file": "/landing/secondary/process-family.png",
+      "route": "/how-it-works",
+      "slot": "process step 3 photo",
+      "alt": "A woman looking at her phone at home"
+    },
+    {
+      "node": "479:203",
+      "file": "/landing/secondary/icon-trend.svg",
+      "route": "/how-it-works",
+      "slot": "activity icon",
+      "decorative": true
+    },
+    {
+      "node": "476:239",
+      "file": "/landing/secondary/icon-walk.svg",
+      "route": "/how-it-works",
+      "slot": "walking steadiness icon",
+      "decorative": true
+    },
+    {
+      "node": "476:245",
+      "file": "/landing/secondary/icon-moon.svg",
+      "route": "/how-it-works",
+      "slot": "sleep and rest icon",
+      "decorative": true
+    },
+    {
+      "node": "479:205",
+      "file": "/landing/secondary/icon-device.svg",
+      "route": "/how-it-works",
+      "slot": "connected devices icon",
+      "decorative": true
+    },
+    {
+      "node": "477:212",
+      "file": "/landing/secondary/icon-chat.svg",
+      "route": "/how-it-works",
+      "slot": "example conversation icon",
+      "decorative": true
+    },
+    {
+      "node": "477:238",
+      "file": "/landing/secondary/icon-shield.svg",
+      "route": "/how-it-works",
+      "slot": "permission note icon",
+      "decorative": true
+    },
+    {
+      "node": "478:215",
+      "file": "/landing/secondary/about-family.png",
+      "route": "/about",
+      "slot": "hero family photo",
+      "alt": "An older man and a woman sharing tea together at home"
+    },
+    {
+      "node": "504:311",
+      "file": "/landing/secondary/lar.png",
+      "route": "/about",
+      "slot": "voice and text phone examples",
+      "decorative": true
+    },
+    {
+      "node": "504:304",
+      "file": "/landing/secondary/status-bar.png",
+      "route": "/about",
+      "slot": "illustrative voice and text phone status bars",
+      "decorative": true
+    },
+    {
+      "node": "504:313",
+      "file": "/landing/secondary/icon-call.svg",
+      "route": "/about",
+      "slot": "illustrative voice phone call icon",
+      "decorative": true
+    },
+    {
+      "node": "504:348",
+      "file": "/landing/secondary/icon-menu.svg",
+      "route": "/about",
+      "slot": "illustrative phone menu icon",
+      "decorative": true
+    },
+    {
+      "node": "504:355",
+      "file": "/landing/secondary/icon-history.svg",
+      "route": "/about",
+      "slot": "illustrative voice phone history icon",
+      "decorative": true
+    },
+    {
+      "node": "508:370",
+      "file": "/landing/secondary/icon-microphone.svg",
+      "route": "/about",
+      "slot": "illustrative text phone microphone icon",
+      "decorative": true
+    }
+  ]
+}

@@ -11,7 +11,8 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:contact": "tsx --test src/app/api/contact/route.test.ts src/components/landing/pilot-message.test.ts"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.4",
@@ -33,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

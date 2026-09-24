@@ -1,144 +1,168 @@
-import { Container } from "@/components/Container";
-import { Section } from "@/components/Section";
-import { Card } from "@/components/Card";
-import { Button } from "@/components/Button";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { LandingButton } from "@/components/landing/LandingButton";
+import { PilotSection } from "@/components/landing/PilotSection";
+import { TextLink } from "@/components/landing/TextLink";
+import { landingSections } from "@/design-system/sections";
+import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Why LaresCare | LaresCare",
+  description:
+    "Learn why LaresCare starts with conversation, connection and respect for each person’s independence.",
+  alternates: { canonical: "https://larescare.io/about" },
+  openGraph: {
+    title: "Why LaresCare | LaresCare",
+    description: "Learn why LaresCare starts with conversation, connection and respect for each person’s independence.",
+    url: "https://larescare.io/about",
+    siteName: "LaresCare",
+    type: "website",
+  },
+};
+
+const principles = [
+  {
+    title: "The person comes first",
+    description: "Their conversation and their perspective stay at the centre.",
+  },
+  {
+    title: "Shared with permission",
+    description: "We explain what is shared and who can see it before the pilot starts.",
+  },
+  {
+    title: "Patterns need context",
+    description: "A quieter day may have a simple explanation. The person’s words matter.",
+  },
+  {
+    title: "Everyday support",
+    description: "LaresCare supports family understanding. It is not medical or emergency care.",
+  },
+] as const;
+
+function ConversationPhones() {
+  return (
+    <div className={styles.phones} aria-label="Illustrative examples of speaking and typing with Lar">
+      <div className={styles.phoneExample}>
+        <div className={styles.phone}>
+          <div className={styles.phoneScreen}>
+            <Image className={styles.phoneStatus} src="/landing/secondary/status-bar.png" alt="" width={240} height={39} style={{ height: "auto" }} />
+            <div className={styles.phoneTopIcons}>
+              <Image src="/landing/secondary/icon-menu.svg" alt="" width={20} height={20} />
+              <Image src="/landing/secondary/icon-history.svg" alt="" width={20} height={20} />
+            </div>
+            <Image className={styles.voiceLar} src="/landing/secondary/lar.png" alt="" width={240} height={160} style={{ height: "auto" }} />
+            <div className={styles.voiceMessage}>
+              <p className={styles.speakingLabel}><span className={styles.wave} aria-hidden="true"><i /><i /><i /><i /><i /></span>Lar is speaking</p>
+              <p>What would you like to talk about today?</p>
+            </div>
+            <span className={styles.callCircle} aria-hidden="true">
+              <Image src="/landing/secondary/icon-call.svg" alt="" width={23} height={25} style={{ height: "auto" }} />
+            </span>
+            <span className={styles.homeIndicator} aria-hidden="true" />
+          </div>
+        </div>
+        <p className={styles.phoneCaption}>Speak naturally</p>
+      </div>
+      <div className={styles.phoneExample}>
+        <div className={styles.phone}>
+          <div className={styles.phoneScreen}>
+            <Image className={styles.phoneStatus} src="/landing/secondary/status-bar.png" alt="" width={240} height={39} style={{ height: "auto" }} />
+            <div className={styles.phoneTopIcons}>
+              <Image src="/landing/secondary/icon-menu.svg" alt="" width={20} height={20} />
+            </div>
+            <Image className={styles.chatLar} src="/landing/secondary/lar.png" alt="" width={96} height={64} style={{ height: "auto" }} />
+            <div className={styles.phoneMessages}>
+              <p className={styles.userMessage}>I stayed inside because of the rain and got lost in a book.</p>
+              <p className={styles.larMessage}>That sounds like a good rainy-day plan. What are you reading?</p>
+              <p className={styles.userMessage}>A mystery. I couldn’t put it down.</p>
+              <p className={styles.larMessage}>Sounds like a story worth staying in for.</p>
+            </div>
+            <div className={styles.phoneComposer}>
+              <span>Message Lar</span>
+              <span className={styles.micCircle} aria-hidden="true">
+                <Image src="/landing/secondary/icon-microphone.svg" alt="" width={20} height={20} />
+              </span>
+            </div>
+            <span className={styles.homeIndicator} aria-hidden="true" />
+          </div>
+        </div>
+        <p className={styles.phoneCaption}>Type whenever you prefer</p>
+      </div>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
-    <div className="bg-bg-main">
-      {/* LEAD STATEMENT */}
-      <Container className="py-12 md:py-16">
-        <div className="max-w-3xl space-y-5">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-brand-orange/80">
-            About LaresCare
-          </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-brand-blue">
-            Calm, human‑readable insight for families supporting aging in place.
-          </h1>
-          <p className="text-lg md:text-xl text-text-secondary">
-            We focus on quiet daily patterns—movement, steadiness, rest—so families can act earlier
-            without turning home into a hospital.
-          </p>
-          <div className="grid gap-3 md:grid-cols-2 text-sm text-brand-blue/70">
-            <span>Designed for dignity.</span>
-            <span>Built for families who can’t be there every day.</span>
+    <div data-design-system="landing" className={styles.page}>
+      <section id={landingSections.about.hero} className={styles.hero} aria-labelledby="about-title">
+        <div className={styles.container + " " + styles.heroGrid}>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>WHY LARESCARE</p>
+            <h1 id="about-title">Care starts<br />with connection.</h1>
+            <p>We’re building a familiar companion for everyday life. Someone to talk to, with the person’s independence and perspective at the centre.</p>
+            <LandingButton href="/how-it-works" variant="outline">See how it works</LandingButton>
+          </div>
+          <div className={styles.heroPhoto}>
+            <Image
+              src="/landing/secondary/about-family.png"
+              alt="An older man and a woman sharing tea together at home"
+              fill
+              priority
+              sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 620px"
+            />
+            <p className={styles.heroNote}>A little closer,<br />even from afar.</p>
           </div>
         </div>
-      </Container>
+      </section>
 
-      {/* PROBLEM / STANCE */}
-      <div className="bg-brand-blue">
-        <Section inverted={true} title="The gap we’re closing">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-headline text-brand-cream">Most tools are clinical</h3>
-              <p className="text-brand-cream/70 text-lg leading-relaxed">
-                Families get dashboards and alerts, but not a clear sense of whether someone is
-                drifting, stable, or slipping.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-headline text-brand-cream">Subtle change is easy to miss</h3>
-              <p className="text-brand-cream/70 text-lg leading-relaxed">
-                Early shifts often appear weeks before a fall or decline. Quiet signals deserve quiet attention.
-              </p>
-            </div>
+      <section id={landingSections.about.conversation} className={styles.conversation} aria-labelledby="about-conversation-title">
+        <div className={styles.container + " " + styles.conversationGrid}>
+          <div className={styles.conversationCopy}>
+            <p className={styles.eyebrow}>OUR VIEW BEGINS WITH THE PERSON</p>
+            <h2 id="about-conversation-title">Conversation<br />comes first.</h2>
+            <p>A regular conversation makes room for stories, questions and small changes. Activity and sleep patterns add context to what a person shares.</p>
+            <p>A person’s words bring meaning to a pattern. Listening is part of understanding.</p>
+            <LandingButton href="/how-it-works">See how it works</LandingButton>
           </div>
-        </Section>
-      </div>
-
-      {/* WHAT WE BELIEVE */}
-      <Section title="What we believe">
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              body: "Independence is the goal, not a feature.",
-            },
-            {
-              body: "Families need clarity, not constant alerts.",
-            },
-            {
-              body: "Respectful tech should fade into daily life.",
-            },
-          ].map((item, index) => (
-            <Card
-              key={item.body}
-              className="p-8 md:p-10 bg-white border border-brand-cream/40 shadow-lg shadow-brand-blue/5"
-            >
-              <span className="text-4xl font-bold text-brand-blue/20">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <p className="mt-4 text-lg text-text-secondary">{item.body}</p>
-            </Card>
-          ))}
+          <ConversationPhones />
         </div>
-      </Section>
+      </section>
 
-      {/* WHAT WE'RE TRYING TO FIX */}
-      <div className="bg-brand-blue">
-        <Section inverted={true} title="What we're trying to fix">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h3 className="text-3xl font-headline text-brand-cream">Traditional tools are clinical</h3>
-              <p className="text-brand-cream/70 text-lg leading-relaxed">
-                Most options are built around medical workflows, not home life. Families get dashboards, not clarity.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-3xl font-headline text-brand-cream">Families see problems too late</h3>
-              <p className="text-brand-cream/70 text-lg leading-relaxed">
-                Subtle changes often show up weeks before a fall. Without data, those patterns are easy to miss.
-              </p>
-            </div>
+      <section id={landingSections.about.connection} className={styles.connection} aria-labelledby="about-connection-title">
+        <div className={styles.container + " " + styles.connectionGrid}>
+          <p className={styles.eyebrow}>WHY IT MATTERS</p>
+          <div>
+            <h2 id="about-connection-title">The National Institute on Aging describes how social connection relates to health and wellbeing as we age.</h2>
+            <p>This informs our focus on everyday conversation and connection to the people you care about.</p>
+            <TextLink href="https://www.nia.nih.gov/health/loneliness-and-social-isolation/loneliness-and-social-isolation-tips-staying-connected">
+              Read the NIA guide
+            </TextLink>
           </div>
-        </Section>
-      </div>
-
-      {/* HOW LARES IS DIFFERENT */}
-      <Section title="How LaresCare is different">
-        <div className="grid md:grid-cols-2 gap-8">
-          {[
-            {
-              title: "Built around Apple Health",
-              body: "No hubs, no hardware deliveries, no new gadgets to learn.",
-            },
-            {
-              title: "Signals, not dashboards",
-              body: "Clear language summaries: unusual trends, drifts, and check-ins.",
-            },
-            {
-              title: "Early, gentle nudges",
-              body: "A call from a daughter or a visit—not constant alarming notifications.",
-            },
-            {
-              title: "Respect for independence",
-              body: "Seniors stay in control. Families stay informed.",
-            },
-          ].map((item) => (
-            <Card
-              key={item.title}
-              className="p-10 md:p-12 space-y-4 bg-white border border-brand-cream/40 shadow-lg shadow-brand-blue/5"
-            >
-              <h3 className="text-3xl font-headline text-brand-blue">{item.title}</h3>
-              <p className="text-text-secondary leading-relaxed">{item.body}</p>
-            </Card>
-          ))}
         </div>
-      </Section>
+      </section>
 
-      {/* CTA */}
-      <div className="bg-brand-cream/30">
-        <Section title="Ready to shape the future of care?" className="text-center">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto space-y-8">
-            <p className="text-xl text-text-secondary">
-              We&apos;re keeping the first cohort small so we can learn quickly.
-            </p>
-            <Button href="/#contact" variant="primary">
-              Join the waitlist
-            </Button>
+      <section id={landingSections.about.independence} className={styles.independence} aria-labelledby="about-independence-title">
+        <div className={styles.container + " " + styles.independenceGrid}>
+          <div className={styles.independenceCopy}>
+            <h2 id="about-independence-title">Close to them.<br />On their terms.</h2>
+            <TextLink href="/how-it-works">See how it works</TextLink>
           </div>
-        </Section>
-      </div>
+          <ol className={styles.principles}>
+            {principles.map((item, index) => (
+              <li key={item.title}>
+                <span className={styles.principleNumber}>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <PilotSection id={landingSections.about.pilot} />
     </div>
   );
 }

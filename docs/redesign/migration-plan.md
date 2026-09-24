@@ -1,6 +1,6 @@
 # Перенесення LaresCare з Figma
 
-Дата: 24 вересня 2026. Статус: підготовка виконана; перенесення сторінок ще не почалося.
+Дата: 24 вересня 2026. Статус: три сторінки реалізовано у `codex/new-landing`; локальні перевірки пройдено. Merge і deployment ще не виконані. Результати та межі перевірки: [implementation-validation.md](./implementation-validation.md).
 
 ## Джерела та гілки
 
@@ -29,8 +29,8 @@
 - 27 нових Figma variables: 10 семантичних кольорів через aliases до чинної палітри, 15 розмірів/відступів/радіусів і 2 кольори CTA-градієнта. WEB syntax пов'язано з CSS tokens.
 - Дев'ять Manrope text styles та окрема дошка основ дизайн-системи; використовується чинна бібліотека з восьми компонентів, без їх дублювання.
 - 24 видимих блоки мають `[#dom-id]` у назві Figma layer. Архівні приховані блоки не входять у карту.
-- `src/design-system/tokens.css`: тема з явним підключенням через `data-design-system="landing"`; ще не імпортована у live layout.
-- `src/design-system/sections.ts`: контракт ID, навігації та CTA; ще не застосований до старого DOM.
+- `src/design-system/tokens.css`: тема з явним підключенням через `data-design-system="landing"`; імпортована у layout, застосована до трьох нових сторінок та їхньої оболонки.
+- `src/design-system/sections.ts`: контракт ID, навігації та CTA; застосований до нових сторінок.
 - `figma-source.json` — знімок джерел; `figma-state.json` — IDs створених/змінених об'єктів для наступної сесії.
 
 ## Послідовність реалізації
@@ -128,7 +128,7 @@ ID унікальні в межах HTML document. `site-header` і `site-footer
 | `about-pilot` | [431:387](https://www.figma.com/design/3kvJHevjr4infPgV2DOtXc/LaresCare?node-id=431-387) | Good company. A good place to start. |
 | `site-footer` | [431:424](https://www.figma.com/design/3kvJHevjr4infPgV2DOtXc/LaresCare?node-id=431-424) | footer |
 
-## Перевірки підготовки та залишкові питання
+## Історичні перевірки підготовки (до реалізації)
 
 - `npm run build`: успішно повторно після останньої зміни CSS; конфігурація досі пропускає type errors.
 - `npx tsc --noEmit`: не проходить через наявні синхронні `params` у `src/app/campaigns/[slug]/page.tsx` (потрібен Promise). Підготовлені файли не змінюють цей route.

@@ -1,0 +1,158 @@
+{
+  "figmaFileKey": "3kvJHevjr4infPgV2DOtXc",
+  "frame": "391:187",
+  "assets": [
+    {
+      "node": "392:193",
+      "path": "/landing/home/hero-conversation-photo.jpg",
+      "component": "HeroArt",
+      "slot": "hero photo behind illustrative phone",
+      "alt": "Woman smiling while looking at her phone",
+      "decorative": false
+    },
+    {
+      "node": "392:204",
+      "path": "/landing/home/lar-original.png",
+      "component": "HeroArt, Hero",
+      "slot": "phone Lar and Meet Lar badge",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "392:237",
+      "path": "/landing/home/icon-menu.svg",
+      "component": "HeroArt",
+      "slot": "illustrative phone menu",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "392:252",
+      "path": "/landing/home/icon-microphone.svg",
+      "component": "HeroArt",
+      "slot": "illustrative phone microphone on navy",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1730",
+      "path": "/landing/home/icon-shield-check.svg",
+      "component": "Hero",
+      "slot": "permission benefit",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1732",
+      "path": "/landing/home/icon-microphone-dark.svg",
+      "component": "Hero",
+      "slot": "Speak or type benefit on cream",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "I392:197;5465:16812",
+      "path": "/landing/home/icon-status-cellular.svg",
+      "component": "HeroArt",
+      "slot": "phone status cellular",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "I392:197;5465:16813",
+      "path": "/landing/home/icon-status-wifi.svg",
+      "component": "HeroArt",
+      "slot": "phone status Wi-Fi",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "I392:197;6325:1760",
+      "path": "/landing/home/icon-status-battery.svg",
+      "component": "HeroArt",
+      "slot": "phone status battery",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "393:209",
+      "path": "/landing/home/lar-conversation.png",
+      "component": "Conversation",
+      "slot": "Lar in warm conversation band",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "393:211,393:213",
+      "path": "/landing/home/lar-expression.png",
+      "component": "Conversation",
+      "slot": "masked thoughtful eye overlays",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1734",
+      "path": "/landing/home/icon-microphone-pill.svg",
+      "component": "Conversation",
+      "slot": "Speak mode label",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1736",
+      "path": "/landing/home/icon-keyboard.svg",
+      "component": "Conversation",
+      "slot": "Type mode label",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "420:253",
+      "path": "/landing/home/icon-chat-circle.svg",
+      "component": "Signals",
+      "slot": "Their own words card",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "417:265",
+      "path": "/landing/home/icon-plus.svg",
+      "component": "Signals",
+      "slot": "plus between signal cards",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "417:267",
+      "path": "/landing/home/icon-equals.svg",
+      "component": "Signals",
+      "slot": "equals between signal cards",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1738",
+      "path": "/landing/home/icon-walk.svg",
+      "component": "Family",
+      "slot": "walking pattern in weekly summary",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "416:1740",
+      "path": "/landing/home/icon-book.svg",
+      "component": "Family",
+      "slot": "conversation highlight in weekly summary",
+      "alt": "",
+      "decorative": true
+    },
+    {
+      "node": "395:1811",
+      "path": "/landing/home/family-tea.png",
+      "component": "Independence",
+      "slot": "family photo",
+      "alt": "Older father and his daughter enjoying tea together at home",
+      "decorative": false
+    }
+  ]
+}
