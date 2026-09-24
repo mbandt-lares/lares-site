@@ -96,11 +96,11 @@ function Conversation() {
     <section id={landingSections.home.conversation} className={styles.conversation} aria-labelledby="conversation-title">
       <div className={styles.conversationBand}>
         <div className={styles.conversationLar} aria-hidden="true">
-          <Image className={styles.larShadow} src={asset("lar-conversation.png")} alt="" width={248} height={165} />
+          <span className={styles.larShadow} data-motion-shadow />
           <MotionScene effect="greet" className={styles.larMotion}>
             <Image src={asset("lar-conversation.png")} alt="" width={248} height={165} />
-            <span className={`${styles.eyePatch} ${styles.eyeLeft}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
-            <span className={`${styles.eyePatch} ${styles.eyeRight}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} /></span>
+            <span className={`${styles.eyePatch} ${styles.eyeLeft}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} data-motion-eye /></span>
+            <span className={`${styles.eyePatch} ${styles.eyeRight}`}><Image src={asset("lar-expression.png")} alt="" width={248} height={165} data-motion-eye /></span>
           </MotionScene>
         </div>
         <h2 id="conversation-title">A story, a question,<br className={styles.desktopBreak} /> or just a little company.</h2>

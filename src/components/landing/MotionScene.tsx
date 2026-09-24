@@ -49,7 +49,7 @@ function playEffect(root: HTMLDivElement, effect: MotionEffect): Animation[] {
   }
 
   if (effect === "greet") {
-    return [root.animate(
+    const body = root.animate(
       [
         { offset: 0, transform: "translateY(0) rotate(0deg)", easing: easeInOut },
         { offset: .45, transform: "translateY(-8px) rotate(-6deg)", easing: easeInOut },
@@ -57,7 +57,29 @@ function playEffect(root: HTMLDivElement, effect: MotionEffect): Animation[] {
         { offset: 1, transform: "translateY(0) rotate(0deg)" },
       ],
       { duration: 1400, easing: "linear" },
-    )];
+    );
+    const eyes = Array.from(root.querySelectorAll<HTMLElement>("[data-motion-eye]")).flatMap((eye) => {
+      if (typeof eye.animate !== "function") return [];
+      return [eye.animate(
+        [
+          { offset: 0, transform: "translate(0, 0)", easing: easeInOut },
+          { offset: .3, transform: "translate(.6%, -.2%)", easing: easeInOut },
+          { offset: .55, transform: "translate(.6%, -.2%)", easing: easeInOut },
+          { offset: 1, transform: "translate(0, 0)" },
+        ],
+        { duration: 1400, easing: "linear" },
+      )];
+    });
+    const shadow = root.parentElement?.querySelector<HTMLElement>("[data-motion-shadow]");
+    const shadowAnimation = shadow && typeof shadow.animate === "function" ? shadow.animate(
+      [
+        { offset: 0, transform: "scaleX(1)", opacity: 1, easing: easeInOut },
+        { offset: .45, transform: "scaleX(.94)", opacity: .82, easing: easeInOut },
+        { offset: 1, transform: "scaleX(1)", opacity: 1 },
+      ],
+      { duration: 1400, easing: "linear" },
+    ) : undefined;
+    return shadowAnimation ? [body, ...eyes, shadowAnimation] : [body, ...eyes];
   }
 
   const selector = effect === "wave" ? "[data-motion-wave]" : "[data-motion-message]";

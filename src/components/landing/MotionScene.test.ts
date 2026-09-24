@@ -48,7 +48,7 @@ function harness() {
   Object.defineProperty(globalThis, "IntersectionObserver", { configurable: true, value: Observer });
 
   function element(top = 100, children: HTMLElement[] = []) {
-    const animations: { cancelled: number; options: KeyframeAnimationOptions }[] = [];
+    const animations: { cancelled: number; frames: Keyframe[]; options: KeyframeAnimationOptions }[] = [];
     const target = {
       dataset: {} as Record<string, string>,
       top,
@@ -56,8 +56,8 @@ function harness() {
         return { left: 0, right: 200, top: this.top, bottom: this.top + 100, width: 200, height: 100 } as DOMRect;
       },
       querySelectorAll: () => children,
-      animate(_frames: Keyframe[], options: KeyframeAnimationOptions) {
-        const record = { cancelled: 0, options };
+      animate(frames: Keyframe[], options: KeyframeAnimationOptions) {
+        const record = { cancelled: 0, frames, options };
         animations.push(record);
         return { finished: new Promise<void>(() => {}), cancel: () => { record.cancelled++; } } as unknown as Animation;
       },
@@ -157,4 +157,35 @@ test("sequence observes each item so lower mobile cards animate when reached", (
     cleanup();
     assert.deepEqual(h.listenerCounts(), [0, 0]);
   } finally { h.restore(); }
+});
+
+test("Lar's eyes and shadow share the greeting timeline and stop with the body", () => {
+  for (const reason of ["hidden", "reduced"] as const) {
+    const h = harness();
+    try {
+      const leftEye = h.element();
+      const rightEye = h.element();
+      const shadow = h.element();
+      const root = h.element(100, [leftEye.target, rightEye.target]);
+      Object.defineProperty(root.target, "parentElement", { value: { querySelector: () => shadow.target } });
+      const cleanup = attachMotionScene(root.target, "greet", { current: false });
+      h.Observer.instances[0].emit(root.target, 1);
+      assert.equal(root.animations.length, 1);
+      assert.equal(leftEye.animations.length, 1);
+      assert.equal(rightEye.animations.length, 1);
+      assert.equal(shadow.animations.length, 1);
+      assert.equal(leftEye.animations[0].frames[1].transform, "translate(.6%, -.2%)");
+      assert.equal(rightEye.animations[0].options.duration, 1400);
+      assert.equal(shadow.animations[0].frames[1].transform, "scaleX(.94)");
+      assert.equal(shadow.animations[0].frames[1].opacity, .82);
+
+      if (reason === "hidden") h.doc.change("hidden");
+      else h.media.change(true);
+      assert.equal(root.animations[0].cancelled, 1);
+      assert.equal(leftEye.animations[0].cancelled, 1);
+      assert.equal(rightEye.animations[0].cancelled, 1);
+      assert.equal(shadow.animations[0].cancelled, 1);
+      cleanup();
+    } finally { h.restore(); }
+  }
 });

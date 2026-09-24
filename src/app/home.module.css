@@ -52,16 +52,17 @@
 .conversation { padding-block: 70px; }
 .conversationBand { width: min(var(--lc-container), calc(100% - 40px)); min-height: 306px; margin-inline: auto; padding: 40px 56px; display: grid; grid-template-columns: 248px minmax(0, 1.33fr) minmax(0, 1fr); align-items: center; justify-content: space-between; gap: 32px; border-radius: 40px; background: var(--lc-peach); }
 .conversationLar { width: 248px; height: 165px; position: relative; transform: translateX(-16px); }
-/* Silhouette masks separate the moving character from the baked-in ground shadow. */
-.larShadow { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; mask-image: url("/landing/home/lar-shadow-mask.svg"); mask-size: 100% 100%; mask-repeat: no-repeat; }
+/* A separate soft shadow cannot retain any pixels from the moving character. */
+.larShadow { position: absolute; left: 21%; top: 77%; width: 58%; height: 14%; background: radial-gradient(ellipse, rgb(82 51 44 / .25) 0%, rgb(82 51 44 / .14) 30%, rgb(82 51 44 / .04) 58%, transparent 74%); pointer-events: none; }
 .larMotion { position: relative; width: 100%; height: 100%; mask-image: url("/landing/home/lar-body-mask.svg"); mask-size: 100% 100%; mask-repeat: no-repeat; }
 .larMotion > img { width: 100%; height: 100%; object-fit: contain; }
-.eyePatch { position: absolute; display: block; width: 30px; height: 30px; overflow: hidden; }
-.eyePatch img { position: absolute; width: 248px; height: 165px; max-width: none; }
-.eyeLeft { left: 103px; top: 70px; }
-.eyeLeft img { left: -103px; top: -70px; }
-.eyeRight { left: 147px; top: 61px; }
-.eyeRight img { left: -147px; top: -61px; }
+/* Crop the approved expression proportionally so the gaze also works on mobile. */
+.eyePatch { position: absolute; display: block; width: 12.096774%; height: 18.181818%; overflow: hidden; mask-image: radial-gradient(ellipse, #000 72%, transparent 100%); }
+.eyePatch img { position: absolute; width: 826.666667%; height: 550%; max-width: none; }
+.eyeLeft { left: 41.532258%; top: 42.424242%; }
+.eyeLeft img { left: -343.333333%; top: -233.333333%; }
+.eyeRight { left: 59.274194%; top: 36.969697%; }
+.eyeRight img { left: -490%; top: -203.333333%; }
 .conversation h2 { font-size: 2.5rem; line-height: 3rem; letter-spacing: -.04em; font-weight: 600; }
 .conversationSide p { color: var(--lc-secondary) !important; font-size: 1.25rem; line-height: 30px; }
 .modeLabels { display: flex; gap: 12px; margin-top: 20px; }
@@ -137,7 +138,6 @@
   .familyGrid, .independenceGrid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
   .conversationBand { grid-template-columns: 20% minmax(0,1fr) minmax(0,30%); padding-inline: 4%; }
   .conversationLar, .larMotion, .larMotion > img { width: 100%; height: auto; aspect-ratio: 248 / 165; }
-  .eyePatch { display: none; }
 }
 
 @media (max-width: 1060px) {
