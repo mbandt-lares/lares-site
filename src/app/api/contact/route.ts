@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 const UPSTREAM_ERROR = "We couldn't send your request. Please try again.";
+// Temporary intake service while the main deployment has no Airtable credentials.
+const CONTACT_RELAY_URL = "https://larescare-contact-relay.vercel.app/api/contact";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -25,6 +27,26 @@ export async function POST(request: Request) {
   const token = process.env.AIRTABLE_ACCESS_TOKEN?.trim();
   const baseId = process.env.AIRTABLE_BASE_ID?.trim();
   const tableId = process.env.AIRTABLE_TABLE_ID?.trim();
+  if (!token && !baseId && !tableId) {
+    try {
+      const response = await fetch(CONTACT_RELAY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email: email.trim(), message }),
+        signal: AbortSignal.timeout(15000),
+        redirect: "error",
+        cache: "no-store",
+      });
+      const result: unknown = await response.json();
+      if (response.ok && typeof result === "object" && result !== null &&
+          "ok" in result && result.ok === true) {
+        return NextResponse.json({ ok: true });
+      }
+      return NextResponse.json({ ok: false, error: UPSTREAM_ERROR }, { status: response.status === 400 ? 400 : 502 });
+    } catch {
+      return NextResponse.json({ ok: false, error: UPSTREAM_ERROR }, { status: 502 });
+    }
+  }
   if (!token || !baseId || !tableId) {
     return NextResponse.json({ ok: false, error: "Contact form is temporarily unavailable" }, { status: 503 });
   }

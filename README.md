@@ -93,7 +93,16 @@ AIRTABLE_BASE_ID=...
 AIRTABLE_TABLE_ID=...
 ```
 
-The API returns 503 when any of these settings is missing. Keep the token out of `NEXT_PUBLIC_` variables and source control.
+Keep the token out of `NEXT_PUBLIC_` variables and source control. Partial configuration returns 503.
+
+While the main deployment has none of these variables, `/api/contact` forwards to
+`https://larescare-contact-relay.vercel.app/api/contact`. The form UI and payload stay unchanged.
+This temporary public intake service runs in the `opmasans-projects/larescare-contact-relay`
+Vercel project; its source and deployment instructions are in `integrations/contact-relay`.
+Its Airtable credentials are configured only in that project's Production environment.
+It is deployed separately, not automatically with this repository's main site.
+Once the customer configures all three variables on the main project and redeploys,
+the main site writes directly to Airtable again. Remove the relay only after verifying that path.
 
 ## 🧪 Scripts
 

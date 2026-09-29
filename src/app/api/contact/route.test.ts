@@ -114,3 +114,51 @@ test("does not claim success when the bounded upstream request times out", async
   assert.equal(response.status, 502);
   assert.equal((await response.json()).ok, false);
 });
+
+function useRelay() {
+  delete process.env.AIRTABLE_ACCESS_TOKEN;
+  delete process.env.AIRTABLE_BASE_ID;
+  delete process.env.AIRTABLE_TABLE_ID;
+}
+
+test("uses the temporary relay without credentials and preserves the audience", async () => {
+  useRelay();
+  globalThis.fetch = async (url, options) => {
+    assert.equal(url, "https://larescare-contact-relay.vercel.app/api/contact");
+    assert.equal(options?.method, "POST");
+    assert.equal(options?.redirect, "error");
+    assert.ok(options?.signal);
+    assert.equal((options?.headers as Record<string, string>).Authorization, undefined);
+    assert.deepEqual(JSON.parse(String(options?.body)), {
+      name: "Ada", email: "ada@example.com", message: "Who is this for: A loved one",
+    });
+    return Response.json({ ok: true });
+  };
+  const response = await POST(request({ name: "Ada", email: " ada@example.com ", message: "Who is this for: A loved one" }));
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), { ok: true });
+});
+
+test("relay errors and ambiguous responses never claim delivery", async () => {
+  useRelay();
+  for (const upstream of [
+    Response.json({ ok: false }),
+    Response.json({ ok: "true" }),
+    Response.json({ ok: true }, { status: 503 }),
+    new Response("not JSON"),
+  ]) {
+    globalThis.fetch = async () => upstream;
+    const response = await POST(request({ email: "ada@example.com" }));
+    assert.equal(response.status, 502);
+    assert.equal((await response.json()).ok, false);
+  }
+  globalThis.fetch = async () => { throw new DOMException("Timed out", "TimeoutError"); };
+  assert.equal((await POST(request({ email: "ada@example.com" }))).status, 502);
+});
+
+test("relay validation errors remain client errors", async () => {
+  useRelay();
+  globalThis.fetch = async () => Response.json({ ok: false }, { status: 400 });
+  const response = await POST(request({ email: "ada@example.com" }));
+  assert.equal(response.status, 400);
+});
