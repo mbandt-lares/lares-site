@@ -85,8 +85,15 @@ Payload:
 }
 ```
 
-Current behavior:
-- Logs submissions to Google Sheets (connected via API)
+The server writes submissions to Airtable. Create a table with `Name`, `Email`, and `Message` fields, all configured as text fields. Give a personal access token permission to create records in that base, then set these server-side environment variables locally and in the deployment environment:
+
+```text
+AIRTABLE_ACCESS_TOKEN=...
+AIRTABLE_BASE_ID=...
+AIRTABLE_TABLE_ID=...
+```
+
+The API returns 503 when any of these settings is missing. Keep the token out of `NEXT_PUBLIC_` variables and source control.
 
 ## 🧪 Scripts
 
