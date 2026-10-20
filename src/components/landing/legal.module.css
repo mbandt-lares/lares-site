@@ -70,8 +70,13 @@
   color: var(--lc-secondary);
 }
 
-.page .article section p + p {
+.page .article section p + p,
+.page .article section ul + p {
   margin-top: 16px;
+}
+
+.article a {
+  overflow-wrap: anywhere;
 }
 
 .article ul {
